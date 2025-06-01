@@ -10,10 +10,10 @@
 [data-theme='light'] { /* Nouveau thème clair */
     --background-color-dark: #f4f7f6;
     --text-color-dark: #333;
-    --button-bg-dark: #e0e0e0;
+    --button-bg-dark: #f0f0f0; /* Gris plus clair pour le conteneur */
     --button-text-dark: #333;
-    --button-hover-dark: #d0d0d0;
-    --border-color-dark: #ccc;
+    --button-hover-dark: #e8e8e8;
+    --border-color-dark: #bbb;
 }
 
 body {
