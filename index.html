@@ -6,15 +6,48 @@
     <title>Générateur de Mot de Passe</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="dark-theme">
     <div class="container">
+        <div class="controls-top">
+            <div class="language-selector">
+                <label for="language">Langue:</label>
+                <select id="language">
+                    <option value="fr">Français</option>
+                    <option value="en">English</option>
+                    <option value="es">Español</option>
+                    <option value="de">Deutsch</option>
+                    <option value="it">Italiano</option>
+                    <option value="pt">Português</option>
+                    <option value="ru">Русский</option>
+                    <option value="ja">日本語</option>
+                    <option value="zh">中文</option>
+                    <option value="ko">한국어</option>
+                    <option value="ar">العربية</option>
+                    <option value="he">עברית</option>
+                    <option value="hi">हिन्दी</option>
+                    <option value="ro">Română</option>
+                    <option value="pl">Polski</option>
+                </select>
+            </div>
+        </div>
         <h1>Générateur de Mot de Passe</h1>
         <div class="password-display">
             <input type="text" id="password" readonly>
             <button id="copyButton">Copier</button>
         </div>
-        <button id="generateButton">Générer un mot de passe</button>
+        <div class="password-length-control">
+            <label for="passwordLength">Longueur du mot de passe:</label>
+            <span id="passwordLengthValue">7</span>
+            <input type="range" id="passwordLength" min="7" max="100" value="7">
+        </div>
+        <div class="character-type-options">
+            <label><input type="checkbox" id="includeUppercase" checked> Majuscules</label>
+            <label><input type="checkbox" id="includeLowercase" checked> Minuscules</label>
+            <label><input type="checkbox" id="includeNumbers" checked> Chiffres</label>
+            <label><input type="checkbox" id="includeSymbols" checked> Symboles</label>
+        </div>
     </div>
+    <div id="copyMessage" class="hidden"></div>
     <script src="script.js"></script>
 </body>
 </html>
