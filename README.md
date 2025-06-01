@@ -2,17 +2,13 @@
 Just generate a random password, right?
 
 # Features
-Multilanguage support
 
-Customizable password length with a slider
-
-Customizable password characters
-
-Generated passwords history
-
-Password strength indicator
-
-Dark and light switch
+*   **Multilanguage Support**: Generate passwords in various languages, catering to a global user base.
+*   **Customizable Password Length**: Easily adjust the password length using an intuitive slider, giving you full control over complexity.
+*   **Customizable Password Characters**: Select the types of characters to include (e.g., uppercase, lowercase, numbers, symbols) for tailored password generation.
+*   **Generated Passwords History**: Keep track of your previously generated passwords for easy retrieval and management.
+*   **Password Strength Indicator**: Get real-time feedback on the strength of your generated password, helping you create robust and secure credentials.
+*   **Dark and Light Mode Switch**: Seamlessly switch between dark and light themes for a comfortable viewing experience, day or night.
 
 # How to host on your computer
 1. Clone the repository
