@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
     const passwordInput = document.getElementById('password');
     const copyButton = document.getElementById('copyButton');
     const passwordLengthInput = document.getElementById('passwordLength');
@@ -10,305 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const includeNumbers = document.getElementById('includeNumbers');
     const includeSymbols = document.getElementById('includeSymbols');
 
-    const translations = {
-        fr: {
-            title: "Générateur de Mot de Passe",
-            passwordLengthLabel: "Longueur du mot de passe:",
-            copyButton: "Copier",
-            copyAlert: "Mot de passe copié dans le presse-papiers !",
-            generateError: "Impossible de générer un mot de passe. Veuillez réessayer.",
-            uppercaseLabel: "Majuscules",
-            lowercaseLabel: "Minuscules",
-            numbersLabel: "Chiffres",
-            symbolsLabel: "Symboles"
-        },
-        en: {
-            title: "Password Generator",
-            passwordLengthLabel: "Password Length:",
-            copyButton: "Copy",
-            copyAlert: "Password copied to clipboard!",
-            generateError: "Could not generate password. Please try again.",
-            uppercaseLabel: "Uppercase",
-            lowercaseLabel: "Lowercase",
-            numbersLabel: "Numbers",
-            symbolsLabel: "Symbols"
-        },
-        es: {
-            title: "Generador de Contraseñas",
-            passwordLengthLabel: "Longitud de la contraseña:",
-            copyButton: "Copiar",
-            copyAlert: "¡Contraseña copiada al portapapeles!",
-            generateError: "No se pudo generar la contraseña. Por favor, inténtelo de nuevo.",
-            uppercaseLabel: "Mayúsculas",
-            lowercaseLabel: "Minúsculas",
-            numbersLabel: "Números",
-            symbolsLabel: "Símbolos"
-        },
-        de: {
-            title: "Passwort-Generator",
-            passwordLengthLabel: "Passwortlänge:",
-            copyButton: "Kopieren",
-            copyAlert: "Passwort in die Zwischenablage kopiert!",
-            generateError: "Passwort konnte nicht generiert werden. Bitte versuchen Sie es erneut.",
-            uppercaseLabel: "Großbuchstaben",
-            lowercaseLabel: "Kleinbuchstaben",
-            numbersLabel: "Zahlen",
-            symbolsLabel: "Symbole"
-        },
-        it: {
-            title: "Generatore di Password",
-            passwordLengthLabel: "Lunghezza password:",
-            copyButton: "Copia",
-            copyAlert: "Password copiata negli appunti!",
-            generateError: "Impossibile generare la password. Riprova.",
-            uppercaseLabel: "Maiuscole",
-            lowercaseLabel: "Minuscole",
-            numbersLabel: "Numeri",
-            symbolsLabel: "Simboli"
-        },
-        pt: {
-            title: "Gerador de Senhas",
-            passwordLengthLabel: "Comprimento da senha:",
-            copyButton: "Copiar",
-            copyAlert: "Senha copiada para a área de transferência!",
-            generateError: "Não foi possível gerar a senha. Por favor, tente novamente.",
-            uppercaseLabel: "Maiúsculas",
-            lowercaseLabel: "Minúsculas",
-            numbersLabel: "Números",
-            symbolsLabel: "Símbolos"
-        },
-        ru: {
-            title: "Генератор Паролей",
-            passwordLengthLabel: "Длина пароля:",
-            copyButton: "Копировать",
-            copyAlert: "Пароль скопирован в буфер обмена!",
-            generateError: "Не удалось сгенерировать пароль. Пожалуйста, попробуйте еще раз.",
-            uppercaseLabel: "Заглавные буквы",
-            lowercaseLabel: "Строчные буквы",
-            numbersLabel: "Цифры",
-            symbolsLabel: "Символы"
-        },
-        ja: {
-            title: "パスワードジェネレーター",
-            passwordLengthLabel: "パスワードの長さ:",
-            copyButton: "コピー",
-            copyAlert: "パスワードがクリップボードにコピーされました！",
-            generateError: "パスワードを生成できませんでした。もう一度お試しください。",
-            uppercaseLabel: "大文字",
-            lowercaseLabel: "小文字",
-            numbersLabel: "数字",
-            symbolsLabel: "記号"
-        },
-        zh: {
-            title: "密码生成器",
-            passwordLengthLabel: "密码长度:",
-            copyButton: "复制",
-            copyAlert: "密码已复制到剪贴板！",
-            generateError: "无法生成密码。请重试。",
-            uppercaseLabel: "大写字母",
-            lowercaseLabel: "小写字母",
-            numbersLabel: "数字",
-            symbolsLabel: "符号"
-        },
-        ko: {
-            title: "비밀번호 생성기",
-            passwordLengthLabel: "비밀번호 길이:",
-            copyButton: "복사",
-            copyAlert: "비밀번호가 클립보드에 복사되었습니다!",
-            generateError: "비밀번호를 생성할 수 없습니다. 다시 시도해주세요.",
-            uppercaseLabel: "대문자",
-            lowercaseLabel: "소문자",
-            numbersLabel: "숫자",
-            symbolsLabel: "기호"
-        },
-        ar: {
-            title: "مولد كلمات المرور",
-            passwordLengthLabel: "طول كلمة المرور:",
-            copyButton: "نسخ",
-            copyAlert: "تم نسخ كلمة المرور إلى الحافظة!",
-            generateError: "تعذر إنشاء كلمة المرور. الرجاء المحاولة مرة أخرى.",
-            uppercaseLabel: "أحرف كبيرة",
-            lowercaseLabel: "أحرف صغيرة",
-            numbersLabel: "أرقام",
-            symbolsLabel: "رموز"
-        },
-        hi: {
-            title: "पासवर्ड जनरेटर",
-            passwordLengthLabel: "पासवर्ड की लंबाई:",
-            copyButton: "कॉपी करें",
-            copyAlert: "पासवर्ड क्लिपबोर्ड पर कॉपी हो गया है!",
-            generateError: "पासवर्ड जनरेट नहीं हो सका। कृपया पुनः प्रयास करें।",
-            uppercaseLabel: "बड़े अक्षर",
-            lowercaseLabel: "छोटे अक्षर",
-            numbersLabel: "संख्याएँ",
-            symbolsLabel: "प्रतीक"
-        },
-        he: {
-            title: "מחולל סיסמאות",
-            passwordLengthLabel: "אורך סיסמה:",
-            copyButton: "העתק",
-            copyAlert: "הסיסמה הועתקה ללוח!",
-            generateError: "לא ניתן ליצור סיסמה. אנא נסה שוב.",
-            uppercaseLabel: "אותיות גדולות",
-            lowercaseLabel: "אותיות קטנות",
-            numbersLabel: "מספרים",
-            symbolsLabel: "סמלים"
-        },
-        ro: {
-            title: "Generator de Parole",
-            passwordLengthLabel: "Lungimea parolei:",
-            copyButton: "Copiază",
-            copyAlert: "Parola a fost copiată în clipboard!",
-            generateError: "Nu s-a putut genera parola. Vă rugăm să încercați din nou.",
-            uppercaseLabel: "Majuscule",
-            lowercaseLabel: "Minuscule",
-            numbersLabel: "Cifre",
-            symbolsLabel: "Simboluri"
-        },
-        pl: {
-            title: "Generator Haseł",
-            passwordLengthLabel: "Długość hasła:",
-            copyButton: "Kopiuj",
-            copyAlert: "Hasło skopiowane do schowka!",
-            generateError: "Nie udało się wygenerować hasła. Spróbuj ponownie.",
-            uppercaseLabel: "Wielkie litery",
-            lowercaseLabel: "Małe litery",
-            numbersLabel: "Cyfry",
-            symbolsLabel: "Symbole"
-        },
-        uk: {
-            title: "Генератор Паролів",
-            passwordLengthLabel: "Довжина пароля:",
-            copyButton: "Копіювати",
-            copyAlert: "Пароль скопійовано в буфер обміну!",
-            generateError: "Не вдалося згенерувати пароль. Будь ласка, спробуйте ще раз.",
-            uppercaseLabel: "Великі літери",
-            lowercaseLabel: "Малі літери",
-            numbersLabel: "Цифри",
-            symbolsLabel: "Символи"
-        },
-        vi: {
-            title: "Trình tạo mật khẩu",
-            passwordLengthLabel: "Độ dài mật khẩu:",
-            copyButton: "Sao chép",
-            copyAlert: "Đã sao chép mật khẩu vào khay nhớ tạm!",
-            generateError: "Không thể tạo mật khẩu. Vui lòng thử lại.",
-            uppercaseLabel: "Chữ hoa",
-            lowercaseLabel: "Chữ thường",
-            numbersLabel: "Số",
-            symbolsLabel: "Ký hiệu"
-        },
-        sv: {
-            title: "Lösenordsgenerator",
-            passwordLengthLabel: "Lösenordslängd:",
-            copyButton: "Kopiera",
-            copyAlert: "Lösenord kopierat till urklipp!",
-            generateError: "Kunde inte generera lösenord. Försök igen.",
-            uppercaseLabel: "Versaler",
-            lowercaseLabel: "Gemener",
-            numbersLabel: "Siffror",
-            symbolsLabel: "Symboler"
-        },
-        da: {
-            title: "Adgangskodegenerator",
-            passwordLengthLabel: "Adgangskodelængde:",
-            copyButton: "Kopier",
-            copyAlert: "Adgangskode kopieret til udklipsholder!",
-            generateError: "Kunne ikke generere adgangskode. Prøv venligst igen.",
-            uppercaseLabel: "Store bogstaver",
-            lowercaseLabel: "Små bogstaver",
-            numbersLabel: "Tal",
-            symbolsLabel: "Symboler"
-        },
-        fi: {
-            title: "Salasanageneraattori",
-            passwordLengthLabel: "Salasanan pituus:",
-            copyButton: "Kopioi",
-            copyAlert: "Salasana kopioitu leikepöydälle!",
-            generateError: "Salasanaa ei voitu luoda. Yritä uudelleen.",
-            uppercaseLabel: "Isot kirjaimet",
-            lowercaseLabel: "Pienet kirjaimet",
-            numbersLabel: "Numerot",
-            symbolsLabel: "Symbolit"
-        },
-        no: {
-            title: "Passordgenerator",
-            passwordLengthLabel: "Passordlengde:",
-            copyButton: "Kopier",
-            copyAlert: "Passord kopiert til utklippstavlen!",
-            generateError: "Kunne ikke generere passord. Vennligst prøv igjen.",
-            uppercaseLabel: "Store bokstaver",
-            lowercaseLabel: "Små bokstaver",
-            numbersLabel: "Tall",
-            symbolsLabel: "Symboler"
-        },
-        nl: {
-            title: "Wachtwoordgenerator",
-            passwordLengthLabel: "Wachtwoordlengte:",
-            copyButton: "Kopiëren",
-            copyAlert: "Wachtwoord gekopieerd naar klembord!",
-            generateError: "Kon geen wachtwoord genereren. Probeer het opnieuw.",
-            uppercaseLabel: "Hoofdletters",
-            lowercaseLabel: "Kleine letters",
-            numbersLabel: "Cijfers",
-            symbolsLabel: "Symbolen"
-        },
-        tr: {
-            title: "Şifre Oluşturucu",
-            passwordLengthLabel: "Şifre Uzunluğu:",
-            copyButton: "Kopyala",
-            copyAlert: "Şifre panoya kopyalandı!",
-            generateError: "Şifre oluşturulamadı. Lütfen tekrar deneyin.",
-            uppercaseLabel: "Büyük Harfler",
-            lowercaseLabel: "Küçük Harfler",
-            numbersLabel: "Rakamlar",
-            symbolsLabel: "Semboller"
-        },
-        th: {
-            title: "เครื่องสร้างรหัสผ่าน",
-            passwordLengthLabel: "ความยาวรหัสผ่าน:",
-            copyButton: "คัดลอก",
-            copyAlert: "คัดลอกรหัสผ่านไปยังคลิปบอร์ดแล้ว!",
-            generateError: "ไม่สามารถสร้างรหัสผ่านได้ โปรดลองอีกครั้ง",
-            uppercaseLabel: "ตัวพิมพ์ใหญ่",
-            lowercaseLabel: "ตัวพิมพ์เล็ก",
-            numbersLabel: "ตัวเลข",
-            symbolsLabel: "สัญลักษณ์"
-        },
-        id: {
-            title: "Generator Kata Sandi",
-            passwordLengthLabel: "Panjang Kata Sandi:",
-            copyButton: "Salin",
-            copyAlert: "Kata sandi disalin ke papan klip!",
-            generateError: "Tidak dapat membuat kata sandi. Silakan coba lagi.",
-            uppercaseLabel: "Huruf Besar",
-            lowercaseLabel: "Huruf Kecil",
-            numbersLabel: "Angka",
-            symbolsLabel: "Simbol"
-        },
-        ms: {
-            title: "Penjana Kata Laluan",
-            passwordLengthLabel: "Panjang Kata Laluan:",
-            copyButton: "Salin",
-            copyAlert: "Kata laluan disalin ke papan keratan!",
-            generateError: "Tidak dapat menjana kata laluan. Sila cuba lagi.",
-            uppercaseLabel: "Huruf Besar",
-            lowercaseLabel: "Huruf Kecil",
-            numbersLabel: "Nombor",
-            symbolsLabel: "Simbol"
-        },
-        cs: {
-            title: "Generátor Hesel",
-            passwordLengthLabel: "Délka hesla:",
-            copyButton: "Kopírovat",
-            copyAlert: "Heslo zkopírováno do schránky!",
-            generateError: "Nelze vygenerovat heslo. Zkuste to prosím znovu.",
-            uppercaseLabel: "Velká písmena",
-            lowercaseLabel: "Malá písmena",
-            numbersLabel: "Čísla",
-            symbolsLabel: "Symboly"
-        }
-    };
+    const allTranslations = {}; // Cet objet stockera toutes les traductions chargées
 
     // Mettre à jour l'affichage de la longueur du mot de passe
     passwordLengthInput.addEventListener('input', () => {
@@ -338,34 +40,53 @@ document.addEventListener('DOMContentLoaded', () => {
             passwordInput.value = data.password;
         } catch (error) {
             console.error('Erreur lors de la génération du mot de passe:', error);
-            showMessage(translations[languageSelect.value].generateError, 3000);
+            showMessage(allTranslations[languageSelect.value].generateError, 3000);
         }
     };
 
     // Fonction pour mettre à jour le texte de l'interface
-    const updateContent = (lang) => {
+    const updateContent = (translations) => {
         const h1Element = document.querySelector('h1');
-        if (h1Element) h1Element.textContent = translations[lang].title;
+        if (h1Element) h1Element.textContent = translations.title;
 
         const passwordLengthLabelElement = document.querySelector('label[for="passwordLength"]');
-        if (passwordLengthLabelElement) passwordLengthLabelElement.textContent = translations[lang].passwordLengthLabel;
+        if (passwordLengthLabelElement) passwordLengthLabelElement.textContent = translations.passwordLengthLabel;
 
-        if (copyButton) copyButton.textContent = translations[lang].copyButton;
+        if (copyButton) copyButton.textContent = translations.copyButton;
 
-        if (includeUppercase) includeUppercase.nextSibling.textContent = translations[lang].uppercaseLabel;
+        if (includeUppercase) includeUppercase.nextSibling.textContent = translations.uppercaseLabel;
 
-        if (includeLowercase) includeLowercase.nextSibling.textContent = translations[lang].lowercaseLabel;
+        if (includeLowercase) includeLowercase.nextSibling.textContent = translations.lowercaseLabel;
 
-        if (includeNumbers) includeNumbers.nextSibling.textContent = translations[lang].numbersLabel;
+        if (includeNumbers) includeNumbers.nextSibling.textContent = translations.numbersLabel;
 
-        if (includeSymbols) includeSymbols.nextSibling.textContent = translations[lang].symbolsLabel;
+        if (includeSymbols) includeSymbols.nextSibling.textContent = translations.symbolsLabel;
+    };
+
+    // Fonction pour charger dynamiquement les traductions
+    const loadTranslations = async (lang) => {
+        if (allTranslations[lang]) {
+            updateContent(allTranslations[lang]);
+            return;
+        }
+        try {
+            const module = await import(`./languages/${lang}.js`);
+            allTranslations[lang] = module[lang];
+            updateContent(allTranslations[lang]);
+        } catch (error) {
+            console.error(`Erreur lors du chargement des traductions pour ${lang}:`, error);
+            // Fallback to default language if loading fails
+            if (allTranslations['fr']) {
+                updateContent(allTranslations['fr']);
+            }
+        }
     };
 
     // Gérer le changement de langue
-    languageSelect.addEventListener('change', (event) => {
+    languageSelect.addEventListener('change', async (event) => {
         const selectedLang = event.target.value;
         localStorage.setItem('language', selectedLang);
-        updateContent(selectedLang);
+        await loadTranslations(selectedLang);
     });
 
     // Fonction pour afficher un message temporaire
@@ -381,23 +102,27 @@ document.addEventListener('DOMContentLoaded', () => {
         passwordInput.select();
         passwordInput.setSelectionRange(0, 99999); // Pour les appareils mobiles
         document.execCommand('copy');
-        showMessage(translations[languageSelect.value].copyAlert);
+        showMessage(allTranslations[languageSelect.value].copyAlert);
     });
 
     // Appliquer la langue sauvegardée ou détecter la langue du navigateur au chargement
     let initialLang = 'fr'; // Langue par défaut
 
     const browserLanguage = navigator.language.split('-')[0]; // Ex: "fr-FR" -> "fr"
-    if (translations[browserLanguage]) {
+    // Vérifier si la langue du navigateur est supportée
+    // Pour l'instant, nous ne pouvons pas vérifier dynamiquement si le fichier existe avant l'importation.
+    // Nous allons donc nous fier à la liste des langues dans index.html pour déterminer si une langue est "supportée".
+    const supportedLanguages = Array.from(languageSelect.options).map(option => option.value);
+    if (supportedLanguages.includes(browserLanguage)) {
         initialLang = browserLanguage; // Utiliser la langue du navigateur si supportée
     }
 
     const savedLanguage = localStorage.getItem('language');
-    if (savedLanguage && translations[savedLanguage]) { // Vérifier si la langue sauvegardée est valide
+    if (savedLanguage && supportedLanguages.includes(savedLanguage)) { // Vérifier si la langue sauvegardée est valide
         initialLang = savedLanguage; // La langue sauvegardée a priorité
     }
     languageSelect.value = initialLang;
-    updateContent(initialLang);
+    await loadTranslations(initialLang); // Charger les traductions initiales
 
     // Ajouter des écouteurs d'événements pour les cases à cocher
     includeUppercase.addEventListener('change', generatePassword);
