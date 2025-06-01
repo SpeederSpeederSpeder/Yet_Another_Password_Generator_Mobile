@@ -1,19 +1,19 @@
 :root {
-    --background-color-light: #f4f7f6;
-    --text-color-light: #333;
-    --button-bg-light: #e0e0e0;
-    --button-text-light: #333;
-    --button-hover-light: #d0d0d0;
-    --border-color-light: #ccc;
+    --background-color-light: #2c2c2c; /* Fond sombre par défaut */
+    --text-color-light: #f4f7f6; /* Texte clair par défaut */
+    --button-bg-light: #555;
+    --button-text-light: #f4f7f6;
+    --button-hover-light: #666;
+    --border-color-light: #444;
 }
 
-[data-theme='dark'] {
-    --background-color-dark: #2c2c2c;
-    --text-color-dark: #f4f7f6;
-    --button-bg-dark: #555;
-    --button-text-dark: #f4f7f6;
-    --button-hover-dark: #666;
-    --border-color-dark: #444;
+[data-theme='light'] { /* Nouveau thème clair */
+    --background-color-dark: #f4f7f6;
+    --text-color-dark: #333;
+    --button-bg-dark: #e0e0e0;
+    --button-text-dark: #333;
+    --button-hover-dark: #d0d0d0;
+    --border-color-dark: #ccc;
 }
 
 body {
@@ -22,7 +22,7 @@ body {
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-[data-theme='dark'] body {
+[data-theme='light'] body {
     background-color: var(--background-color-dark);
     color: var(--text-color-dark);
 }
@@ -51,29 +51,27 @@ body {
     background-color: var(--button-hover-light);
 }
 
-[data-theme='dark'] #theme-toggle {
+[data-theme='light'] #theme-toggle {
     background-color: var(--button-bg-dark);
     color: var(--button-text-dark);
     border-color: var(--border-color-dark);
 }
 
-[data-theme='dark'] #theme-toggle:hover {
+[data-theme='light'] #theme-toggle:hover {
     background-color: var(--button-hover-dark);
 }
 
 #theme-toggle .icon-light,
 #theme-toggle .icon-dark {
-    display: none;
+    display: none; /* Masquer les deux par défaut */
 }
 
-#theme-toggle .icon-light {
+/* En mode sombre (par défaut), afficher l'icône de la lune */
+#theme-toggle.dark-mode .icon-dark {
     display: inline-block;
 }
 
-#theme-toggle.dark-mode .icon-light {
-    display: none;
-}
-
-#theme-toggle.dark-mode .icon-dark {
+/* En mode clair, afficher l'icône du soleil */
+#theme-toggle.light-mode .icon-light {
     display: inline-block;
 }
