@@ -46,6 +46,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     const passwordHistoryList = document.getElementById('passwordHistoryList'); // Nouvel élément
     const clearHistoryButton = document.getElementById('clearHistoryButton'); // Nouvel élément
 
+    let currentTranslations = {}; // Variable pour stocker les traductions actuelles
+
     const allTranslations = {
         ar, cs, da, de, en, es, fi, fr, he, hi, id, it, ja, ko, ms, nl, no, pl, pt, ro, ru, sv, th, tr, uk, vi, zh
     };
@@ -100,7 +102,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         // Calculer et afficher la force du mot de passe
         const strengthScore = calculatePasswordStrength(generatedPassword);
-        strengthText.textContent = getStrengthDescription(strengthScore);
+        strengthText.textContent = currentTranslations[getStrengthDescription(strengthScore)];
 
         // Ajouter le mot de passe à l'historique
         addPasswordToHistory(generatedPassword);
@@ -138,12 +140,25 @@ document.addEventListener('DOMContentLoaded', async () => {
     // Fonction pour charger les traductions
     const loadTranslations = (lang) => { // Removed async as no dynamic import
         if (allTranslations[lang]) {
-            updateContent(allTranslations[lang]);
+            currentTranslations = allTranslations[lang]; // Mettre à jour les traductions actuelles
+            updateContent(currentTranslations);
+            // Mettre à jour la force du mot de passe affichée avec la nouvelle langue
+            const currentPassword = passwordInput.value;
+            if (currentPassword) {
+                const strengthScore = calculatePasswordStrength(currentPassword);
+                strengthText.textContent = currentTranslations[getStrengthDescription(strengthScore)];
+            }
         } else {
             console.error(`Traductions non disponibles pour la langue: ${lang}`);
             // Fallback to default language if not found
             if (allTranslations['fr']) {
-                updateContent(allTranslations['fr']);
+                currentTranslations = allTranslations['fr']; // Mettre à jour les traductions actuelles
+                updateContent(currentTranslations);
+                const currentPassword = passwordInput.value;
+                if (currentPassword) {
+                    const strengthScore = calculatePasswordStrength(currentPassword);
+                    strengthText.textContent = currentTranslations[getStrengthDescription(strengthScore)];
+                }
             }
         }
     };
@@ -183,7 +198,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             listItem.addEventListener('click', () => {
                 passwordInput.value = password; // Remplir le champ de mot de passe avec l'historique
                 const strengthScore = calculatePasswordStrength(password);
-                strengthText.textContent = getStrengthDescription(strengthScore);
+                strengthText.textContent = currentTranslations[getStrengthDescription(strengthScore)];
             });
             passwordHistoryList.appendChild(listItem);
         });

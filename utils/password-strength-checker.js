@@ -68,14 +68,14 @@ export function calculatePasswordStrength(password) {
  */
 export function getStrengthDescription(strengthScore) {
     if (strengthScore <= 3) {
-        return "Très faible";
+        return "passwordStrengthVeryWeak";
     } else if (strengthScore <= 6) {
-        return "Faible";
+        return "passwordStrengthWeak";
     } else if (strengthScore <= 9) {
-        return "Moyenne";
+        return "passwordStrengthMedium";
     } else if (strengthScore <= 12) {
-        return "Forte";
+        return "passwordStrengthStrong";
     } else {
-        return "Très forte";
+        return "passwordStrengthVeryStrong";
     }
 }

@@ -9,6 +9,11 @@ export const hi = {
     numbersLabel: "संख्याएँ",
     symbolsLabel: "प्रतीक",
     passwordStrengthLabel: "पासवर्ड की शक्ति", // Machine translated, please review
+    passwordStrengthVeryWeak: "बहुत कमजोर", // Machine translated, please review
+    passwordStrengthWeak: "कमजोर", // Machine translated, please review
+    passwordStrengthMedium: "मध्यम", // Machine translated, please review
+    passwordStrengthStrong: "मजबूत", // Machine translated, please review
+    passwordStrengthVeryStrong: "बहुत मजबूत", // Machine translated, please review
     historyTitle: "पासवर्ड इतिहास", // Machine translated, please review
     clearHistoryButton: "इतिहास मिटाएँ", // Machine translated, please review
     noHistory: "अभी तक कोई पासवर्ड जनरेट नहीं हुआ है।" // Machine translated, please review

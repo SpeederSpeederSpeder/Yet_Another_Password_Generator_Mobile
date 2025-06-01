@@ -9,6 +9,11 @@ export const en = {
     numbersLabel: "Numbers",
     symbolsLabel: "Symbols",
     passwordStrengthLabel: "Password Strength",
+    passwordStrengthVeryWeak: "Very Weak",
+    passwordStrengthWeak: "Weak",
+    passwordStrengthMedium: "Medium",
+    passwordStrengthStrong: "Strong",
+    passwordStrengthVeryStrong: "Very Strong",
     historyTitle: "Password History",
     clearHistoryButton: "Clear History",
     noHistory: "No passwords generated yet."

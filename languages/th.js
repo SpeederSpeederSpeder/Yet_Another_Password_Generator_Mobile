@@ -9,6 +9,11 @@ export const th = {
     numbersLabel: "ตัวเลข",
     symbolsLabel: "สัญลักษณ์",
     passwordStrengthLabel: "ความแข็งแรงของรหัสผ่าน", // Machine translated, please review
+    passwordStrengthVeryWeak: "อ่อนแอมาก", // Machine translated, please review
+    passwordStrengthWeak: "อ่อนแอ", // Machine translated, please review
+    passwordStrengthMedium: "ปานกลาง", // Machine translated, please review
+    passwordStrengthStrong: "แข็งแรง", // Machine translated, please review
+    passwordStrengthVeryStrong: "แข็งแรงมาก", // Machine translated, please review
     historyTitle: "ประวัติรหัสผ่าน", // Machine translated, please review
     clearHistoryButton: "ล้างประวัติ", // Machine translated, please review
     noHistory: "ยังไม่มีรหัสผ่านที่สร้างขึ้น" // Machine translated, please review

@@ -9,6 +9,11 @@ export const vi = {
     numbersLabel: "Số",
     symbolsLabel: "Ký hiệu",
     passwordStrengthLabel: "Độ mạnh mật khẩu", // Machine translated, please review
+    passwordStrengthVeryWeak: "Rất yếu", // Machine translated, please review
+    passwordStrengthWeak: "Yếu", // Machine translated, please review
+    passwordStrengthMedium: "Trung bình", // Machine translated, please review
+    passwordStrengthStrong: "Mạnh", // Machine translated, please review
+    passwordStrengthVeryStrong: "Rất mạnh", // Machine translated, please review
     historyTitle: "Lịch sử mật khẩu", // Machine translated, please review
     clearHistoryButton: "Xóa lịch sử", // Machine translated, please review
     noHistory: "Chưa có mật khẩu nào được tạo." // Machine translated, please review

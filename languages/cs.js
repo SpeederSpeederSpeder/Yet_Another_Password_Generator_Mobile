@@ -9,6 +9,11 @@ export const cs = {
     numbersLabel: "Čísla",
     symbolsLabel: "Symboly",
     passwordStrengthLabel: "Síla hesla", // Machine translated, please review
+    passwordStrengthVeryWeak: "Velmi slabé", // Machine translated, please review
+    passwordStrengthWeak: "Slabé", // Machine translated, please review
+    passwordStrengthMedium: "Střední", // Machine translated, please review
+    passwordStrengthStrong: "Silné", // Machine translated, please review
+    passwordStrengthVeryStrong: "Velmi silné", // Machine translated, please review
     historyTitle: "Historie hesel", // Machine translated, please review
     clearHistoryButton: "Vymazat historii", // Machine translated, please review
     noHistory: "Zatím žádná hesla nebyla vygenerována." // Machine translated, please review

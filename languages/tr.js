@@ -9,6 +9,11 @@ export const tr = {
     numbersLabel: "Rakamlar",
     symbolsLabel: "Semboller",
     passwordStrengthLabel: "Şifre Gücü", // Machine translated, please review
+    passwordStrengthVeryWeak: "Çok Zayıf", // Machine translated, please review
+    passwordStrengthWeak: "Zayıf", // Machine translated, please review
+    passwordStrengthMedium: "Orta", // Machine translated, please review
+    passwordStrengthStrong: "Güçlü", // Machine translated, please review
+    passwordStrengthVeryStrong: "Çok Güçlü", // Machine translated, please review
     historyTitle: "Şifre Geçmişi", // Machine translated, please review
     clearHistoryButton: "Geçmişi Temizle", // Machine translated, please review
     noHistory: "Henüz şifre oluşturulmadı." // Machine translated, please review

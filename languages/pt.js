@@ -9,6 +9,11 @@ export const pt = {
     numbersLabel: "Números",
     symbolsLabel: "Símbolos",
     passwordStrengthLabel: "Força da Senha", // Machine translated, please review
+    passwordStrengthVeryWeak: "Muito Fraca", // Machine translated, please review
+    passwordStrengthWeak: "Fraca", // Machine translated, please review
+    passwordStrengthMedium: "Média", // Machine translated, please review
+    passwordStrengthStrong: "Forte", // Machine translated, please review
+    passwordStrengthVeryStrong: "Muito Forte", // Machine translated, please review
     historyTitle: "Histórico de Senhas", // Machine translated, please review
     clearHistoryButton: "Limpar Histórico", // Machine translated, please review
     noHistory: "Nenhuma senha gerada ainda." // Machine translated, please review

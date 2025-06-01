@@ -9,6 +9,11 @@ export const da = {
     numbersLabel: "Tal",
     symbolsLabel: "Symboler",
     passwordStrengthLabel: "Adgangskodestyrke", // Machine translated, please review
+    passwordStrengthVeryWeak: "Meget svag", // Machine translated, please review
+    passwordStrengthWeak: "Svag", // Machine translated, please review
+    passwordStrengthMedium: "Medium", // Machine translated, please review
+    passwordStrengthStrong: "Stærk", // Machine translated, please review
+    passwordStrengthVeryStrong: "Meget stærk", // Machine translated, please review
     historyTitle: "Adgangskodehistorik", // Machine translated, please review
     clearHistoryButton: "Ryd historik", // Machine translated, please review
     noHistory: "Ingen adgangskoder genereret endnu." // Machine translated, please review

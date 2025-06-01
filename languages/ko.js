@@ -9,6 +9,11 @@ export const ko = {
     numbersLabel: "숫자",
     symbolsLabel: "기호",
     passwordStrengthLabel: "비밀번호 강도", // Machine translated, please review
+    passwordStrengthVeryWeak: "매우 약함", // Machine translated, please review
+    passwordStrengthWeak: "약함", // Machine translated, please review
+    passwordStrengthMedium: "보통", // Machine translated, please review
+    passwordStrengthStrong: "강함", // Machine translated, please review
+    passwordStrengthVeryStrong: "매우 강함", // Machine translated, please review
     historyTitle: "비밀번호 기록", // Machine translated, please review
     clearHistoryButton: "기록 지우기", // Machine translated, please review
     noHistory: "아직 생성된 비밀번호가 없습니다." // Machine translated, please review

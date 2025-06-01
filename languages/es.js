@@ -9,6 +9,11 @@ export const es = {
     numbersLabel: "Números",
     symbolsLabel: "Símbolos",
     passwordStrengthLabel: "Fuerza de la contraseña", // Machine translated, please review
+    passwordStrengthVeryWeak: "Muy débil", // Machine translated, please review
+    passwordStrengthWeak: "Débil", // Machine translated, please review
+    passwordStrengthMedium: "Media", // Machine translated, please review
+    passwordStrengthStrong: "Fuerte", // Machine translated, please review
+    passwordStrengthVeryStrong: "Muy Fuerte", // Machine translated, please review
     historyTitle: "Historial de contraseñas", // Machine translated, please review
     clearHistoryButton: "Borrar historial", // Machine translated, please review
     noHistory: "Aún no se han generado contraseñas." // Machine translated, please review

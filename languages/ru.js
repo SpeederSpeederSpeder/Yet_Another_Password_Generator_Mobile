@@ -9,6 +9,11 @@ export const ru = {
     numbersLabel: "Цифры",
     symbolsLabel: "Символы",
     passwordStrengthLabel: "Надежность пароля", // Machine translated, please review
+    passwordStrengthVeryWeak: "Очень слабый", // Machine translated, please review
+    passwordStrengthWeak: "Слабый", // Machine translated, please review
+    passwordStrengthMedium: "Средний", // Machine translated, please review
+    passwordStrengthStrong: "Сильный", // Machine translated, please review
+    passwordStrengthVeryStrong: "Очень сильный", // Machine translated, please review
     historyTitle: "История паролей", // Machine translated, please review
     clearHistoryButton: "Очистить историю", // Machine translated, please review
     noHistory: "Пароли еще не сгенерированы." // Machine translated, please review

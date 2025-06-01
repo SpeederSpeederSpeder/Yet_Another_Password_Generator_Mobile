@@ -9,6 +9,11 @@ export const fr = {
     numbersLabel: "Chiffres",
     symbolsLabel: "Symboles",
     passwordStrengthLabel: "Force du mot de passe",
+    passwordStrengthVeryWeak: "Très faible",
+    passwordStrengthWeak: "Faible",
+    passwordStrengthMedium: "Moyen",
+    passwordStrengthStrong: "Fort",
+    passwordStrengthVeryStrong: "Très Fort",
     historyTitle: "Historique des mots de passe",
     clearHistoryButton: "Effacer l'historique",
     noHistory: "Aucun mot de passe généré pour l'instant."
