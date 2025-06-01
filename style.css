@@ -4,24 +4,28 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-color: #2c2c2c; /* Thème sombre permanent */
-    color: #f0f0f0; /* Couleur de texte par défaut pour le thème sombre */
+    background-color: var(--background-color-light);
+    color: var(--text-color-light);
     margin: 0;
 }
 
 .container {
-    background-color: #3a3a3a; /* Fond du conteneur pour le thème sombre */
+    background-color: var(--button-bg-light);
     padding: 30px;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Ombre plus prononcée pour le thème sombre */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
     width: 100%;
     max-width: 400px;
 }
 
 h1 {
-    color: #f0f0f0; /* Couleur du titre pour le thème sombre */
+    color: var(--text-color-light);
     margin-bottom: 25px;
+}
+
+[data-theme='dark'] h1 {
+    color: var(--text-color-dark);
 }
 
 .password-display {
@@ -32,17 +36,23 @@ h1 {
 #password {
     flex-grow: 1;
     padding: 10px;
-    border: 1px solid #555; /* Bordure pour le thème sombre */
+    border: 1px solid var(--border-color-light);
     border-radius: 4px 0 0 4px;
     font-size: 1.1em;
     outline: none;
-    background-color: #4a4a4a; /* Fond du champ de mot de passe pour le thème sombre */
-    color: #f0f0f0; /* Couleur du texte du mot de passe pour le thème sombre */
+    background-color: var(--button-bg-light);
+    color: var(--text-color-light);
+}
+
+[data-theme='dark'] #password {
+    border-color: var(--border-color-dark);
+    background-color: var(--button-bg-dark);
+    color: var(--text-color-dark);
 }
 
 #copyButton {
     padding: 10px 15px;
-    background-color: #0056b3; /* Couleur du bouton Copier pour le thème sombre */
+    background-color: #0056b3; /* Garder cette couleur spécifique pour le bouton copier */
     color: white;
     border: none;
     border-radius: 0 4px 4px 0;
@@ -52,7 +62,7 @@ h1 {
 }
 
 #copyButton:hover {
-    background-color: #003f80; /* Couleur au survol pour le thème sombre */
+    background-color: #003f80; /* Garder cette couleur spécifique pour le bouton copier */
 }
 
 /* #generateButton est supprimé de index.html, donc ces styles ne sont plus nécessaires */
@@ -66,15 +76,23 @@ h1 {
 
 .password-length-control label {
     margin-bottom: 10px;
-    color: #ccc; /* Couleur du label pour le thème sombre */
+    color: var(--text-color-light);
     font-size: 1em;
+}
+
+[data-theme='dark'] .password-length-control label {
+    color: var(--text-color-dark);
 }
 
 .password-length-control span {
     font-size: 1.2em;
     font-weight: bold;
-    color: #66b3ff; /* Couleur du texte de la longueur pour le thème sombre */
+    color: var(--text-color-light);
     margin-bottom: 10px;
+}
+
+[data-theme='dark'] .password-length-control span {
+    color: var(--text-color-dark);
 }
 
 #passwordLength {
@@ -82,11 +100,15 @@ h1 {
     -webkit-appearance: none;
     appearance: none;
     height: 8px;
-    background: #555; /* Fond de la molette pour le thème sombre */
+    background: var(--border-color-light);
     border-radius: 5px;
     outline: none;
     opacity: 0.7;
     transition: opacity 0.2s;
+}
+
+[data-theme='dark'] #passwordLength {
+    background: var(--border-color-dark);
 }
 
 #passwordLength:hover {
@@ -99,48 +121,67 @@ h1 {
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    background: #66b3ff; /* Couleur du curseur de la molette pour le thème sombre */
+    background: var(--text-color-light);
     cursor: pointer;
+}
+
+[data-theme='dark'] #passwordLength::-webkit-slider-thumb {
+    background: var(--text-color-dark);
 }
 
 #passwordLength::-moz-range-thumb {
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    background: #66b3ff; /* Couleur du curseur de la molette pour le thème sombre */
+    background: var(--text-color-light);
     cursor: pointer;
+}
+
+[data-theme='dark'] #passwordLength::-moz-range-thumb {
+    background: var(--text-color-dark);
 }
 
 /* Contrôles supérieurs (sélecteur de langue) */
 .controls-top {
     display: flex;
-    justify-content: flex-end; /* Aligner à droite car il n'y a plus de bouton thème */
+    justify-content: space-between; /* Aligner à droite et à gauche pour le bouton thème et le sélecteur de langue */
     align-items: center;
     margin-bottom: 20px;
 }
 
 .language-selector label {
     margin-right: 10px;
-    color: #ccc; /* Couleur du label pour le thème sombre */
+    color: var(--text-color-light);
+}
+
+[data-theme='dark'] .language-selector label {
+    color: var(--text-color-dark);
 }
 
 .language-selector select {
-    padding: 10px 15px; /* Augmenter le padding */
-    border: 1px solid #555; /* Bordure pour le thème sombre */
-    border-radius: 8px; /* Rayon de bordure plus grand */
-    background-color: #4a4a4a; /* Fond pour le thème sombre */
-    color: #f0f0f0; /* Couleur du texte pour le thème sombre */
-    font-size: 1em; /* Taille de police légèrement plus grande */
+    padding: 10px 15px;
+    border: 1px solid var(--border-color-light);
+    border-radius: 8px;
+    background-color: var(--button-bg-light);
+    color: var(--text-color-light);
+    font-size: 1em;
     outline: none;
     cursor: pointer;
-    -webkit-appearance: none; /* Supprimer l'apparence par défaut */
+    -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%20viewBox%3D%220%200%20292.4%20292.4%22%3E%3Cpath%20fill%3D%22%23f0f0f0%22%20d%3D%22M287%20197.1L159.1%2069.2c-3.7-3.7-8.6-5.7-13.9-5.7s-10.2%202-13.9%205.7L5.4%20197.1c-3.7%203.7-5.7%208.6-5.7%2013.9s2%2010.2%205.7%2013.9l22.7%2022.7c3.7%203.7%208.6%205.7%2013.9%205.7s10.2-2%2013.9-5.7l100.7-100.7L247.4%20233.7c3.7%203.7%208.6%205.7%2013.9%205.7s10.2-2%2013.9-5.7l22.7-22.7c3.7-3.7%205.7-8.6%205.7-13.9s-2-10.2-5.7-13.9z%22%2F%3E%3C%2Fsvg%3E'); /* Flèche SVG personnalisée */
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%20viewBox%3D%220%200%20292.4%20292.4%22%3E%3Cpath%20fill%3D%22%23333%22%20d%3D%22M287%20197.1L159.1%2069.2c-3.7-3.7-8.6-5.7-13.9-5.7s-10.2%202-13.9%205.7L5.4%20197.1c-3.7%203.7-5.7%208.6-5.7%2013.9s2%2010.2%205.7%2013.9l22.7%2022.7c3.7%203.7%208.6%205.7%2013.9%205.7s10.2-2%2013.9-5.7l100.7-100.7L247.4%20233.7c3.7%203.7%208.6%205.7%2013.9%205.7s10.2-2%2013.9-5.7l22.7-22.7c3.7-3.7%205.7-8.6%205.7-13.9s-2-10.2-5.7-13.9z%22%2F%3E%3C%2Fsvg%3E'); /* Flèche SVG personnalisée */
     background-repeat: no-repeat;
     background-position: right 10px top 50%;
     background-size: 12px auto;
     padding-right: 30px; /* Espace pour la flèche */
+}
+
+[data-theme='dark'] .language-selector select {
+    border-color: var(--border-color-dark);
+    background-color: var(--button-bg-dark);
+    color: var(--button-text-dark);
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%20viewBox%3D%220%200%20292.4%20292.4%22%3E%3Cpath%20fill%3D%22%23f4f7f6%22%20d%3D%22M287%20197.1L159.1%2069.2c-3.7-3.7-8.6-5.7-13.9-5.7s-10.2%202-13.9%205.7L5.4%20197.1c-3.7%203.7-5.7%208.6-5.7%2013.9s2%2010.2%205.7%2013.9l22.7%2022.7c3.7%203.7%208.6%205.7%2013.9%205.7s10.2-2%2013.9-5.7l100.7-100.7L247.4%20233.7c3.7%203.7%208.6%205.7%2013.9%205.7s10.2-2%2013.9-5.7l22.7-22.7c3.7-3.7%205.7-8.6%205.7-13.9s-2-10.2-5.7-13.9z%22%2F%3E%3C%2Fsvg%3E'); /* Flèche SVG personnalisée pour le thème sombre */
 }
 
 /* Message de confirmation de copie */
@@ -179,8 +220,12 @@ h1 {
     display: flex;
     align-items: center;
     cursor: pointer;
-    color: #f0f0f0; /* Couleur du texte pour le thème sombre */
+    color: var(--text-color-light);
     font-size: 0.95em;
+}
+
+[data-theme='dark'] .character-type-options label {
+    color: var(--text-color-dark);
 }
 
 .character-type-options input[type="checkbox"] {
@@ -188,27 +233,41 @@ h1 {
     appearance: none;
     width: 18px;
     height: 18px;
-    border: 2px solid #66b3ff; /* Bordure de la case à cocher */
+    border: 2px solid var(--border-color-light);
     border-radius: 4px;
     margin-right: 8px;
     cursor: pointer;
     position: relative;
-    background-color: #4a4a4a; /* Fond de la case à cocher */
+    background-color: var(--button-bg-light);
     transition: background-color 0.2s, border-color 0.2s;
 }
 
+[data-theme='dark'] .character-type-options input[type="checkbox"] {
+    border-color: var(--border-color-dark);
+    background-color: var(--button-bg-dark);
+}
+
 .character-type-options input[type="checkbox"]:checked {
-    background-color: #66b3ff; /* Fond quand coché */
-    border-color: #66b3ff;
+    background-color: var(--text-color-light);
+    border-color: var(--text-color-light);
+}
+
+[data-theme='dark'] .character-type-options input[type="checkbox"]:checked {
+    background-color: var(--text-color-dark);
+    border-color: var(--text-color-dark);
 }
 
 .character-type-options input[type="checkbox"]:checked::after {
-    content: '✔'; /* Coche personnalisée */
+    content: '✔';
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: #3a3a3a; /* Couleur de la coche */
+    color: var(--background-color-light);
     font-size: 12px;
     font-weight: bold;
+}
+
+[data-theme='dark'] .character-type-options input[type="checkbox"]:checked::after {
+    color: var(--background-color-dark);
 }
