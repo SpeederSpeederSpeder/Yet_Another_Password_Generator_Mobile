@@ -7,5 +7,9 @@ export const en = {
     uppercaseLabel: "Uppercase",
     lowercaseLabel: "Lowercase",
     numbersLabel: "Numbers",
-    symbolsLabel: "Symbols"
+    symbolsLabel: "Symbols",
+    passwordStrengthLabel: "Password Strength",
+    historyTitle: "Password History",
+    clearHistoryButton: "Clear History",
+    noHistory: "No passwords generated yet."
 };

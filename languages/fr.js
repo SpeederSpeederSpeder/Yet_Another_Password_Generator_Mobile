@@ -7,5 +7,9 @@ export const fr = {
     uppercaseLabel: "Majuscules",
     lowercaseLabel: "Minuscules",
     numbersLabel: "Chiffres",
-    symbolsLabel: "Symboles"
+    symbolsLabel: "Symboles",
+    passwordStrengthLabel: "Force du mot de passe",
+    historyTitle: "Historique des mots de passe",
+    clearHistoryButton: "Effacer l'historique",
+    noHistory: "Aucun mot de passe généré pour l'instant."
 };

@@ -48,6 +48,9 @@
             <input type="text" id="password" readonly>
             <button id="copyButton">Copier</button>
         </div>
+        <div id="passwordStrengthDisplay" class="password-strength-display">
+            Force du mot de passe: <span id="strengthText">N/A</span>
+        </div>
         <div class="password-length-control">
             <label for="passwordLength">Longueur du mot de passe:</label>
             <span id="passwordLengthValue">7</span>
@@ -58,6 +61,13 @@
             <label><input type="checkbox" id="includeLowercase" checked> Minuscules</label>
             <label><input type="checkbox" id="includeNumbers" checked> Chiffres</label>
             <label><input type="checkbox" id="includeSymbols" checked> Symboles</label>
+        </div>
+        <div class="password-history-section">
+            <h2>Historique des mots de passe</h2>
+            <ul id="passwordHistoryList">
+                <!-- L'historique sera inséré ici par JavaScript -->
+            </ul>
+            <button id="clearHistoryButton">Effacer l'historique</button>
         </div>
     </div>
     <div id="copyMessage" class="hidden"></div>

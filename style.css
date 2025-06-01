@@ -271,3 +271,97 @@ h1 {
 [data-theme='light'] .character-type-options input[type="checkbox"]:checked::after {
     color: var(--background-color-dark);
 }
+
+/* Styles pour l'affichage de la force du mot de passe */
+.password-strength-display {
+    margin-top: -10px; /* Remonter un peu pour être plus proche du champ de mot de passe */
+    margin-bottom: 20px;
+    font-size: 0.9em;
+    color: var(--text-color-light);
+    text-align: left;
+    padding-left: 5px;
+}
+
+[data-theme='light'] .password-strength-display {
+    color: var(--text-color-dark);
+}
+
+.password-strength-display #strengthText {
+    font-weight: bold;
+}
+
+/* Styles pour l'historique des mots de passe */
+.password-history-section {
+    margin-top: 30px;
+    text-align: left;
+    max-height: 200px; /* Limiter la hauteur pour le défilement */
+    overflow-y: auto; /* Activer le défilement vertical */
+    border: 1px solid var(--border-color-light);
+    border-radius: 8px;
+    padding: 15px;
+    background-color: var(--background-color-light);
+}
+
+[data-theme='light'] .password-history-section {
+    border-color: var(--border-color-dark);
+    background-color: var(--background-color-dark);
+}
+
+.password-history-section h2 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: var(--text-color-light);
+    font-size: 1.1em;
+}
+
+[data-theme='light'] .password-history-section h2 {
+    color: var(--text-color-dark);
+}
+
+#passwordHistoryList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#passwordHistoryList li {
+    background-color: var(--button-bg-light);
+    color: var(--text-color-light);
+    padding: 10px;
+    margin-bottom: 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    word-break: break-all; /* Empêche le débordement des longs mots de passe */
+}
+
+[data-theme='light'] #passwordHistoryList li {
+    background-color: var(--button-bg-dark);
+    color: var(--text-color-dark);
+}
+
+#passwordHistoryList li:hover {
+    background-color: var(--border-color-light);
+}
+
+[data-theme='light'] #passwordHistoryList li:hover {
+    background-color: var(--border-color-dark);
+}
+
+#clearHistoryButton {
+    display: block;
+    width: 100%;
+    padding: 10px 15px;
+    margin-top: 15px;
+    background-color: #dc3545; /* Rouge pour effacer */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.2s;
+}
+
+#clearHistoryButton:hover {
+    background-color: #c82333;
+}

@@ -1,3 +1,6 @@
+import { calculatePasswordStrength, getStrengthDescription } from './utils/password-strength-checker.js';
+import { addPasswordToHistory, loadPasswordHistory, clearPasswordHistory } from './utils/password-history.js';
+
 document.addEventListener('DOMContentLoaded', async () => {
     const passwordInput = document.getElementById('password');
     const copyButton = document.getElementById('copyButton');
@@ -9,6 +12,9 @@ document.addEventListener('DOMContentLoaded', async () => {
     const includeLowercase = document.getElementById('includeLowercase');
     const includeNumbers = document.getElementById('includeNumbers');
     const includeSymbols = document.getElementById('includeSymbols');
+    const strengthText = document.getElementById('strengthText'); // Nouvel élément
+    const passwordHistoryList = document.getElementById('passwordHistoryList'); // Nouvel élément
+    const clearHistoryButton = document.getElementById('clearHistoryButton'); // Nouvel élément
 
     const allTranslations = {}; // Cet objet stockera toutes les traductions chargées
 
@@ -37,7 +43,17 @@ document.addEventListener('DOMContentLoaded', async () => {
         try {
             const response = await fetch(`/api/generate-password?${params}`);
             const data = await response.json();
-            passwordInput.value = data.password;
+            const generatedPassword = data.password;
+            passwordInput.value = generatedPassword;
+
+            // Calculer et afficher la force du mot de passe
+            const strengthScore = calculatePasswordStrength(generatedPassword);
+            strengthText.textContent = getStrengthDescription(strengthScore);
+
+            // Ajouter le mot de passe à l'historique
+            addPasswordToHistory(generatedPassword);
+            displayPasswordHistory(); // Mettre à jour l'affichage de l'historique
+
         } catch (error) {
             console.error('Erreur lors de la génération du mot de passe:', error);
             showMessage(allTranslations[languageSelect.value].generateError, 3000);
@@ -61,6 +77,15 @@ document.addEventListener('DOMContentLoaded', async () => {
         if (includeNumbers) includeNumbers.nextSibling.textContent = translations.numbersLabel;
 
         if (includeSymbols) includeSymbols.nextSibling.textContent = translations.symbolsLabel;
+
+        // Mettre à jour le texte pour la force du mot de passe et l'historique
+        const strengthLabel = document.querySelector('.password-strength-display');
+        if (strengthLabel) strengthLabel.firstChild.textContent = translations.passwordStrengthLabel + ": ";
+
+        const historyTitle = document.querySelector('.password-history-section h2');
+        if (historyTitle) historyTitle.textContent = translations.historyTitle;
+
+        if (clearHistoryButton) clearHistoryButton.textContent = translations.clearHistoryButton;
     };
 
     // Fonction pour charger dynamiquement les traductions
@@ -98,11 +123,42 @@ document.addEventListener('DOMContentLoaded', async () => {
         }, duration);
     };
 
+    // Fonction pour afficher l'historique des mots de passe
+    const displayPasswordHistory = () => {
+        const history = loadPasswordHistory();
+        passwordHistoryList.innerHTML = ''; // Effacer l'historique actuel
+
+        if (history.length === 0) {
+            const noHistoryItem = document.createElement('li');
+            noHistoryItem.textContent = allTranslations[languageSelect.value].noHistory;
+            passwordHistoryList.appendChild(noHistoryItem);
+            return;
+        }
+
+        history.forEach(password => {
+            const listItem = document.createElement('li');
+            listItem.textContent = password;
+            listItem.classList.add('history-item');
+            listItem.addEventListener('click', () => {
+                passwordInput.value = password; // Remplir le champ de mot de passe avec l'historique
+                const strengthScore = calculatePasswordStrength(password);
+                strengthText.textContent = getStrengthDescription(strengthScore);
+            });
+            passwordHistoryList.appendChild(listItem);
+        });
+    };
+
     copyButton.addEventListener('click', () => {
         passwordInput.select();
         passwordInput.setSelectionRange(0, 99999); // Pour les appareils mobiles
         document.execCommand('copy');
         showMessage(allTranslations[languageSelect.value].copyAlert);
+    });
+
+    // Gérer l'effacement de l'historique
+    clearHistoryButton.addEventListener('click', () => {
+        clearPasswordHistory();
+        displayPasswordHistory(); // Mettre à jour l'affichage après effacement
     });
 
     // Appliquer la langue sauvegardée ou détecter la langue du navigateur au chargement
@@ -132,4 +188,5 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     // Générer un mot de passe au chargement de la page avec la longueur par défaut
     generatePassword();
+    displayPasswordHistory(); // Afficher l'historique au chargement de la page
 });
