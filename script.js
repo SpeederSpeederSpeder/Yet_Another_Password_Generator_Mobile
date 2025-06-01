@@ -197,6 +197,116 @@ document.addEventListener('DOMContentLoaded', () => {
             lowercaseLabel: "Chữ thường",
             numbersLabel: "Số",
             symbolsLabel: "Ký hiệu"
+        },
+        sv: {
+            title: "Lösenordsgenerator",
+            passwordLengthLabel: "Lösenordslängd:",
+            copyButton: "Kopiera",
+            copyAlert: "Lösenord kopierat till urklipp!",
+            generateError: "Kunde inte generera lösenord. Försök igen.",
+            uppercaseLabel: "Versaler",
+            lowercaseLabel: "Gemener",
+            numbersLabel: "Siffror",
+            symbolsLabel: "Symboler"
+        },
+        da: {
+            title: "Adgangskodegenerator",
+            passwordLengthLabel: "Adgangskodelængde:",
+            copyButton: "Kopier",
+            copyAlert: "Adgangskode kopieret til udklipsholder!",
+            generateError: "Kunne ikke generere adgangskode. Prøv venligst igen.",
+            uppercaseLabel: "Store bogstaver",
+            lowercaseLabel: "Små bogstaver",
+            numbersLabel: "Tal",
+            symbolsLabel: "Symboler"
+        },
+        fi: {
+            title: "Salasanageneraattori",
+            passwordLengthLabel: "Salasanan pituus:",
+            copyButton: "Kopioi",
+            copyAlert: "Salasana kopioitu leikepöydälle!",
+            generateError: "Salasanaa ei voitu luoda. Yritä uudelleen.",
+            uppercaseLabel: "Isot kirjaimet",
+            lowercaseLabel: "Pienet kirjaimet",
+            numbersLabel: "Numerot",
+            symbolsLabel: "Symbolit"
+        },
+        no: {
+            title: "Passordgenerator",
+            passwordLengthLabel: "Passordlengde:",
+            copyButton: "Kopier",
+            copyAlert: "Passord kopiert til utklippstavlen!",
+            generateError: "Kunne ikke generere passord. Vennligst prøv igjen.",
+            uppercaseLabel: "Store bokstaver",
+            lowercaseLabel: "Små bokstaver",
+            numbersLabel: "Tall",
+            symbolsLabel: "Symboler"
+        },
+        nl: {
+            title: "Wachtwoordgenerator",
+            passwordLengthLabel: "Wachtwoordlengte:",
+            copyButton: "Kopiëren",
+            copyAlert: "Wachtwoord gekopieerd naar klembord!",
+            generateError: "Kon geen wachtwoord genereren. Probeer het opnieuw.",
+            uppercaseLabel: "Hoofdletters",
+            lowercaseLabel: "Kleine letters",
+            numbersLabel: "Cijfers",
+            symbolsLabel: "Symbolen"
+        },
+        tr: {
+            title: "Şifre Oluşturucu",
+            passwordLengthLabel: "Şifre Uzunluğu:",
+            copyButton: "Kopyala",
+            copyAlert: "Şifre panoya kopyalandı!",
+            generateError: "Şifre oluşturulamadı. Lütfen tekrar deneyin.",
+            uppercaseLabel: "Büyük Harfler",
+            lowercaseLabel: "Küçük Harfler",
+            numbersLabel: "Rakamlar",
+            symbolsLabel: "Semboller"
+        },
+        th: {
+            title: "เครื่องสร้างรหัสผ่าน",
+            passwordLengthLabel: "ความยาวรหัสผ่าน:",
+            copyButton: "คัดลอก",
+            copyAlert: "คัดลอกรหัสผ่านไปยังคลิปบอร์ดแล้ว!",
+            generateError: "ไม่สามารถสร้างรหัสผ่านได้ โปรดลองอีกครั้ง",
+            uppercaseLabel: "ตัวพิมพ์ใหญ่",
+            lowercaseLabel: "ตัวพิมพ์เล็ก",
+            numbersLabel: "ตัวเลข",
+            symbolsLabel: "สัญลักษณ์"
+        },
+        id: {
+            title: "Generator Kata Sandi",
+            passwordLengthLabel: "Panjang Kata Sandi:",
+            copyButton: "Salin",
+            copyAlert: "Kata sandi disalin ke papan klip!",
+            generateError: "Tidak dapat membuat kata sandi. Silakan coba lagi.",
+            uppercaseLabel: "Huruf Besar",
+            lowercaseLabel: "Huruf Kecil",
+            numbersLabel: "Angka",
+            symbolsLabel: "Simbol"
+        },
+        ms: {
+            title: "Penjana Kata Laluan",
+            passwordLengthLabel: "Panjang Kata Laluan:",
+            copyButton: "Salin",
+            copyAlert: "Kata laluan disalin ke papan keratan!",
+            generateError: "Tidak dapat menjana kata laluan. Sila cuba lagi.",
+            uppercaseLabel: "Huruf Besar",
+            lowercaseLabel: "Huruf Kecil",
+            numbersLabel: "Nombor",
+            symbolsLabel: "Simbol"
+        },
+        cs: {
+            title: "Generátor Hesel",
+            passwordLengthLabel: "Délka hesla:",
+            copyButton: "Kopírovat",
+            copyAlert: "Heslo zkopírováno do schránky!",
+            generateError: "Nelze vygenerovat heslo. Zkuste to prosím znovu.",
+            uppercaseLabel: "Velká písmena",
+            lowercaseLabel: "Malá písmena",
+            numbersLabel: "Čísla",
+            symbolsLabel: "Symboly"
         }
     };
 
