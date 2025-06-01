@@ -1,2 +1,2 @@
 # Password-Generator
-Generate a random password ?
+Generate a random password?
