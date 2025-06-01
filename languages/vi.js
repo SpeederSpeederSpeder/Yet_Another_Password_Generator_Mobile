@@ -7,5 +7,9 @@ export const vi = {
     uppercaseLabel: "Chữ hoa",
     lowercaseLabel: "Chữ thường",
     numbersLabel: "Số",
-    symbolsLabel: "Ký hiệu"
+    symbolsLabel: "Ký hiệu",
+    passwordStrengthLabel: "Độ mạnh mật khẩu", // Machine translated, please review
+    historyTitle: "Lịch sử mật khẩu", // Machine translated, please review
+    clearHistoryButton: "Xóa lịch sử", // Machine translated, please review
+    noHistory: "Chưa có mật khẩu nào được tạo." // Machine translated, please review
 };

@@ -7,5 +7,9 @@ export const it = {
     uppercaseLabel: "Maiuscole",
     lowercaseLabel: "Minuscole",
     numbersLabel: "Numeri",
-    symbolsLabel: "Simboli"
+    symbolsLabel: "Simboli",
+    passwordStrengthLabel: "Forza della password", // Machine translated, please review
+    historyTitle: "Cronologia password", // Machine translated, please review
+    clearHistoryButton: "Cancella cronologia", // Machine translated, please review
+    noHistory: "Nessuna password generata ancora." // Machine translated, please review
 };

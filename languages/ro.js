@@ -7,5 +7,9 @@ export const ro = {
     uppercaseLabel: "Majuscule",
     lowercaseLabel: "Minuscule",
     numbersLabel: "Cifre",
-    symbolsLabel: "Simboluri"
+    symbolsLabel: "Simboluri",
+    passwordStrengthLabel: "Forța parolei", // Machine translated, please review
+    historyTitle: "Istoricul parolelor", // Machine translated, please review
+    clearHistoryButton: "Șterge istoricul", // Machine translated, please review
+    noHistory: "Nicio parolă generată încă." // Machine translated, please review
 };

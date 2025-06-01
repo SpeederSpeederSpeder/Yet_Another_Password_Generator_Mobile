@@ -7,5 +7,9 @@ export const no = {
     uppercaseLabel: "Store bogstaver",
     lowercaseLabel: "Små bogstaver",
     numbersLabel: "Tall",
-    symbolsLabel: "Symboler"
+    symbolsLabel: "Symboler",
+    passwordStrengthLabel: "Passordstyrke", // Machine translated, please review
+    historyTitle: "Passordhistorikk", // Machine translated, please review
+    clearHistoryButton: "Slett historikk", // Machine translated, please review
+    noHistory: "Ingen passord generert ennå." // Machine translated, please review
 };

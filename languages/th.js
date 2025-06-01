@@ -7,5 +7,9 @@ export const th = {
     uppercaseLabel: "ตัวพิมพ์ใหญ่",
     lowercaseLabel: "ตัวพิมพ์เล็ก",
     numbersLabel: "ตัวเลข",
-    symbolsLabel: "สัญลักษณ์"
+    symbolsLabel: "สัญลักษณ์",
+    passwordStrengthLabel: "ความแข็งแรงของรหัสผ่าน", // Machine translated, please review
+    historyTitle: "ประวัติรหัสผ่าน", // Machine translated, please review
+    clearHistoryButton: "ล้างประวัติ", // Machine translated, please review
+    noHistory: "ยังไม่มีรหัสผ่านที่สร้างขึ้น" // Machine translated, please review
 };

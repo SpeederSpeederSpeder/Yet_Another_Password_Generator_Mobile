@@ -7,5 +7,9 @@ export const id = {
     uppercaseLabel: "Huruf Besar",
     lowercaseLabel: "Huruf Kecil",
     numbersLabel: "Angka",
-    symbolsLabel: "Simbol"
+    symbolsLabel: "Simbol",
+    passwordStrengthLabel: "Kekuatan Kata Sandi", // Machine translated, please review
+    historyTitle: "Riwayat Kata Sandi", // Machine translated, please review
+    clearHistoryButton: "Hapus Riwayat", // Machine translated, please review
+    noHistory: "Belum ada kata sandi yang dibuat." // Machine translated, please review
 };

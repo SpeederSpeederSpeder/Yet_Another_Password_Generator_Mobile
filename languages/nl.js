@@ -7,5 +7,9 @@ export const nl = {
     uppercaseLabel: "Hoofdletters",
     lowercaseLabel: "Kleine letters",
     numbersLabel: "Cijfers",
-    symbolsLabel: "Symbolen"
+    symbolsLabel: "Symbolen",
+    passwordStrengthLabel: "Wachtwoordsterkte", // Machine translated, please review
+    historyTitle: "Wachtwoordgeschiedenis", // Machine translated, please review
+    clearHistoryButton: "Geschiedenis wissen", // Machine translated, please review
+    noHistory: "Nog geen wachtwoorden gegenereerd." // Machine translated, please review
 };

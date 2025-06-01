@@ -1,6 +1,36 @@
 import { calculatePasswordStrength, getStrengthDescription } from './utils/password-strength-checker.js';
 import { addPasswordToHistory, loadPasswordHistory, clearPasswordHistory } from './utils/password-history.js';
 
+// Statically import all language files
+import { ar } from './languages/ar.js';
+import { cs } from './languages/cs.js';
+import { da } from './languages/da.js';
+import { de } from './languages/de.js';
+import { en } from './languages/en.js';
+import { es } from './languages/es.js';
+import { fi } from './languages/fi.js';
+import { fr } from './languages/fr.js';
+import { he } from './languages/he.js';
+import { hi } from './languages/hi.js';
+import { id } from './languages/id.js';
+import { it } from './languages/it.js';
+import { ja } from './languages/ja.js';
+import { ko } from './languages/ko.js';
+import { ms } from './languages/ms.js';
+import { nl } from './languages/nl.js';
+import { no } from './languages/no.js';
+import { pl } from './languages/pl.js';
+import { pt } from './languages/pt.js';
+import { ro } from './languages/ro.js';
+import { ru } from './languages/ru.js';
+import { sv } from './languages/sv.js';
+import { th } from './languages/th.js';
+import { tr } from './languages/tr.js';
+import { uk } from './languages/uk.js';
+import { vi } from './languages/vi.js';
+import { zh } from './languages/zh.js';
+
+
 document.addEventListener('DOMContentLoaded', async () => {
     const passwordInput = document.getElementById('password');
     const copyButton = document.getElementById('copyButton');
@@ -16,7 +46,9 @@ document.addEventListener('DOMContentLoaded', async () => {
     const passwordHistoryList = document.getElementById('passwordHistoryList'); // Nouvel élément
     const clearHistoryButton = document.getElementById('clearHistoryButton'); // Nouvel élément
 
-    const allTranslations = {}; // Cet objet stockera toutes les traductions chargées
+    const allTranslations = {
+        ar, cs, da, de, en, es, fi, fr, he, hi, id, it, ja, ko, ms, nl, no, pl, pt, ro, ru, sv, th, tr, uk, vi, zh
+    };
 
     // Mettre à jour l'affichage de la longueur du mot de passe
     passwordLengthInput.addEventListener('input', () => {
@@ -31,33 +63,48 @@ document.addEventListener('DOMContentLoaded', async () => {
         const includeNum = includeNumbers.checked;
         const includeSym = includeSymbols.checked;
 
-        // Construire les paramètres de requête
-        const params = new URLSearchParams({
-            length: length,
-            uppercase: includeUpper,
-            lowercase: includeLower,
-            numbers: includeNum,
-            symbols: includeSym
-        }).toString();
+        let password = "";
 
-        try {
-            const response = await fetch(`/api/generate-password?${params}`);
-            const data = await response.json();
-            const generatedPassword = data.password;
-            passwordInput.value = generatedPassword;
+        const uppercaseChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        const lowercaseChars = "abcdefghijklmnopqrstuvwxyz";
+        const numberChars = "0123456789";
+        const symbolChars = "!@#$%^&*()_+~`|}{[]:;?><,./-=";
 
-            // Calculer et afficher la force du mot de passe
-            const strengthScore = calculatePasswordStrength(generatedPassword);
-            strengthText.textContent = getStrengthDescription(strengthScore);
+        let availableChars = "";
+        if (includeUpper) availableChars += uppercaseChars;
+        if (includeLower) availableChars += lowercaseChars;
+        if (includeNum) availableChars += numberChars;
+        if (includeSym) availableChars += symbolChars;
 
-            // Ajouter le mot de passe à l'historique
-            addPasswordToHistory(generatedPassword);
-            displayPasswordHistory(); // Mettre à jour l'affichage de l'historique
-
-        } catch (error) {
-            console.error('Erreur lors de la génération du mot de passe:', error);
-            showMessage(allTranslations[languageSelect.value].generateError, 3000);
+        // Si aucun type n'est sélectionné, inclure tous les types par défaut
+        if (availableChars.length === 0) {
+            availableChars = uppercaseChars + lowercaseChars + numberChars + symbolChars;
         }
+
+        // Valider la longueur du mot de passe
+        const minLength = 7;
+        const maxLength = 100;
+        let passwordLength = parseInt(length, 10); // Use 'length' from input
+
+        if (isNaN(passwordLength) || passwordLength < minLength || passwordLength > maxLength) {
+            passwordLength = minLength; // Utiliser la longueur par défaut si invalide
+        }
+
+        for (let i = 0; i < passwordLength; i++) {
+            const randomIndex = Math.floor(Math.random() * availableChars.length);
+            password += availableChars[randomIndex];
+        }
+
+        const generatedPassword = password;
+        passwordInput.value = generatedPassword;
+
+        // Calculer et afficher la force du mot de passe
+        const strengthScore = calculatePasswordStrength(generatedPassword);
+        strengthText.textContent = getStrengthDescription(strengthScore);
+
+        // Ajouter le mot de passe à l'historique
+        addPasswordToHistory(generatedPassword);
+        displayPasswordHistory(); // Mettre à jour l'affichage de l'historique
     };
 
     // Fonction pour mettre à jour le texte de l'interface
@@ -88,19 +135,13 @@ document.addEventListener('DOMContentLoaded', async () => {
         if (clearHistoryButton) clearHistoryButton.textContent = translations.clearHistoryButton;
     };
 
-    // Fonction pour charger dynamiquement les traductions
-    const loadTranslations = async (lang) => {
+    // Fonction pour charger les traductions
+    const loadTranslations = (lang) => { // Removed async as no dynamic import
         if (allTranslations[lang]) {
             updateContent(allTranslations[lang]);
-            return;
-        }
-        try {
-            const module = await import(`./languages/${lang}.js`);
-            allTranslations[lang] = module[lang];
-            updateContent(allTranslations[lang]);
-        } catch (error) {
-            console.error(`Erreur lors du chargement des traductions pour ${lang}:`, error);
-            // Fallback to default language if loading fails
+        } else {
+            console.error(`Traductions non disponibles pour la langue: ${lang}`);
+            // Fallback to default language if not found
             if (allTranslations['fr']) {
                 updateContent(allTranslations['fr']);
             }

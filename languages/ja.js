@@ -7,5 +7,9 @@ export const ja = {
     uppercaseLabel: "大文字",
     lowercaseLabel: "小文字",
     numbersLabel: "数字",
-    symbolsLabel: "記号"
+    symbolsLabel: "記号",
+    passwordStrengthLabel: "パスワードの強度", // Machine translated, please review
+    historyTitle: "パスワード履歴", // Machine translated, please review
+    clearHistoryButton: "履歴をクリア", // Machine translated, please review
+    noHistory: "まだパスワードは生成されていません。" // Machine translated, please review
 };

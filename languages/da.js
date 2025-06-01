@@ -7,5 +7,9 @@ export const da = {
     uppercaseLabel: "Store bogstaver",
     lowercaseLabel: "Små bogstaver",
     numbersLabel: "Tal",
-    symbolsLabel: "Symboler"
+    symbolsLabel: "Symboler",
+    passwordStrengthLabel: "Adgangskodestyrke", // Machine translated, please review
+    historyTitle: "Adgangskodehistorik", // Machine translated, please review
+    clearHistoryButton: "Ryd historik", // Machine translated, please review
+    noHistory: "Ingen adgangskoder genereret endnu." // Machine translated, please review
 };

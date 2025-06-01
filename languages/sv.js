@@ -7,5 +7,9 @@ export const sv = {
     uppercaseLabel: "Versaler",
     lowercaseLabel: "Gemener",
     numbersLabel: "Siffror",
-    symbolsLabel: "Symboler"
+    symbolsLabel: "Symboler",
+    passwordStrengthLabel: "Lösenordsstyrka", // Machine translated, please review
+    historyTitle: "Lösenordshistorik", // Machine translated, please review
+    clearHistoryButton: "Rensa historik", // Machine translated, please review
+    noHistory: "Inga lösenord har genererats ännu." // Machine translated, please review
 };

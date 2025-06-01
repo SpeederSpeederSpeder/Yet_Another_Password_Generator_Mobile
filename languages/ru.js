@@ -7,5 +7,9 @@ export const ru = {
     uppercaseLabel: "Заглавные буквы",
     lowercaseLabel: "Строчные буквы",
     numbersLabel: "Цифры",
-    symbolsLabel: "Символы"
+    symbolsLabel: "Символы",
+    passwordStrengthLabel: "Надежность пароля", // Machine translated, please review
+    historyTitle: "История паролей", // Machine translated, please review
+    clearHistoryButton: "Очистить историю", // Machine translated, please review
+    noHistory: "Пароли еще не сгенерированы." // Machine translated, please review
 };

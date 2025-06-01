@@ -7,5 +7,9 @@ export const fi = {
     uppercaseLabel: "Isot kirjaimet",
     lowercaseLabel: "Pienet kirjaimet",
     numbersLabel: "Numerot",
-    symbolsLabel: "Symbolit"
+    symbolsLabel: "Symbolit",
+    passwordStrengthLabel: "Salasanan vahvuus", // Machine translated, please review
+    historyTitle: "Salasanahistoria", // Machine translated, please review
+    clearHistoryButton: "Tyhjennä historia", // Machine translated, please review
+    noHistory: "Ei salasanoja luotu vielä." // Machine translated, please review
 };

@@ -7,5 +7,9 @@ export const pl = {
     uppercaseLabel: "Wielkie litery",
     lowercaseLabel: "Małe litery",
     numbersLabel: "Cyfry",
-    symbolsLabel: "Symbole"
+    symbolsLabel: "Symbole",
+    passwordStrengthLabel: "Siła hasła", // Machine translated, please review
+    historyTitle: "Historia haseł", // Machine translated, please review
+    clearHistoryButton: "Wyczyść historię", // Machine translated, please review
+    noHistory: "Nie wygenerowano jeszcze żadnych haseł." // Machine translated, please review
 };

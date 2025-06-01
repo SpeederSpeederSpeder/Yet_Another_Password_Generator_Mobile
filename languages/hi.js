@@ -7,5 +7,9 @@ export const hi = {
     uppercaseLabel: "बड़े अक्षर",
     lowercaseLabel: "छोटे अक्षर",
     numbersLabel: "संख्याएँ",
-    symbolsLabel: "प्रतीक"
+    symbolsLabel: "प्रतीक",
+    passwordStrengthLabel: "पासवर्ड की शक्ति", // Machine translated, please review
+    historyTitle: "पासवर्ड इतिहास", // Machine translated, please review
+    clearHistoryButton: "इतिहास मिटाएँ", // Machine translated, please review
+    noHistory: "अभी तक कोई पासवर्ड जनरेट नहीं हुआ है।" // Machine translated, please review
 };

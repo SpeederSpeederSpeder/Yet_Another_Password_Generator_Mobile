@@ -7,5 +7,9 @@ export const ko = {
     uppercaseLabel: "대문자",
     lowercaseLabel: "소문자",
     numbersLabel: "숫자",
-    symbolsLabel: "기호"
+    symbolsLabel: "기호",
+    passwordStrengthLabel: "비밀번호 강도", // Machine translated, please review
+    historyTitle: "비밀번호 기록", // Machine translated, please review
+    clearHistoryButton: "기록 지우기", // Machine translated, please review
+    noHistory: "아직 생성된 비밀번호가 없습니다." // Machine translated, please review
 };

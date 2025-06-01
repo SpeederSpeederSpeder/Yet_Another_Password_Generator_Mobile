@@ -7,5 +7,9 @@ export const pt = {
     uppercaseLabel: "Maiúsculas",
     lowercaseLabel: "Minúsculas",
     numbersLabel: "Números",
-    symbolsLabel: "Símbolos"
+    symbolsLabel: "Símbolos",
+    passwordStrengthLabel: "Força da Senha", // Machine translated, please review
+    historyTitle: "Histórico de Senhas", // Machine translated, please review
+    clearHistoryButton: "Limpar Histórico", // Machine translated, please review
+    noHistory: "Nenhuma senha gerada ainda." // Machine translated, please review
 };

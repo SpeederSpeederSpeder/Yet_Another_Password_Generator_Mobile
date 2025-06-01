@@ -7,5 +7,9 @@ export const he = {
     uppercaseLabel: "אותיות גדולות",
     lowercaseLabel: "אותיות קטנות",
     numbersLabel: "מספרים",
-    symbolsLabel: "סמלים"
+    symbolsLabel: "סמלים",
+    passwordStrengthLabel: "חוזק סיסמה", // Machine translated, please review
+    historyTitle: "היסטוריית סיסמאות", // Machine translated, please review
+    clearHistoryButton: "נקה היסטוריה", // Machine translated, please review
+    noHistory: "טרם נוצרו סיסמאות." // Machine translated, please review
 };

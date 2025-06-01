@@ -7,5 +7,9 @@ export const de = {
     uppercaseLabel: "Großbuchstaben",
     lowercaseLabel: "Kleinbuchstaben",
     numbersLabel: "Zahlen",
-    symbolsLabel: "Symbole"
+    symbolsLabel: "Symbole",
+    passwordStrengthLabel: "Passwortstärke", // Machine translated, please review
+    historyTitle: "Passwort-Historie", // Machine translated, please review
+    clearHistoryButton: "Verlauf löschen", // Machine translated, please review
+    noHistory: "Noch keine Passwörter generiert." // Machine translated, please review
 };

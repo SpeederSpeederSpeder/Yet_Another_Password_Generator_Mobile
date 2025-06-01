@@ -7,5 +7,9 @@ export const es = {
     uppercaseLabel: "Mayúsculas",
     lowercaseLabel: "Minúsculas",
     numbersLabel: "Números",
-    symbolsLabel: "Símbolos"
+    symbolsLabel: "Símbolos",
+    passwordStrengthLabel: "Fuerza de la contraseña", // Machine translated, please review
+    historyTitle: "Historial de contraseñas", // Machine translated, please review
+    clearHistoryButton: "Borrar historial", // Machine translated, please review
+    noHistory: "Aún no se han generado contraseñas." // Machine translated, please review
 };

@@ -7,5 +7,9 @@ export const ar = {
     uppercaseLabel: "أحرف كبيرة",
     lowercaseLabel: "أحرف صغيرة",
     numbersLabel: "أرقام",
-    symbolsLabel: "رموز"
+    symbolsLabel: "رموز",
+    passwordStrengthLabel: "قوة كلمة المرور", // Machine translated, please review
+    historyTitle: "سجل كلمات المرور", // Machine translated, please review
+    clearHistoryButton: "مسح السجل", // Machine translated, please review
+    noHistory: "لم يتم إنشاء كلمات مرور بعد." // Machine translated, please review
 };
