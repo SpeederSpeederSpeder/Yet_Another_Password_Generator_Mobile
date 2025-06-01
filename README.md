@@ -3,10 +3,15 @@ Just generate a random password, right?
 
 # Features
 Multilanguage support
+
 Customizable password length with a slider
+
 Customizable password characters
+
 Generated passwords history
+
 Password strength indicator
+
 Dark and light switch
 
 # How to host on your computer
