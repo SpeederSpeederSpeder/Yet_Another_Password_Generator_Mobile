@@ -16,16 +16,7 @@ export const tr = {
     passwordStrengthVeryStrong: "Çok Güçlü", // Machine translated, please review
     historyTitle: "Şifre Geçmişi", // Machine translated, please review
     clearHistoryButton: "Geçmişi Temizle", // Machine translated, please review
-    noHistory: "Henüz şifre oluşturulmadı." // Machine translated, please review
-    passwordStrengthLabel: "Şifre gücü",
-    passwordStrengthVeryWeak: "Çok zayıf",
-    passwordStrengthWeak: "Zayıf",
-    passwordStrengthMedium: "Orta",
-    passwordStrengthStrong: "Güçlü",
-    passwordStrengthVeryStrong: "Çok güçlü",
-    historyTitle: "Şifre geçmişi",
-    clearHistoryButton: "Geçmişi temizle",
-    noHistory: "Henüz şifre oluşturulmadı.",
+    noHistory: "Henüz şifre oluşturulmadı.", // Machine translated, please review
     crackTimeLabel: "Tahmini kırılma süresi",
     crackTimeUnits: {
         "instant": "anında",
@@ -47,3 +38,4 @@ export const tr = {
     pwnedStatusChecking: "Kontrol ediliyor...",
     pwnedStatusPwned: "Bu şifre ele geçirildi!",
     pwnedStatusSafe: "Şifre güvenli"
+};
