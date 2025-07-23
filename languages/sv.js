@@ -17,4 +17,7 @@ export const sv = {
     historyTitle: "Lösenordshistorik",
     clearHistoryButton: "Rensa historik",
     noHistory: "Inget lösenord genererat än.",
+    pwnedStatusChecking: "Kontrollerar...",
+    pwnedStatusPwned: "Detta lösenord har blivit komprometterat!",
+    pwnedStatusSafe: "Lösenordet är säkert"
 };

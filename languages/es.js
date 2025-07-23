@@ -37,5 +37,5 @@ export const es = {
     },
     pwnedStatusChecking: "Verificando...",
     pwnedStatusPwned: "¡Esta contraseña ha sido comprometida!",
-    pwnedStatusSafe: "La contraseña es segura"
+    pwnedStatusSafe: "Contraseña segura"
 };

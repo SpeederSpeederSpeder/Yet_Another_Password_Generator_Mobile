@@ -37,5 +37,5 @@ export const en = {
     },
     pwnedStatusChecking: "Checking...",
     pwnedStatusPwned: "This password has been compromised!",
-    pwnedStatusSafe: "Password is safe"
+    pwnedStatusSafe: "Secure password"
 };
