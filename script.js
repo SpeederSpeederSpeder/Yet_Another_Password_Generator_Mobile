@@ -2,36 +2,6 @@ import { getStrengthDescription } from './utils/password-strength-checker.js';
 import { addPasswordToHistory, loadPasswordHistory, clearPasswordHistory } from './utils/password-history.js';
 import { isPasswordPwned } from './utils/pwned-checker.js';
 
-// Statically import all language files
-import { ar } from './languages/ar.js';
-import { cs } from './languages/cs.js';
-import { da } from './languages/da.js';
-import { de } from './languages/de.js';
-import { en } from './languages/en.js';
-import { es } from './languages/es.js';
-import { fi } from './languages/fi.js';
-import { fr } from './languages/fr.js';
-import { he } from './languages/he.js';
-import { hi } from './languages/hi.js';
-import { id } from './languages/id.js';
-import { it } from './languages/it.js';
-import { ja } from './languages/ja.js';
-import { ko } from './languages/ko.js';
-import { ms } from './languages/ms.js';
-import { nl } from './languages/nl.js';
-import { no } from './languages/no.js';
-import { pl } from './languages/pl.js';
-import { pt } from './languages/pt.js';
-import { ro } from './languages/ro.js';
-import { ru } from './languages/ru.js';
-import { sv } from './languages/sv.js';
-import { th } from './languages/th.js';
-import { tr } from './languages/tr.js';
-import { uk } from './languages/uk.js';
-import { vi } from './languages/vi.js';
-import { zh } from './languages/zh.js';
-
-
 document.addEventListener('DOMContentLoaded', async () => {
     const passwordInput = document.getElementById('password');
     const copyButton = document.getElementById('copyButton');
@@ -52,10 +22,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     const clearHistoryButton = document.getElementById('clearHistoryButton'); // Nouvel élément
 
     let currentTranslations = {}; // Variable pour stocker les traductions actuelles
-
-    const allTranslations = {
-        ar, cs, da, de, en, es, fi, fr, he, hi, id, it, ja, ko, ms, nl, no, pl, pt, ro, ru, sv, th, tr, uk, vi, zh
-    };
 
     // Mettre à jour l'affichage de la longueur du mot de passe
     passwordLengthInput.addEventListener('input', () => {
@@ -186,9 +152,10 @@ document.addEventListener('DOMContentLoaded', async () => {
     };
 
     // Fonction pour charger les traductions
-    const loadTranslations = (lang) => { // Removed async as no dynamic import
-        if (allTranslations[lang]) {
-            currentTranslations = allTranslations[lang]; // Mettre à jour les traductions actuelles
+    const loadTranslations = async (lang) => {
+        try {
+            const module = await import(`./languages/${lang}.js`);
+            currentTranslations = module[lang];
             updateContent(currentTranslations);
             // Mettre à jour la force du mot de passe affichée avec la nouvelle langue
             const currentPassword = passwordInput.value;
@@ -203,19 +170,18 @@ document.addEventListener('DOMContentLoaded', async () => {
                 // Fallback for when there is no password yet
                 crackTimeText.textContent = "N/A";
             }
-        } else {
-            console.error(`Traductions non disponibles pour la langue: ${lang}`);
+        } catch (error) {
+            console.error(`Traductions non disponibles pour la langue: ${lang}`, error);
             // Fallback to default language if not found
-            if (allTranslations['fr']) {
-                currentTranslations = allTranslations['fr']; // Mettre à jour les traductions actuelles
-                updateContent(currentTranslations);
-                const currentPassword = passwordInput.value;
-                if (currentPassword) {
-                    if (typeof zxcvbn !== 'undefined') {
-                        const result = zxcvbn(currentPassword);
-                        const strengthScore = result.score;
-                        strengthText.textContent = currentTranslations[getStrengthDescription(strengthScore)];
-                    }
+            const module = await import('./languages/fr.js');
+            currentTranslations = module.fr;
+            updateContent(currentTranslations);
+            const currentPassword = passwordInput.value;
+            if (currentPassword) {
+                if (typeof zxcvbn !== 'undefined') {
+                    const result = zxcvbn(currentPassword);
+                    const strengthScore = result.score;
+                    strengthText.textContent = currentTranslations[getStrengthDescription(strengthScore)];
                 }
             }
         }
@@ -244,7 +210,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         if (history.length === 0) {
             const noHistoryItem = document.createElement('li');
-            noHistoryItem.textContent = allTranslations[languageSelect.value].noHistory;
+            noHistoryItem.textContent = currentTranslations.noHistory;
             passwordHistoryList.appendChild(noHistoryItem);
             return;
         }
@@ -282,7 +248,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         passwordInput.select();
         passwordInput.setSelectionRange(0, 99999); // Pour les appareils mobiles
         document.execCommand('copy');
-        showMessage(allTranslations[languageSelect.value].copyAlert);
+        showMessage(currentTranslations.copyAlert);
     });
 
     // Gérer l'effacement de l'historique
