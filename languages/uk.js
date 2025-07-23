@@ -8,13 +8,34 @@ export const uk = {
     lowercaseLabel: "Малі літери",
     numbersLabel: "Цифри",
     symbolsLabel: "Символи",
-    passwordStrengthLabel: "Надійність пароля", // Machine translated, please review
-    passwordStrengthVeryWeak: "Дуже слабкий", // Machine translated, please review
-    passwordStrengthWeak: "Слабкий", // Machine translated, please review
-    passwordStrengthMedium: "Середній", // Machine translated, please review
-    passwordStrengthStrong: "Сильний", // Machine translated, please review
-    passwordStrengthVeryStrong: "Дуже сильний", // Machine translated, please review
-    historyTitle: "Історія паролів", // Machine translated, please review
-    clearHistoryButton: "Очистити історію", // Machine translated, please review
-    noHistory: "Паролі ще не згенеровано." // Machine translated, please review
+    passwordStrengthLabel: "Надійність пароля",
+    passwordStrengthVeryWeak: "Дуже слабкий",
+    passwordStrengthWeak: "Слабкий",
+    passwordStrengthMedium: "Середній",
+    passwordStrengthStrong: "Сильний",
+    passwordStrengthVeryStrong: "Дуже сильний",
+    historyTitle: "Історія паролів",
+    clearHistoryButton: "Очистити історію",
+    noHistory: "Паролі ще не згенеровано.",
+    crackTimeLabel: "Орієнтовний час злому",
+    crackTimeUnits: {
+        "instant": "миттєво",
+        "second": "секунда",
+        "seconds": "секунди",
+        "minute": "хвилина",
+        "minutes": "хвилини",
+        "hour": "година",
+        "hours": "години",
+        "day": "день",
+        "days": "дні",
+        "month": "місяць",
+        "months": "місяці",
+        "year": "рік",
+        "years": "роки",
+        "century": "століття",
+        "centuries": "століття"
+    },
+    pwnedStatusChecking: "Перевірка...",
+    pwnedStatusPwned: "Цей пароль був скомпрометований!",
+    pwnedStatusSafe: "Пароль безпечний"
 };

@@ -3,18 +3,39 @@ export const th = {
     passwordLengthLabel: "ความยาวรหัสผ่าน:",
     copyButton: "คัดลอก",
     copyAlert: "คัดลอกรหัสผ่านไปยังคลิปบอร์ดแล้ว!",
-    generateError: "ไม่สามารถสร้างรหัสผ่านได้ โปรดลองอีกครั้ง",
+    generateError: "ไม่สามารถสร้างรหัสผ่านได้ กรุณาลองใหม่อีกครั้ง.",
     uppercaseLabel: "ตัวพิมพ์ใหญ่",
     lowercaseLabel: "ตัวพิมพ์เล็ก",
     numbersLabel: "ตัวเลข",
     symbolsLabel: "สัญลักษณ์",
-    passwordStrengthLabel: "ความแข็งแรงของรหัสผ่าน", // Machine translated, please review
-    passwordStrengthVeryWeak: "อ่อนแอมาก", // Machine translated, please review
-    passwordStrengthWeak: "อ่อนแอ", // Machine translated, please review
-    passwordStrengthMedium: "ปานกลาง", // Machine translated, please review
-    passwordStrengthStrong: "แข็งแรง", // Machine translated, please review
-    passwordStrengthVeryStrong: "แข็งแรงมาก", // Machine translated, please review
-    historyTitle: "ประวัติรหัสผ่าน", // Machine translated, please review
-    clearHistoryButton: "ล้างประวัติ", // Machine translated, please review
-    noHistory: "ยังไม่มีรหัสผ่านที่สร้างขึ้น" // Machine translated, please review
+    passwordStrengthLabel: "ความแข็งแรงของรหัสผ่าน",
+    passwordStrengthVeryWeak: "อ่อนมาก",
+    passwordStrengthWeak: "อ่อน",
+    passwordStrengthMedium: "ปานกลาง",
+    passwordStrengthStrong: "แข็งแรง",
+    passwordStrengthVeryStrong: "แข็งแรงมาก",
+    historyTitle: "ประวัติรหัสผ่าน",
+    clearHistoryButton: "ล้างประวัติ",
+    noHistory: "ยังไม่มีการสร้างรหัสผ่าน.",
+    crackTimeLabel: "เวลาคาดการณ์ในการถอดรหัส",
+    crackTimeUnits: {
+        "instant": "ทันที",
+        "second": "วินาที",
+        "seconds": "วินาที",
+        "minute": "นาที",
+        "minutes": "นาที",
+        "hour": "ชั่วโมง",
+        "hours": "ชั่วโมง",
+        "day": "วัน",
+        "days": "วัน",
+        "month": "เดือน",
+        "months": "เดือน",
+        "year": "ปี",
+        "years": "ปี",
+        "century": "ศตวรรษ",
+        "centuries": "ศตวรรษ"
+    },
+    pwnedStatusChecking: "กำลังตรวจสอบ...",
+    pwnedStatusPwned: "รหัสผ่านนี้ถูกเปิดเผยแล้ว!",
+    pwnedStatusSafe: "รหัสผ่านปลอดภัย"
 };

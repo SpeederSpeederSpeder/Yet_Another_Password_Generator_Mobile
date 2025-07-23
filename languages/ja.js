@@ -8,13 +8,34 @@ export const ja = {
     lowercaseLabel: "小文字",
     numbersLabel: "数字",
     symbolsLabel: "記号",
-    passwordStrengthLabel: "パスワードの強度", // Machine translated, please review
-    passwordStrengthVeryWeak: "非常に弱い", // Machine translated, please review
-    passwordStrengthWeak: "弱い", // Machine translated, please review
-    passwordStrengthMedium: "中", // Machine translated, please review
-    passwordStrengthStrong: "強い", // Machine translated, please review
-    passwordStrengthVeryStrong: "非常に強い", // Machine translated, please review
-    historyTitle: "パスワード履歴", // Machine translated, please review
-    clearHistoryButton: "履歴をクリア", // Machine translated, please review
-    noHistory: "まだパスワードは生成されていません。" // Machine translated, please review
+    passwordStrengthLabel: "パスワードの強度",
+    passwordStrengthVeryWeak: "非常に弱い",
+    passwordStrengthWeak: "弱い",
+    passwordStrengthMedium: "普通",
+    passwordStrengthStrong: "強い",
+    passwordStrengthVeryStrong: "非常に強い",
+    historyTitle: "パスワード履歴",
+    clearHistoryButton: "履歴をクリア",
+    noHistory: "まだパスワードは生成されていません。",
+    crackTimeLabel: "推定解読時間",
+    crackTimeUnits: {
+        "instant": "瞬時",
+        "second": "秒",
+        "seconds": "秒",
+        "minute": "分",
+        "minutes": "分",
+        "hour": "時間",
+        "hours": "時間",
+        "day": "日",
+        "days": "日",
+        "month": "ヶ月",
+        "months": "ヶ月",
+        "year": "年",
+        "years": "年",
+        "century": "世紀",
+        "centuries": "世紀"
+    },
+    pwnedStatusChecking: "確認中...",
+    pwnedStatusPwned: "このパスワードは漏洩しています！",
+    pwnedStatusSafe: "パスワードは安全です"
 };

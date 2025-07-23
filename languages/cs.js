@@ -1,5 +1,5 @@
 export const cs = {
-    title: "Generátor Hesel",
+    title: "Generátor hesel",
     passwordLengthLabel: "Délka hesla:",
     copyButton: "Kopírovat",
     copyAlert: "Heslo zkopírováno do schránky!",
@@ -8,13 +8,34 @@ export const cs = {
     lowercaseLabel: "Malá písmena",
     numbersLabel: "Čísla",
     symbolsLabel: "Symboly",
-    passwordStrengthLabel: "Síla hesla", // Machine translated, please review
-    passwordStrengthVeryWeak: "Velmi slabé", // Machine translated, please review
-    passwordStrengthWeak: "Slabé", // Machine translated, please review
-    passwordStrengthMedium: "Střední", // Machine translated, please review
-    passwordStrengthStrong: "Silné", // Machine translated, please review
-    passwordStrengthVeryStrong: "Velmi silné", // Machine translated, please review
-    historyTitle: "Historie hesel", // Machine translated, please review
-    clearHistoryButton: "Vymazat historii", // Machine translated, please review
-    noHistory: "Zatím žádná hesla nebyla vygenerována." // Machine translated, please review
+    passwordStrengthLabel: "Síla hesla",
+    passwordStrengthVeryWeak: "Velmi slabé",
+    passwordStrengthWeak: "Slabé",
+    passwordStrengthMedium: "Střední",
+    passwordStrengthStrong: "Silné",
+    passwordStrengthVeryStrong: "Velmi silné",
+    historyTitle: "Historie hesel",
+    clearHistoryButton: "Vymazat historii",
+    noHistory: "Zatím nebylo vygenerováno žádné heslo.",
+    crackTimeLabel: "Odhadovaný čas prolomení",
+    crackTimeUnits: {
+        "instant": "okamžitě",
+        "second": "sekunda",
+        "seconds": "sekundy",
+        "minute": "minuta",
+        "minutes": "minuty",
+        "hour": "hodina",
+        "hours": "hodiny",
+        "day": "den",
+        "days": "dny",
+        "month": "měsíc",
+        "months": "měsíce",
+        "year": "rok",
+        "years": "roky",
+        "century": "století",
+        "centuries": "století"
+    },
+    pwnedStatusChecking: "Kontrola...",
+    pwnedStatusPwned: "Toto heslo bylo kompromitováno!",
+    pwnedStatusSafe: "Heslo je bezpečné"
 };

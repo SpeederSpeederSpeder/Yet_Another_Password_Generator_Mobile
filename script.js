@@ -1,5 +1,6 @@
-import { calculatePasswordStrength, getStrengthDescription } from './utils/password-strength-checker.js';
+import { getStrengthDescription } from './utils/password-strength-checker.js';
 import { addPasswordToHistory, loadPasswordHistory, clearPasswordHistory } from './utils/password-history.js';
+import { isPasswordPwned } from './utils/pwned-checker.js';
 
 // Statically import all language files
 import { ar } from './languages/ar.js';
@@ -43,6 +44,10 @@ document.addEventListener('DOMContentLoaded', async () => {
     const includeNumbers = document.getElementById('includeNumbers');
     const includeSymbols = document.getElementById('includeSymbols');
     const strengthText = document.getElementById('strengthText'); // Nouvel élément
+    const crackTimeText = document.getElementById('crackTimeText'); // Pour le temps de cassage
+    const pwnedStatus = document.getElementById('pwnedStatus');
+    const pwnedStatusIcon = document.getElementById('pwnedStatusIcon');
+    const pwnedStatusText = document.getElementById('pwnedStatusText');
     const passwordHistoryList = document.getElementById('passwordHistoryList'); // Nouvel élément
     const clearHistoryButton = document.getElementById('clearHistoryButton'); // Nouvel élément
 
@@ -57,6 +62,26 @@ document.addEventListener('DOMContentLoaded', async () => {
         passwordLengthValueDisplay.textContent = passwordLengthInput.value;
         generatePassword(); // Générer un nouveau mot de passe lorsque la longueur change
     });
+
+    // Fonction pour traduire le temps de cassage
+    const translateCrackTime = (crackTime) => {
+        if (!crackTime || !currentTranslations.crackTimeUnits) {
+            return crackTime;
+        }
+
+        const parts = crackTime.split(' ');
+        if (parts.length < 2) {
+            // Gère les cas comme "instant"
+            const unit = parts[0].toLowerCase();
+            return currentTranslations.crackTimeUnits[unit] || crackTime;
+        }
+
+        const value = parts.slice(0, parts.length - 1).join(' ');
+        const unit = parts[parts.length - 1].toLowerCase();
+        const translatedUnit = currentTranslations.crackTimeUnits[unit];
+
+        return translatedUnit ? `${value} ${translatedUnit}` : crackTime;
+    };
 
     const generatePassword = async () => {
         const length = passwordLengthInput.value;
@@ -100,9 +125,29 @@ document.addEventListener('DOMContentLoaded', async () => {
         const generatedPassword = password;
         passwordInput.value = generatedPassword;
 
-        // Calculer et afficher la force du mot de passe
-        const strengthScore = calculatePasswordStrength(generatedPassword);
-        strengthText.textContent = currentTranslations[getStrengthDescription(strengthScore)];
+        // Calculer la force et le temps de cassage avec zxcvbn
+        if (typeof zxcvbn !== 'undefined') {
+            const result = zxcvbn(generatedPassword);
+            const strengthScore = result.score;
+            strengthText.textContent = currentTranslations[getStrengthDescription(strengthScore)];
+            crackTimeText.textContent = translateCrackTime(result.crack_times_display.offline_slow_hashing_1e4_per_second);
+        }
+
+        // Vérifier si le mot de passe est compromis
+        pwnedStatus.className = 'pwned-status checking';
+        pwnedStatusIcon.textContent = '⏳';
+        pwnedStatusText.textContent = currentTranslations.pwnedStatusChecking;
+
+        const pwned = await isPasswordPwned(generatedPassword);
+        if (pwned) {
+            pwnedStatus.className = 'pwned-status pwned';
+            pwnedStatusIcon.textContent = '❌';
+            pwnedStatusText.textContent = currentTranslations.pwnedStatusPwned;
+        } else {
+            pwnedStatus.className = 'pwned-status safe';
+            pwnedStatusIcon.textContent = '✅';
+            pwnedStatusText.textContent = currentTranslations.pwnedStatusSafe;
+        }
 
         // Ajouter le mot de passe à l'historique
         addPasswordToHistory(generatedPassword);
@@ -131,6 +176,9 @@ document.addEventListener('DOMContentLoaded', async () => {
         const strengthLabel = document.querySelector('.password-strength-display');
         if (strengthLabel) strengthLabel.firstChild.textContent = translations.passwordStrengthLabel + ": ";
 
+        const crackTimeLabel = document.querySelector('.crack-time-display');
+        if (crackTimeLabel) crackTimeLabel.firstChild.textContent = translations.crackTimeLabel + ": ";
+
         const historyTitle = document.querySelector('.password-history-section h2');
         if (historyTitle) historyTitle.textContent = translations.historyTitle;
 
@@ -145,8 +193,15 @@ document.addEventListener('DOMContentLoaded', async () => {
             // Mettre à jour la force du mot de passe affichée avec la nouvelle langue
             const currentPassword = passwordInput.value;
             if (currentPassword) {
-                const strengthScore = calculatePasswordStrength(currentPassword);
-                strengthText.textContent = currentTranslations[getStrengthDescription(strengthScore)];
+                if (typeof zxcvbn !== 'undefined') {
+                    const result = zxcvbn(currentPassword);
+                    const strengthScore = result.score;
+                    strengthText.textContent = currentTranslations[getStrengthDescription(strengthScore)];
+                    crackTimeText.textContent = translateCrackTime(result.crack_times_display.offline_slow_hashing_1e4_per_second);
+                }
+            } else {
+                // Fallback for when there is no password yet
+                crackTimeText.textContent = "N/A";
             }
         } else {
             console.error(`Traductions non disponibles pour la langue: ${lang}`);
@@ -156,8 +211,11 @@ document.addEventListener('DOMContentLoaded', async () => {
                 updateContent(currentTranslations);
                 const currentPassword = passwordInput.value;
                 if (currentPassword) {
-                    const strengthScore = calculatePasswordStrength(currentPassword);
-                    strengthText.textContent = currentTranslations[getStrengthDescription(strengthScore)];
+                    if (typeof zxcvbn !== 'undefined') {
+                        const result = zxcvbn(currentPassword);
+                        const strengthScore = result.score;
+                        strengthText.textContent = currentTranslations[getStrengthDescription(strengthScore)];
+                    }
                 }
             }
         }
@@ -197,8 +255,24 @@ document.addEventListener('DOMContentLoaded', async () => {
             listItem.classList.add('history-item');
             listItem.addEventListener('click', () => {
                 passwordInput.value = password; // Remplir le champ de mot de passe avec l'historique
-                const strengthScore = calculatePasswordStrength(password);
-                strengthText.textContent = currentTranslations[getStrengthDescription(strengthScore)];
+                if (typeof zxcvbn !== 'undefined') {
+                    const result = zxcvbn(password);
+                    const strengthScore = result.score;
+                    strengthText.textContent = currentTranslations[getStrengthDescription(strengthScore)];
+                    crackTimeText.textContent = translateCrackTime(result.crack_times_display.offline_slow_hashing_1e4_per_second);
+                }
+                // Mettre à jour le statut pwned aussi
+                isPasswordPwned(password).then(pwned => {
+                    if (pwned) {
+                        pwnedStatus.className = 'pwned-status pwned';
+                        pwnedStatusIcon.textContent = '❌';
+                        pwnedStatusText.textContent = currentTranslations.pwnedStatusPwned;
+                    } else {
+                        pwnedStatus.className = 'pwned-status safe';
+                        pwnedStatusIcon.textContent = '✅';
+                        pwnedStatusText.textContent = currentTranslations.pwnedStatusSafe;
+                    }
+                });
             });
             passwordHistoryList.appendChild(listItem);
         });

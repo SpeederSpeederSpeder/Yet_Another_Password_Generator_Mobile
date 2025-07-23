@@ -3,18 +3,39 @@ export const es = {
     passwordLengthLabel: "Longitud de la contraseña:",
     copyButton: "Copiar",
     copyAlert: "¡Contraseña copiada al portapapeles!",
-    generateError: "No se pudo generar la contraseña. Por favor, inténtelo de nuevo.",
+    generateError: "No se pudo generar la contraseña. Por favor, inténtalo de nuevo.",
     uppercaseLabel: "Mayúsculas",
     lowercaseLabel: "Minúsculas",
     numbersLabel: "Números",
     symbolsLabel: "Símbolos",
-    passwordStrengthLabel: "Fuerza de la contraseña", // Machine translated, please review
-    passwordStrengthVeryWeak: "Muy débil", // Machine translated, please review
-    passwordStrengthWeak: "Débil", // Machine translated, please review
-    passwordStrengthMedium: "Media", // Machine translated, please review
-    passwordStrengthStrong: "Fuerte", // Machine translated, please review
-    passwordStrengthVeryStrong: "Muy Fuerte", // Machine translated, please review
-    historyTitle: "Historial de contraseñas", // Machine translated, please review
-    clearHistoryButton: "Borrar historial", // Machine translated, please review
-    noHistory: "Aún no se han generado contraseñas." // Machine translated, please review
+    passwordStrengthLabel: "Fortaleza de la contraseña",
+    passwordStrengthVeryWeak: "Muy débil",
+    passwordStrengthWeak: "Débil",
+    passwordStrengthMedium: "Media",
+    passwordStrengthStrong: "Fuerte",
+    passwordStrengthVeryStrong: "Muy fuerte",
+    historyTitle: "Historial de contraseñas",
+    clearHistoryButton: "Borrar historial",
+    noHistory: "Aún no se ha generado ninguna contraseña.",
+    crackTimeLabel: "Tiempo estimado de descifrado",
+    crackTimeUnits: {
+        "instant": "instantáneo",
+        "second": "segundo",
+        "seconds": "segundos",
+        "minute": "minuto",
+        "minutes": "minutos",
+        "hour": "hora",
+        "hours": "horas",
+        "day": "día",
+        "days": "días",
+        "month": "mes",
+        "months": "meses",
+        "year": "año",
+        "years": "años",
+        "century": "siglo",
+        "centuries": "siglos"
+    },
+    pwnedStatusChecking: "Verificando...",
+    pwnedStatusPwned: "¡Esta contraseña ha sido comprometida!",
+    pwnedStatusSafe: "La contraseña es segura"
 };

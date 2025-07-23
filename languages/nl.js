@@ -3,18 +3,39 @@ export const nl = {
     passwordLengthLabel: "Wachtwoordlengte:",
     copyButton: "Kopiëren",
     copyAlert: "Wachtwoord gekopieerd naar klembord!",
-    generateError: "Kon geen wachtwoord genereren. Probeer het opnieuw.",
+    generateError: "Kan geen wachtwoord genereren. Probeer het opnieuw.",
     uppercaseLabel: "Hoofdletters",
     lowercaseLabel: "Kleine letters",
     numbersLabel: "Cijfers",
     symbolsLabel: "Symbolen",
-    passwordStrengthLabel: "Wachtwoordsterkte", // Machine translated, please review
-    passwordStrengthVeryWeak: "Zeer zwak", // Machine translated, please review
-    passwordStrengthWeak: "Zwak", // Machine translated, please review
-    passwordStrengthMedium: "Gemiddeld", // Machine translated, please review
-    passwordStrengthStrong: "Sterk", // Machine translated, please review
-    passwordStrengthVeryStrong: "Zeer sterk", // Machine translated, please review
-    historyTitle: "Wachtwoordgeschiedenis", // Machine translated, please review
-    clearHistoryButton: "Geschiedenis wissen", // Machine translated, please review
-    noHistory: "Nog geen wachtwoorden gegenereerd." // Machine translated, please review
+    passwordStrengthLabel: "Wachtwoordsterkte",
+    passwordStrengthVeryWeak: "Zeer zwak",
+    passwordStrengthWeak: "Zwak",
+    passwordStrengthMedium: "Gemiddeld",
+    passwordStrengthStrong: "Sterk",
+    passwordStrengthVeryStrong: "Zeer sterk",
+    historyTitle: "Wachtwoordgeschiedenis",
+    clearHistoryButton: "Geschiedenis wissen",
+    noHistory: "Nog geen wachtwoord gegenereerd.",
+    crackTimeLabel: "Geschatte kraaktijd",
+    crackTimeUnits: {
+        "instant": "onmiddellijk",
+        "second": "seconde",
+        "seconds": "seconden",
+        "minute": "minuut",
+        "minutes": "minuten",
+        "hour": "uur",
+        "hours": "uren",
+        "day": "dag",
+        "days": "dagen",
+        "month": "maand",
+        "months": "maanden",
+        "year": "jaar",
+        "years": "jaren",
+        "century": "eeuw",
+        "centuries": "eeuwen"
+    },
+    pwnedStatusChecking: "Bezig met controleren...",
+    pwnedStatusPwned: "Dit wachtwoord is gecompromitteerd!",
+    pwnedStatusSafe: "Wachtwoord is veilig"
 };

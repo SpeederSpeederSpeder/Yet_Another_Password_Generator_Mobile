@@ -3,18 +3,39 @@ export const ar = {
     passwordLengthLabel: "طول كلمة المرور:",
     copyButton: "نسخ",
     copyAlert: "تم نسخ كلمة المرور إلى الحافظة!",
-    generateError: "تعذر إنشاء كلمة المرور. الرجاء المحاولة مرة أخرى.",
+    generateError: "تعذر إنشاء كلمة مرور. يرجى المحاولة مرة أخرى.",
     uppercaseLabel: "أحرف كبيرة",
     lowercaseLabel: "أحرف صغيرة",
     numbersLabel: "أرقام",
     symbolsLabel: "رموز",
-    passwordStrengthLabel: "قوة كلمة المرور", // Machine translated, please review
-    passwordStrengthVeryWeak: "ضعيف جداً", // Machine translated, please review
-    passwordStrengthWeak: "ضعيف", // Machine translated, please review
-    passwordStrengthMedium: "متوسط", // Machine translated, please review
-    passwordStrengthStrong: "قوي", // Machine translated, please review
-    passwordStrengthVeryStrong: "قوي جداً", // Machine translated, please review
-    historyTitle: "سجل كلمات المرور", // Machine translated, please review
-    clearHistoryButton: "مسح السجل", // Machine translated, please review
-    noHistory: "لم يتم إنشاء كلمات مرور بعد." // Machine translated, please review
+    passwordStrengthLabel: "قوة كلمة المرور",
+    passwordStrengthVeryWeak: "ضعيفة جدًا",
+    passwordStrengthWeak: "ضعيفة",
+    passwordStrengthMedium: "متوسطة",
+    passwordStrengthStrong: "قوية",
+    passwordStrengthVeryStrong: "قوية جدًا",
+    historyTitle: "سجل كلمات المرور",
+    clearHistoryButton: "مسح السجل",
+    noHistory: "لم يتم إنشاء أي كلمة مرور حتى الآن.",
+    crackTimeLabel: "الوقت المقدر للكسر",
+    crackTimeUnits: {
+        "instant": "فوري",
+        "second": "ثانية",
+        "seconds": "ثواني",
+        "minute": "دقيقة",
+        "minutes": "دقائق",
+        "hour": "ساعة",
+        "hours": "ساعات",
+        "day": "يوم",
+        "days": "أيام",
+        "month": "شهر",
+        "months": "أشهر",
+        "year": "سنة",
+        "years": "سنوات",
+        "century": "قرن",
+        "centuries": "قرون"
+    },
+    pwnedStatusChecking: "جارٍ التحقق...",
+    pwnedStatusPwned: "تم تسريب كلمة المرور هذه!",
+    pwnedStatusSafe: "كلمة المرور آمنة"
 };

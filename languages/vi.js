@@ -2,19 +2,40 @@ export const vi = {
     title: "Trình tạo mật khẩu",
     passwordLengthLabel: "Độ dài mật khẩu:",
     copyButton: "Sao chép",
-    copyAlert: "Đã sao chép mật khẩu vào khay nhớ tạm!",
+    copyAlert: "Mật khẩu đã được sao chép vào clipboard!",
     generateError: "Không thể tạo mật khẩu. Vui lòng thử lại.",
     uppercaseLabel: "Chữ hoa",
     lowercaseLabel: "Chữ thường",
     numbersLabel: "Số",
     symbolsLabel: "Ký hiệu",
-    passwordStrengthLabel: "Độ mạnh mật khẩu", // Machine translated, please review
-    passwordStrengthVeryWeak: "Rất yếu", // Machine translated, please review
-    passwordStrengthWeak: "Yếu", // Machine translated, please review
-    passwordStrengthMedium: "Trung bình", // Machine translated, please review
-    passwordStrengthStrong: "Mạnh", // Machine translated, please review
-    passwordStrengthVeryStrong: "Rất mạnh", // Machine translated, please review
-    historyTitle: "Lịch sử mật khẩu", // Machine translated, please review
-    clearHistoryButton: "Xóa lịch sử", // Machine translated, please review
-    noHistory: "Chưa có mật khẩu nào được tạo." // Machine translated, please review
+    passwordStrengthLabel: "Độ mạnh mật khẩu",
+    passwordStrengthVeryWeak: "Rất yếu",
+    passwordStrengthWeak: "Yếu",
+    passwordStrengthMedium: "Trung bình",
+    passwordStrengthStrong: "Mạnh",
+    passwordStrengthVeryStrong: "Rất mạnh",
+    historyTitle: "Lịch sử mật khẩu",
+    clearHistoryButton: "Xóa lịch sử",
+    noHistory: "Chưa có mật khẩu nào được tạo.",
+    crackTimeLabel: "Thời gian bẻ khóa ước tính",
+    crackTimeUnits: {
+        "instant": "ngay lập tức",
+        "second": "giây",
+        "seconds": "giây",
+        "minute": "phút",
+        "minutes": "phút",
+        "hour": "giờ",
+        "hours": "giờ",
+        "day": "ngày",
+        "days": "ngày",
+        "month": "tháng",
+        "months": "tháng",
+        "year": "năm",
+        "years": "năm",
+        "century": "thế kỷ",
+        "centuries": "thế kỷ"
+    },
+    pwnedStatusChecking: "Đang kiểm tra...",
+    pwnedStatusPwned: "Mật khẩu này đã bị rò rỉ!",
+    pwnedStatusSafe: "Mật khẩu an toàn"
 };

@@ -16,5 +16,26 @@ export const fr = {
     passwordStrengthVeryStrong: "Très Fort",
     historyTitle: "Historique des mots de passe",
     clearHistoryButton: "Effacer l'historique",
-    noHistory: "Aucun mot de passe généré pour l'instant."
+    noHistory: "Aucun mot de passe généré pour l'instant.",
+    crackTimeLabel: "Temps de cassage estimé",
+    crackTimeUnits: {
+        "instant": "instantané",
+        "second": "seconde",
+        "seconds": "secondes",
+        "minute": "minute",
+        "minutes": "minutes",
+        "hour": "heure",
+        "hours": "heures",
+        "day": "jour",
+        "days": "jours",
+        "month": "mois",
+        "months": "mois",
+        "year": "an",
+        "years": "ans",
+        "century": "siècle",
+        "centuries": "siècles"
+    },
+    pwnedStatusChecking: "Vérification...",
+    pwnedStatusPwned: "Ce mot de passe a été compromis !",
+    pwnedStatusSafe: "Mot de passe sécurisé"
 };

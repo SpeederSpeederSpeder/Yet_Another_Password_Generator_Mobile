@@ -4,17 +4,38 @@ export const no = {
     copyButton: "Kopier",
     copyAlert: "Passord kopiert til utklippstavlen!",
     generateError: "Kunne ikke generere passord. Vennligst prøv igjen.",
-    uppercaseLabel: "Store bogstaver",
-    lowercaseLabel: "Små bogstaver",
+    uppercaseLabel: "Store bokstaver",
+    lowercaseLabel: "Små bokstaver",
     numbersLabel: "Tall",
     symbolsLabel: "Symboler",
-    passwordStrengthLabel: "Passordstyrke", // Machine translated, please review
-    passwordStrengthVeryWeak: "Veldig svak", // Machine translated, please review
-    passwordStrengthWeak: "Svak", // Machine translated, please review
-    passwordStrengthMedium: "Middels", // Machine translated, please review
-    passwordStrengthStrong: "Sterk", // Machine translated, please review
-    passwordStrengthVeryStrong: "Veldig sterk", // Machine translated, please review
-    historyTitle: "Passordhistorikk", // Machine translated, please review
-    clearHistoryButton: "Slett historikk", // Machine translated, please review
-    noHistory: "Ingen passord generert ennå." // Machine translated, please review
+    passwordStrengthLabel: "Passordstyrke",
+    passwordStrengthVeryWeak: "Svært svakt",
+    passwordStrengthWeak: "Svakt",
+    passwordStrengthMedium: "Middels",
+    passwordStrengthStrong: "Sterkt",
+    passwordStrengthVeryStrong: "Svært sterkt",
+    historyTitle: "Passordhistorikk",
+    clearHistoryButton: "Tøm historikk",
+    noHistory: "Ingen passord generert ennå.",
+    crackTimeLabel: "Estimert tid for å knekke",
+    crackTimeUnits: {
+        "instant": "øyeblikkelig",
+        "second": "sekund",
+        "seconds": "sekunder",
+        "minute": "minutt",
+        "minutes": "minutter",
+        "hour": "time",
+        "hours": "timer",
+        "day": "dag",
+        "days": "dager",
+        "month": "måned",
+        "months": "måneder",
+        "year": "år",
+        "years": "år",
+        "century": "århundre",
+        "centuries": "århundrer"
+    },
+    pwnedStatusChecking: "Sjekker...",
+    pwnedStatusPwned: "Dette passordet har blitt kompromittert!",
+    pwnedStatusSafe: "Passordet er trygt"
 };

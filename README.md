@@ -8,6 +8,8 @@ A robust and customizable password generator designed for enhanced security and 
 *   **Customizable Password Characters**: Select the types of characters to include (e.g., uppercase, lowercase, numbers, symbols) for tailored password generation.
 *   **Generated Passwords History**: Keep track of your previously generated passwords for easy retrieval and management.
 *   **Password Strength Indicator**: Get real-time feedback on the strength of your generated password, helping you create robust and secure credentials.
+*   **Crack Time Estimation**: See an estimate of how long it would take to crack your password, providing a clear and understandable measure of its security.
+*   **Pwned Password Check**: Automatically checks if your generated password has been exposed in a known data breach using the "Have I Been Pwned?" API, ensuring you don't use a compromised password.
 *   **Dark and Light Mode Switch**: Seamlessly switch between dark and light themes for a comfortable viewing experience, day or night.
 
 # How to host on your computer

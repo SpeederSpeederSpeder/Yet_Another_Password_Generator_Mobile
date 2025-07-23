@@ -1,20 +1,41 @@
 export const id = {
     title: "Generator Kata Sandi",
-    passwordLengthLabel: "Panjang Kata Sandi:",
+    passwordLengthLabel: "Panjang kata sandi:",
     copyButton: "Salin",
-    copyAlert: "Kata sandi disalin ke papan klip!",
-    generateError: "Tidak dapat membuat kata sandi. Silakan coba lagi.",
-    uppercaseLabel: "Huruf Besar",
-    lowercaseLabel: "Huruf Kecil",
+    copyAlert: "Kata sandi disalin ke clipboard!",
+    generateError: "Tidak dapat menghasilkan kata sandi. Silakan coba lagi.",
+    uppercaseLabel: "Huruf besar",
+    lowercaseLabel: "Huruf kecil",
     numbersLabel: "Angka",
     symbolsLabel: "Simbol",
-    passwordStrengthLabel: "Kekuatan Kata Sandi", // Machine translated, please review
-    passwordStrengthVeryWeak: "Sangat Lemah", // Machine translated, please review
-    passwordStrengthWeak: "Lemah", // Machine translated, please review
-    passwordStrengthMedium: "Sedang", // Machine translated, please review
-    passwordStrengthStrong: "Kuat", // Machine translated, please review
-    passwordStrengthVeryStrong: "Sangat Kuat", // Machine translated, please review
-    historyTitle: "Riwayat Kata Sandi", // Machine translated, please review
-    clearHistoryButton: "Hapus Riwayat", // Machine translated, please review
-    noHistory: "Belum ada kata sandi yang dibuat." // Machine translated, please review
+    passwordStrengthLabel: "Kekuatan kata sandi",
+    passwordStrengthVeryWeak: "Sangat lemah",
+    passwordStrengthWeak: "Lemah",
+    passwordStrengthMedium: "Sedang",
+    passwordStrengthStrong: "Kuat",
+    passwordStrengthVeryStrong: "Sangat kuat",
+    historyTitle: "Riwayat kata sandi",
+    clearHistoryButton: "Hapus riwayat",
+    noHistory: "Belum ada kata sandi yang dihasilkan.",
+    crackTimeLabel: "Perkiraan waktu pembobolan",
+    crackTimeUnits: {
+        "instant": "seketika",
+        "second": "detik",
+        "seconds": "detik",
+        "minute": "menit",
+        "minutes": "menit",
+        "hour": "jam",
+        "hours": "jam",
+        "day": "hari",
+        "days": "hari",
+        "month": "bulan",
+        "months": "bulan",
+        "year": "tahun",
+        "years": "tahun",
+        "century": "abad",
+        "centuries": "abad"
+    },
+    pwnedStatusChecking: "Memeriksa...",
+    pwnedStatusPwned: "Kata sandi ini telah bocor!",
+    pwnedStatusSafe: "Kata sandi aman"
 };

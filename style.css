@@ -12,12 +12,12 @@ body {
 
 .container {
     background-color: var(--card-bg-light); /* New variable for card background */
-    padding: 40px; /* Increased padding */
+    padding: 15px; /* Further reduced padding */
     border-radius: 12px; /* More rounded corners */
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2); /* More pronounced, softer shadow */
     text-align: center;
     width: 100%;
-    max-width: 450px; /* Slightly wider */
+    max-width: 600px; /* Wider container */
     transition: background-color 0.4s ease, box-shadow 0.4s ease, transform 0.2s ease; /* Added transform for subtle effect */
     border: 2px solid var(--border-color-light); /* More prominent border */
 }
@@ -28,7 +28,7 @@ body {
 
 h1 {
     color: var(--heading-color-light); /* New variable for heading color */
-    margin-bottom: 30px; /* Increased margin */
+    margin-bottom: 20px; /* Reduced margin */
     font-size: 2.2em; /* Slightly larger heading */
     font-weight: 700; /* Bolder */
     letter-spacing: -0.5px; /* Tighter letter spacing */
@@ -134,7 +134,7 @@ h1 {
 }
 
 #passwordLength {
-    width: 90%; /* Wider slider */
+    width: 100%; /* Full width slider */
     -webkit-appearance: none;
     appearance: none;
     height: 12px; /* Thicker slider track */
@@ -339,11 +339,61 @@ h1 {
     color: var(--primary-color-dark);
 }
 
+.crack-time-display {
+    margin-top: -15px;
+    margin-bottom: 25px;
+    font-size: 1em;
+    color: var(--text-color-light);
+    text-align: left;
+    padding-left: 5px;
+    font-weight: 500;
+}
+
+[data-theme='light'] .crack-time-display {
+    color: var(--text-color-dark);
+}
+
+.crack-time-display #crackTimeText {
+    font-weight: bold;
+    color: var(--primary-color-light);
+}
+
+[data-theme='light'] .crack-time-display #crackTimeText {
+    color: var(--primary-color-dark);
+}
+
+.pwned-status {
+    text-align: left;
+    padding-left: 5px;
+    margin-top: -15px;
+    margin-bottom: 25px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+}
+
+#pwnedStatusIcon {
+    margin-right: 8px;
+}
+
+.pwned-status.safe {
+    color: #28a745;
+}
+
+.pwned-status.pwned {
+    color: #dc3545;
+}
+
+.pwned-status.checking {
+    color: #6c757d;
+}
+
+
 /* Styles pour l'historique des mots de passe */
 .password-history-section {
     margin-top: 35px; /* Increased margin */
     text-align: left;
-    max-height: 220px; /* Slightly increased height */
+    max-height: 100px; /* Further reduced height */
     overflow-y: auto;
     border: 2px solid var(--border-color-light); /* More prominent border */
     border-radius: 10px; /* More rounded */
@@ -426,4 +476,36 @@ h1 {
 #clearHistoryButton:active {
     transform: translateY(0);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Media Queries pour l'affichage mobile */
+@media (max-width: 600px) {
+    .container {
+        padding: 20px;
+        max-width: 100%;
+        border-radius: 0;
+        box-shadow: none;
+        border: none;
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+
+    .password-display {
+        flex-direction: column;
+    }
+
+    #password {
+        margin-bottom: 10px;
+    }
+
+    #copyButton {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .character-type-options {
+        grid-template-columns: 1fr;
+    }
 }

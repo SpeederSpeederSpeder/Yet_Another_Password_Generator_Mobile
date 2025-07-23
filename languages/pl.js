@@ -1,20 +1,41 @@
 export const pl = {
-    title: "Generator Haseł",
+    title: "Generator haseł",
     passwordLengthLabel: "Długość hasła:",
     copyButton: "Kopiuj",
     copyAlert: "Hasło skopiowane do schowka!",
-    generateError: "Nie udało się wygenerować hasła. Spróbuj ponownie.",
+    generateError: "Nie można wygenerować hasła. Spróbuj ponownie.",
     uppercaseLabel: "Wielkie litery",
     lowercaseLabel: "Małe litery",
-    numbersLabel: "Cyfry",
+    numbersLabel: "Liczby",
     symbolsLabel: "Symbole",
-    passwordStrengthLabel: "Siła hasła", // Machine translated, please review
-    passwordStrengthVeryWeak: "Bardzo słabe", // Machine translated, please review
-    passwordStrengthWeak: "Słabe", // Machine translated, please review
-    passwordStrengthMedium: "Średnie", // Machine translated, please review
-    passwordStrengthStrong: "Silne", // Machine translated, please review
-    passwordStrengthVeryStrong: "Bardzo silne", // Machine translated, please review
-    historyTitle: "Historia haseł", // Machine translated, please review
-    clearHistoryButton: "Wyczyść historię", // Machine translated, please review
-    noHistory: "Nie wygenerowano jeszcze żadnych haseł." // Machine translated, please review
+    passwordStrengthLabel: "Siła hasła",
+    passwordStrengthVeryWeak: "Bardzo słabe",
+    passwordStrengthWeak: "Słabe",
+    passwordStrengthMedium: "Średnie",
+    passwordStrengthStrong: "Mocne",
+    passwordStrengthVeryStrong: "Bardzo mocne",
+    historyTitle: "Historia haseł",
+    clearHistoryButton: "Wyczyść historię",
+    noHistory: "Nie wygenerowano jeszcze żadnego hasła.",
+    crackTimeLabel: "Szacowany czas złamania",
+    crackTimeUnits: {
+        "instant": "natychmiast",
+        "second": "sekunda",
+        "seconds": "sekundy",
+        "minute": "minuta",
+        "minutes": "minuty",
+        "hour": "godzina",
+        "hours": "godziny",
+        "day": "dzień",
+        "days": "dni",
+        "month": "miesiąc",
+        "months": "miesiące",
+        "year": "rok",
+        "years": "lata",
+        "century": "wiek",
+        "centuries": "wieki"
+    },
+    pwnedStatusChecking: "Sprawdzanie...",
+    pwnedStatusPwned: "To hasło zostało ujawnione!",
+    pwnedStatusSafe: "Hasło jest bezpieczne"
 };

@@ -8,13 +8,34 @@ export const de = {
     lowercaseLabel: "Kleinbuchstaben",
     numbersLabel: "Zahlen",
     symbolsLabel: "Symbole",
-    passwordStrengthLabel: "Passwortstärke", // Machine translated, please review
-    passwordStrengthVeryWeak: "Sehr schwach", // Machine translated, please review
-    passwordStrengthWeak: "Schwach", // Machine translated, please review
-    passwordStrengthMedium: "Mittel", // Machine translated, please review
-    passwordStrengthStrong: "Stark", // Machine translated, please review
-    passwordStrengthVeryStrong: "Sehr stark", // Machine translated, please review
-    historyTitle: "Passwort-Historie", // Machine translated, please review
-    clearHistoryButton: "Verlauf löschen", // Machine translated, please review
-    noHistory: "Noch keine Passwörter generiert." // Machine translated, please review
+    passwordStrengthLabel: "Passwortstärke",
+    passwordStrengthVeryWeak: "Sehr schwach",
+    passwordStrengthWeak: "Schwach",
+    passwordStrengthMedium: "Mittel",
+    passwordStrengthStrong: "Stark",
+    passwordStrengthVeryStrong: "Sehr stark",
+    historyTitle: "Passworthistorie",
+    clearHistoryButton: "Verlauf löschen",
+    noHistory: "Noch kein Passwort generiert.",
+    crackTimeLabel: "Geschätzte Knackzeit",
+    crackTimeUnits: {
+        "instant": "sofort",
+        "second": "Sekunde",
+        "seconds": "Sekunden",
+        "minute": "Minute",
+        "minutes": "Minuten",
+        "hour": "Stunde",
+        "hours": "Stunden",
+        "day": "Tag",
+        "days": "Tage",
+        "month": "Monat",
+        "months": "Monate",
+        "year": "Jahr",
+        "years": "Jahre",
+        "century": "Jahrhundert",
+        "centuries": "Jahrhunderte"
+    },
+    pwnedStatusChecking: "Überprüfung...",
+    pwnedStatusPwned: "Dieses Passwort wurde kompromittiert!",
+    pwnedStatusSafe: "Passwort ist sicher"
 };

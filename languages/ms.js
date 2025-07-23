@@ -1,20 +1,41 @@
 export const ms = {
     title: "Penjana Kata Laluan",
-    passwordLengthLabel: "Panjang Kata Laluan:",
+    passwordLengthLabel: "Panjang kata laluan:",
     copyButton: "Salin",
-    copyAlert: "Kata laluan disalin ke papan keratan!",
+    copyAlert: "Kata laluan disalin ke papan klip!",
     generateError: "Tidak dapat menjana kata laluan. Sila cuba lagi.",
-    uppercaseLabel: "Huruf Besar",
-    lowercaseLabel: "Huruf Kecil",
+    uppercaseLabel: "Huruf besar",
+    lowercaseLabel: "Huruf kecil",
     numbersLabel: "Nombor",
     symbolsLabel: "Simbol",
-    passwordStrengthLabel: "Kekuatan Kata Laluan", // Machine translated, please review
-    passwordStrengthVeryWeak: "Sangat Lemah", // Machine translated, please review
-    passwordStrengthWeak: "Lemah", // Machine translated, please review
-    passwordStrengthMedium: "Sederhana", // Machine translated, please review
-    passwordStrengthStrong: "Kuat", // Machine translated, please review
-    passwordStrengthVeryStrong: "Sangat Kuat", // Machine translated, please review
-    historyTitle: "Sejarah Kata Laluan", // Machine translated, please review
-    clearHistoryButton: "Padam Sejarah", // Machine translated, please review
-    noHistory: "Tiada kata laluan dijana lagi." // Machine translated, please review
+    passwordStrengthLabel: "Kekuatan kata laluan",
+    passwordStrengthVeryWeak: "Sangat lemah",
+    passwordStrengthWeak: "Lemah",
+    passwordStrengthMedium: "Sederhana",
+    passwordStrengthStrong: "Kuat",
+    passwordStrengthVeryStrong: "Sangat kuat",
+    historyTitle: "Sejarah kata laluan",
+    clearHistoryButton: "Kosongkan sejarah",
+    noHistory: "Belum ada kata laluan dijana.",
+    crackTimeLabel: "Anggaran masa pecah",
+    crackTimeUnits: {
+        "instant": "segera",
+        "second": "saat",
+        "seconds": "saat",
+        "minute": "minit",
+        "minutes": "minit",
+        "hour": "jam",
+        "hours": "jam",
+        "day": "hari",
+        "days": "hari",
+        "month": "bulan",
+        "months": "bulan",
+        "year": "tahun",
+        "years": "tahun",
+        "century": "abad",
+        "centuries": "abad"
+    },
+    pwnedStatusChecking: "Memeriksa...",
+    pwnedStatusPwned: "Kata laluan ini telah dibocorkan!",
+    pwnedStatusSafe: "Kata laluan selamat"
 };

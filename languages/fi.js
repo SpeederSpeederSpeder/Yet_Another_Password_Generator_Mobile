@@ -8,13 +8,34 @@ export const fi = {
     lowercaseLabel: "Pienet kirjaimet",
     numbersLabel: "Numerot",
     symbolsLabel: "Symbolit",
-    passwordStrengthLabel: "Salasanan vahvuus", // Machine translated, please review
-    passwordStrengthVeryWeak: "Erittäin heikko", // Machine translated, please review
-    passwordStrengthWeak: "Heikko", // Machine translated, please review
-    passwordStrengthMedium: "Keskiverto", // Machine translated, please review
-    passwordStrengthStrong: "Vahva", // Machine translated, please review
-    passwordStrengthVeryStrong: "Erittäin vahva", // Machine translated, please review
-    historyTitle: "Salasanahistoria", // Machine translated, please review
-    clearHistoryButton: "Tyhjennä historia", // Machine translated, please review
-    noHistory: "Ei salasanoja luotu vielä." // Machine translated, please review
+    passwordStrengthLabel: "Salasanan vahvuus",
+    passwordStrengthVeryWeak: "Erittäin heikko",
+    passwordStrengthWeak: "Heikko",
+    passwordStrengthMedium: "Keskivahva",
+    passwordStrengthStrong: "Vahva",
+    passwordStrengthVeryStrong: "Erittäin vahva",
+    historyTitle: "Salasanojen historia",
+    clearHistoryButton: "Tyhjennä historia",
+    noHistory: "Yhtään salasanaa ei ole vielä luotu.",
+    crackTimeLabel: "Arvioitu murtamisaika",
+    crackTimeUnits: {
+        "instant": "välitön",
+        "second": "sekunti",
+        "seconds": "sekuntia",
+        "minute": "minuutti",
+        "minutes": "minuuttia",
+        "hour": "tunti",
+        "hours": "tuntia",
+        "day": "päivä",
+        "days": "päivää",
+        "month": "kuukausi",
+        "months": "kuukautta",
+        "year": "vuosi",
+        "years": "vuotta",
+        "century": "vuosisata",
+        "centuries": "vuosisadat"
+    },
+    pwnedStatusChecking: "Tarkistetaan...",
+    pwnedStatusPwned: "Tämä salasana on vaarantunut!",
+    pwnedStatusSafe: "Salasana on turvallinen"
 };

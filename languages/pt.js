@@ -3,18 +3,39 @@ export const pt = {
     passwordLengthLabel: "Comprimento da senha:",
     copyButton: "Copiar",
     copyAlert: "Senha copiada para a área de transferência!",
-    generateError: "Não foi possível gerar a senha. Por favor, tente novamente.",
+    generateError: "Não foi possível gerar uma senha. Por favor, tente novamente.",
     uppercaseLabel: "Maiúsculas",
     lowercaseLabel: "Minúsculas",
     numbersLabel: "Números",
     symbolsLabel: "Símbolos",
-    passwordStrengthLabel: "Força da Senha", // Machine translated, please review
-    passwordStrengthVeryWeak: "Muito Fraca", // Machine translated, please review
-    passwordStrengthWeak: "Fraca", // Machine translated, please review
-    passwordStrengthMedium: "Média", // Machine translated, please review
-    passwordStrengthStrong: "Forte", // Machine translated, please review
-    passwordStrengthVeryStrong: "Muito Forte", // Machine translated, please review
-    historyTitle: "Histórico de Senhas", // Machine translated, please review
-    clearHistoryButton: "Limpar Histórico", // Machine translated, please review
-    noHistory: "Nenhuma senha gerada ainda." // Machine translated, please review
+    passwordStrengthLabel: "Força da senha",
+    passwordStrengthVeryWeak: "Muito fraca",
+    passwordStrengthWeak: "Fraca",
+    passwordStrengthMedium: "Média",
+    passwordStrengthStrong: "Forte",
+    passwordStrengthVeryStrong: "Muito forte",
+    historyTitle: "Histórico de senhas",
+    clearHistoryButton: "Limpar histórico",
+    noHistory: "Nenhuma senha gerada até agora.",
+    crackTimeLabel: "Tempo estimado de quebra",
+    crackTimeUnits: {
+        "instant": "instantâneo",
+        "second": "segundo",
+        "seconds": "segundos",
+        "minute": "minuto",
+        "minutes": "minutos",
+        "hour": "hora",
+        "hours": "horas",
+        "day": "dia",
+        "days": "dias",
+        "month": "mês",
+        "months": "meses",
+        "year": "ano",
+        "years": "anos",
+        "century": "século",
+        "centuries": "séculos"
+    },
+    pwnedStatusChecking: "Verificando...",
+    pwnedStatusPwned: "Esta senha foi comprometida!",
+    pwnedStatusSafe: "Senha segura"
 };

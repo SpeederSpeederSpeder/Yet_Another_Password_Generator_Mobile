@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Générateur de Mot de Passe</title>
+    <link rel="icon" href="data:,">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="theme-switcher.css">
 </head>
@@ -38,7 +39,14 @@
             <button id="copyButton">Copier</button>
         </div>
         <div id="passwordStrengthDisplay" class="password-strength-display">
-            Force du mot de passe: <span id="strengthText">N/A</span>
+             Force du mot de passe: <span id="strengthText">N/A</span>
+         </div>
+        <div id="crackTimeDisplay" class="crack-time-display">
+            Temps de cassage estimé: <span id="crackTimeText">N/A</span>
+        </div>
+        <div id="pwnedStatus" class="pwned-status">
+            <span id="pwnedStatusIcon"></span>
+            <span id="pwnedStatusText"></span>
         </div>
         <div class="password-length-control">
             <label for="passwordLength">Longueur du mot de passe:</label>
@@ -60,6 +68,7 @@
         </div>
     </div>
     <div id="copyMessage" class="hidden"></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/zxcvbn/4.4.2/zxcvbn.js"></script>
     <script type="module" src="script.js"></script>
     <script type="module" src="theme-switcher.js"></script>
 </body>

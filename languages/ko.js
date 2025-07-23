@@ -3,18 +3,39 @@ export const ko = {
     passwordLengthLabel: "비밀번호 길이:",
     copyButton: "복사",
     copyAlert: "비밀번호가 클립보드에 복사되었습니다!",
-    generateError: "비밀번호를 생성할 수 없습니다. 다시 시도해주세요.",
+    generateError: "비밀번호를 생성할 수 없습니다. 다시 시도해 주세요.",
     uppercaseLabel: "대문자",
     lowercaseLabel: "소문자",
     numbersLabel: "숫자",
     symbolsLabel: "기호",
-    passwordStrengthLabel: "비밀번호 강도", // Machine translated, please review
-    passwordStrengthVeryWeak: "매우 약함", // Machine translated, please review
-    passwordStrengthWeak: "약함", // Machine translated, please review
-    passwordStrengthMedium: "보통", // Machine translated, please review
-    passwordStrengthStrong: "강함", // Machine translated, please review
-    passwordStrengthVeryStrong: "매우 강함", // Machine translated, please review
-    historyTitle: "비밀번호 기록", // Machine translated, please review
-    clearHistoryButton: "기록 지우기", // Machine translated, please review
-    noHistory: "아직 생성된 비밀번호가 없습니다." // Machine translated, please review
+    passwordStrengthLabel: "비밀번호 강도",
+    passwordStrengthVeryWeak: "매우 약함",
+    passwordStrengthWeak: "약함",
+    passwordStrengthMedium: "보통",
+    passwordStrengthStrong: "강함",
+    passwordStrengthVeryStrong: "매우 강함",
+    historyTitle: "비밀번호 기록",
+    clearHistoryButton: "기록 지우기",
+    noHistory: "아직 생성된 비밀번호가 없습니다.",
+    crackTimeLabel: "예상 해독 시간",
+    crackTimeUnits: {
+        "instant": "즉시",
+        "second": "초",
+        "seconds": "초",
+        "minute": "분",
+        "minutes": "분",
+        "hour": "시간",
+        "hours": "시간",
+        "day": "일",
+        "days": "일",
+        "month": "개월",
+        "months": "개월",
+        "year": "년",
+        "years": "년",
+        "century": "세기",
+        "centuries": "세기"
+    },
+    pwnedStatusChecking: "확인 중...",
+    pwnedStatusPwned: "이 비밀번호는 유출되었습니다!",
+    pwnedStatusSafe: "비밀번호는 안전합니다"
 };

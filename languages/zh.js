@@ -2,19 +2,40 @@ export const zh = {
     title: "密码生成器",
     passwordLengthLabel: "密码长度:",
     copyButton: "复制",
-    copyAlert: "密码已复制到剪贴板！",
+    copyAlert: "密码已复制到剪贴板!",
     generateError: "无法生成密码。请重试。",
     uppercaseLabel: "大写字母",
     lowercaseLabel: "小写字母",
     numbersLabel: "数字",
     symbolsLabel: "符号",
-    passwordStrengthLabel: "密码强度", // Machine translated, please review
-    passwordStrengthVeryWeak: "非常弱", // Machine translated, please review
-    passwordStrengthWeak: "弱", // Machine translated, please review
-    passwordStrengthMedium: "中", // Machine translated, please review
-    passwordStrengthStrong: "强", // Machine translated, please review
-    passwordStrengthVeryStrong: "非常强", // Machine translated, please review
-    historyTitle: "密码历史", // Machine translated, please review
-    clearHistoryButton: "清除历史", // Machine translated, please review
-    noHistory: "尚未生成密码。" // Machine translated, please review
+    passwordStrengthLabel: "密码强度",
+    passwordStrengthVeryWeak: "非常弱",
+    passwordStrengthWeak: "弱",
+    passwordStrengthMedium: "中等",
+    passwordStrengthStrong: "强",
+    passwordStrengthVeryStrong: "非常强",
+    historyTitle: "密码历史",
+    clearHistoryButton: "清除历史",
+    noHistory: "尚未生成密码。",
+    crackTimeLabel: "预计破解时间",
+    crackTimeUnits: {
+        "instant": "瞬间",
+        "second": "秒",
+        "seconds": "秒",
+        "minute": "分钟",
+        "minutes": "分钟",
+        "hour": "小时",
+        "hours": "小时",
+        "day": "天",
+        "days": "天",
+        "month": "月",
+        "months": "月",
+        "year": "年",
+        "years": "年",
+        "century": "世纪",
+        "centuries": "世纪"
+    },
+    pwnedStatusChecking: "正在检查...",
+    pwnedStatusPwned: "此密码已泄露!",
+    pwnedStatusSafe: "密码安全"
 };

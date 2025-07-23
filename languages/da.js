@@ -1,20 +1,41 @@
 export const da = {
     title: "Adgangskodegenerator",
     passwordLengthLabel: "Adgangskodelængde:",
-    copyButton: "Kopier",
-    copyAlert: "Adgangskode kopieret til udklipsholder!",
-    generateError: "Kunne ikke generere adgangskode. Prøv venligst igen.",
+    copyButton: "Kopiér",
+    copyAlert: "Adgangskode kopieret til udklipsholderen!",
+    generateError: "Kan ikke generere adgangskode. Prøv igen.",
     uppercaseLabel: "Store bogstaver",
     lowercaseLabel: "Små bogstaver",
     numbersLabel: "Tal",
     symbolsLabel: "Symboler",
-    passwordStrengthLabel: "Adgangskodestyrke", // Machine translated, please review
-    passwordStrengthVeryWeak: "Meget svag", // Machine translated, please review
-    passwordStrengthWeak: "Svag", // Machine translated, please review
-    passwordStrengthMedium: "Medium", // Machine translated, please review
-    passwordStrengthStrong: "Stærk", // Machine translated, please review
-    passwordStrengthVeryStrong: "Meget stærk", // Machine translated, please review
-    historyTitle: "Adgangskodehistorik", // Machine translated, please review
-    clearHistoryButton: "Ryd historik", // Machine translated, please review
-    noHistory: "Ingen adgangskoder genereret endnu." // Machine translated, please review
+    passwordStrengthLabel: "Adgangskodestyrke",
+    passwordStrengthVeryWeak: "Meget svag",
+    passwordStrengthWeak: "Svag",
+    passwordStrengthMedium: "Middel",
+    passwordStrengthStrong: "Stærk",
+    passwordStrengthVeryStrong: "Meget stærk",
+    historyTitle: "Adgangskodehistorik",
+    clearHistoryButton: "Ryd historik",
+    noHistory: "Ingen adgangskoder genereret endnu.",
+    crackTimeLabel: "Estimeret tid til at knække",
+    crackTimeUnits: {
+        "instant": "øjeblikkelig",
+        "second": "sekund",
+        "seconds": "sekunder",
+        "minute": "minut",
+        "minutes": "minutter",
+        "hour": "time",
+        "hours": "timer",
+        "day": "dag",
+        "days": "dage",
+        "month": "måned",
+        "months": "måneder",
+        "year": "år",
+        "years": "år",
+        "century": "århundrede",
+        "centuries": "århundreder"
+    },
+    pwnedStatusChecking: "Tjekker...",
+    pwnedStatusPwned: "Denne adgangskode er blevet kompromitteret!",
+    pwnedStatusSafe: "Adgangskoden er sikker"
 };
