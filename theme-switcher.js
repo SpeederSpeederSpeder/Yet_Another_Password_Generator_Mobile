@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.prepend(themeToggleButton);
     }
 
-    const currentTheme = localStorage.getItem('theme') || 'dark'; // Thème par défaut est sombre
+    const currentTheme = localStorage.getItem('theme') || 'light'; // Thème par défaut est clair
     document.documentElement.setAttribute('data-theme', currentTheme);
     updateToggleButton(currentTheme);
 
