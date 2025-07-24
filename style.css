@@ -4,14 +4,14 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-color: var(--background-color-light);
-    color: var(--text-color-light);
+    background-color: var(--background-color);
+    color: var(--text-color);
     margin: 0;
     transition: background-color 0.4s ease, color 0.4s ease; /* Smooth theme transition */
 }
 
 .container {
-    background-color: var(--card-bg-light); /* New variable for card background */
+    background-color: var(--card-bg); /* New variable for card background */
     padding: 15px; /* Further reduced padding */
     border-radius: 12px; /* More rounded corners */
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2); /* More pronounced, softer shadow */
@@ -19,7 +19,7 @@ body {
     width: 100%;
     max-width: 600px; /* Wider container */
     transition: background-color 0.4s ease, box-shadow 0.4s ease, transform 0.2s ease; /* Added transform for subtle effect */
-    border: 2px solid var(--border-color-light); /* More prominent border */
+    border: 2px solid var(--border-color); /* More prominent border */
 }
 
 .container:hover {
@@ -27,15 +27,11 @@ body {
 }
 
 h1 {
-    color: var(--heading-color-light); /* New variable for heading color */
+    color: var(--heading-color); /* New variable for heading color */
     margin-bottom: 20px; /* Reduced margin */
     font-size: 2.2em; /* Slightly larger heading */
     font-weight: 700; /* Bolder */
     letter-spacing: -0.5px; /* Tighter letter spacing */
-}
-
-[data-theme='light'] h1 {
-    color: var(--heading-color-dark);
 }
 
 .password-display {
@@ -46,35 +42,28 @@ h1 {
 #password {
     flex-grow: 1;
     padding: 14px 18px; /* Increased padding */
-    border: 2px solid var(--border-color-light); /* More prominent border */
+    border: 2px solid var(--border-color); /* More prominent border */
     border-radius: 8px; /* More rounded input */
     font-size: 1.2em; /* Slightly larger font */
     outline: none;
-    background-color: var(--input-bg-light); /* New variable for input background */
-    color: var(--text-color-light);
+    background-color: var(--input-bg); /* New variable for input background */
+    color: var(--text-color);
     transition: border-color 0.3s ease, background-color 0.3s ease, color 0.3s ease, box-shadow 0.2s ease;
     box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05); /* Inner shadow for depth */
 }
 
-[data-theme='light'] #password {
-    border-color: var(--border-color-dark);
-    background-color: var(--input-bg-dark);
-    color: var(--text-color-dark);
-}
-
 #password:focus {
-    border-color: var(--primary-color-light); /* Highlight on focus */
+    border-color: var(--primary-color); /* Highlight on focus */
     box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05), 0 0 0 3px rgba(46, 204, 113, 0.2); /* Glow effect */
 }
 
-[data-theme='light'] #password:focus {
-    border-color: var(--primary-color-dark);
+[data-theme='dark'] #password:focus {
     box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05), 0 0 0 3px rgba(155, 89, 182, 0.2);
 }
 
 #copyButton {
     padding: 14px 22px; /* Increased padding */
-    background-color: var(--primary-color-light); /* Primary color */
+    background-color: var(--primary-color); /* Primary color */
     color: white;
     border: none;
     border-radius: 8px; /* More rounded button */
@@ -97,11 +86,7 @@ h1 {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-[data-theme='light'] #copyButton {
-    background-color: var(--primary-color-dark);
-}
-
-[data-theme='light'] #copyButton:hover {
+[data-theme='dark'] #copyButton:hover {
     background-color: #8e44ad; /* Darker purple for hover */
 }
 
@@ -114,23 +99,15 @@ h1 {
 
 .password-length-control label {
     margin-bottom: 12px; /* Adjusted margin */
-    color: var(--text-color-light);
+    color: var(--text-color);
     font-size: 1.05em; /* Slightly larger font */
-}
-
-[data-theme='light'] .password-length-control label {
-    color: var(--text-color-dark);
 }
 
 .password-length-control span {
     font-size: 1.4em; /* Larger value display */
     font-weight: bold;
-    color: var(--primary-color-light); /* Use primary color for emphasis */
+    color: var(--primary-color); /* Use primary color for emphasis */
     margin-bottom: 15px; /* Adjusted margin */
-}
-
-[data-theme='light'] .password-length-control span {
-    color: var(--primary-color-dark);
 }
 
 #passwordLength {
@@ -138,15 +115,11 @@ h1 {
     -webkit-appearance: none;
     appearance: none;
     height: 12px; /* Thicker slider track */
-    background: var(--slider-track-bg-light); /* New variable for slider track */
+    background: var(--slider-track-bg); /* New variable for slider track */
     border-radius: 6px;
     outline: none;
     opacity: 0.9;
     transition: opacity 0.2s ease, background 0.3s ease;
-}
-
-[data-theme='light'] #passwordLength {
-    background: var(--slider-track-bg-dark);
 }
 
 #passwordLength:hover {
@@ -159,28 +132,20 @@ h1 {
     width: 28px; /* Larger thumb */
     height: 28px; /* Larger thumb */
     border-radius: 50%;
-    background: var(--primary-color-light); /* Primary color for thumb */
+    background: var(--primary-color); /* Primary color for thumb */
     cursor: grab;
     box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3); /* More prominent shadow on thumb */
     transition: background 0.3s ease, box-shadow 0.3s ease;
-}
-
-[data-theme='light'] #passwordLength::-webkit-slider-thumb {
-    background: var(--primary-color-dark);
 }
 
 #passwordLength::-moz-range-thumb {
     width: 28px;
     height: 28px;
     border-radius: 50%;
-    background: var(--primary-color-light);
+    background: var(--primary-color);
     cursor: grab;
     box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
     transition: background 0.3s ease, box-shadow 0.3s ease;
-}
-
-[data-theme='light'] #passwordLength::-moz-range-thumb {
-    background: var(--primary-color-dark);
 }
 
 /* Contrôles supérieurs (sélecteur de langue) */
@@ -193,20 +158,16 @@ h1 {
 
 .language-selector label {
     margin-right: 10px;
-    color: var(--text-color-light);
+    color: var(--text-color);
     font-size: 1em;
-}
-
-[data-theme='light'] .language-selector label {
-    color: var(--text-color-dark);
 }
 
 .language-selector select {
     padding: 12px 20px; /* Adjusted padding for better look */
-    border: 2px solid var(--border-color-light); /* More prominent border */
+    border: 2px solid var(--border-color); /* More prominent border */
     border-radius: 8px; /* More rounded select */
-    background-color: var(--input-bg-light);
-    color: var(--text-color-light);
+    background-color: var(--input-bg);
+    color: var(--text-color);
     font-size: 1em;
     outline: none;
     cursor: pointer;
@@ -221,10 +182,7 @@ h1 {
     transition: border-color 0.3s ease, background-color 0.3s ease, color 0.3s ease;
 }
 
-[data-theme='light'] .language-selector select {
-    border-color: var(--border-color-dark);
-    background-color: var(--input-bg-dark);
-    color: var(--text-color-dark);
+[data-theme='dark'] .language-selector select {
     background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%20viewBox%3D%220%200%20292.4%20292.4%22%3E%3Cpath%20fill%3D%22%23aaa%22%20d%3D%22M287%20197.1L159.1%2069.2c-3.7-3.7-8.6-5.7-13.9-5.7s-10.2%202-13.9%205.7L5.4%20197.1c-3.7%203.7-5.7%208.6-5.7%2013.9s2%2010.2%205.7%2013.9l22.7%2022.7c3.7%203.7%208.6%205.7%2013.9%205.7s10.2-2%2013.9-5.7l100.7-100.7L247.4%20233.7c3.7%203.7%208.6%205.7%2013.9%205.7s10.2-2%2013.9-5.7l22.7-22.7c3.7-3.7%205.7-8.6%205.7-13.9s-2-10.2-5.7-13.9z%22%2F%3E%3C%2Fsvg%3E'); /* Lighter arrow for dark theme */
 }
 
@@ -266,13 +224,9 @@ h1 {
     display: flex;
     align-items: center;
     cursor: pointer;
-    color: var(--text-color-light);
+    color: var(--text-color);
     font-size: 1.05em;
     transition: color 0.3s ease;
-}
-
-[data-theme='light'] .character-type-options label {
-    color: var(--text-color-dark);
 }
 
 .character-type-options input[type="checkbox"] {
@@ -280,28 +234,18 @@ h1 {
     appearance: none;
     width: 22px; /* Larger checkbox */
     height: 22px; /* Larger checkbox */
-    border: 2px solid var(--border-color-light);
+    border: 2px solid var(--border-color);
     border-radius: 6px; /* More rounded checkbox */
     margin-right: 10px;
     cursor: pointer;
     position: relative;
-    background-color: var(--input-bg-light);
+    background-color: var(--input-bg);
     transition: background-color 0.2s ease, border-color 0.2s ease;
 }
 
-[data-theme='light'] .character-type-options input[type="checkbox"] {
-    border-color: var(--border-color-dark);
-    background-color: var(--input-bg-dark);
-}
-
 .character-type-options input[type="checkbox"]:checked {
-    background-color: var(--primary-color-light); /* Primary color when checked */
-    border-color: var(--primary-color-light);
-}
-
-[data-theme='light'] .character-type-options input[type="checkbox"]:checked {
-    background-color: var(--primary-color-dark);
-    border-color: var(--primary-color-dark);
+    background-color: var(--primary-color); /* Primary color when checked */
+    border-color: var(--primary-color);
 }
 
 .character-type-options input[type="checkbox"]:checked::after {
@@ -320,46 +264,30 @@ h1 {
     margin-top: -15px; /* Adjusted margin */
     margin-bottom: 25px;
     font-size: 1em;
-    color: var(--text-color-light);
+    color: var(--text-color);
     text-align: left;
     padding-left: 5px;
     font-weight: 500;
 }
 
-[data-theme='light'] .password-strength-display {
-    color: var(--text-color-dark);
-}
-
 .password-strength-display #strengthText {
     font-weight: bold;
-    color: var(--primary-color-light); /* Use primary color for strength text */
-}
-
-[data-theme='light'] .password-strength-display #strengthText {
-    color: var(--primary-color-dark);
+    color: var(--primary-color); /* Use primary color for strength text */
 }
 
 .crack-time-display {
     margin-top: -15px;
     margin-bottom: 25px;
     font-size: 1em;
-    color: var(--text-color-light);
+    color: var(--text-color);
     text-align: left;
     padding-left: 5px;
     font-weight: 500;
 }
 
-[data-theme='light'] .crack-time-display {
-    color: var(--text-color-dark);
-}
-
 .crack-time-display #crackTimeText {
     font-weight: bold;
-    color: var(--primary-color-light);
-}
-
-[data-theme='light'] .crack-time-display #crackTimeText {
-    color: var(--primary-color-dark);
+    color: var(--primary-color);
 }
 
 .pwned-status {
@@ -395,28 +323,19 @@ h1 {
     text-align: left;
     max-height: 100px; /* Further reduced height */
     overflow-y: auto;
-    border: 2px solid var(--border-color-light); /* More prominent border */
+    border: 2px solid var(--border-color); /* More prominent border */
     border-radius: 10px; /* More rounded */
     padding: 20px; /* Increased padding */
-    background-color: var(--card-bg-light); /* Use card background */
+    background-color: var(--card-bg); /* Use card background */
     transition: border-color 0.3s ease, background-color 0.3s ease;
-}
-
-[data-theme='light'] .password-history-section {
-    border-color: var(--border-color-dark);
-    background-color: var(--card-bg-dark);
 }
 
 .password-history-section h2 {
     margin-top: 0;
     margin-bottom: 20px; /* Increased margin */
-    color: var(--heading-color-light);
+    color: var(--heading-color);
     font-size: 1.2em; /* Slightly larger heading */
     font-weight: 600;
-}
-
-[data-theme='light'] .password-history-section h2 {
-    color: var(--heading-color-dark);
 }
 
 #passwordHistoryList {
@@ -426,8 +345,8 @@ h1 {
 }
 
 #passwordHistoryList li {
-    background-color: var(--input-bg-light); /* Use input background for list items */
-    color: var(--text-color-light);
+    background-color: var(--input-bg); /* Use input background for list items */
+    color: var(--text-color);
     padding: 12px; /* Increased padding */
     margin-bottom: 10px; /* Increased margin */
     border-radius: 6px; /* More rounded */
@@ -437,18 +356,9 @@ h1 {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* Subtle shadow for list items */
 }
 
-[data-theme='light'] #passwordHistoryList li {
-    background-color: var(--input-bg-dark);
-    color: var(--text-color-dark);
-}
-
 #passwordHistoryList li:hover {
-    background-color: var(--hover-bg-light); /* New variable for hover background */
+    background-color: var(--hover-bg); /* New variable for hover background */
     transform: translateX(3px); /* Subtle slide effect on hover */
-}
-
-[data-theme='light'] #passwordHistoryList li:hover {
-    background-color: var(--hover-bg-dark);
 }
 
 #clearHistoryButton {

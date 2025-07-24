@@ -1,43 +1,38 @@
 :root {
     /* Light Theme (Default) */
-    --background-color-light: #e8f0f2; /* Very light blue-grey background */
-    --text-color-light: #2c3e50; /* Dark blue text */
-    --card-bg-light: #ffffff; /* Pure white card background */
-    --heading-color-light: #1c2833; /* Even darker headings */
-    --input-bg-light: #fdfdfd; /* Off-white input */
-    --border-color-light: #d0d7de; /* Slightly darker subtle grey border */
-    --slider-track-bg-light: #e0e6eb; /* Light grey-blue slider track */
-    --primary-color-light: #2ecc71; /* Vibrant green */
-    --hover-bg-light: #e0e6eb; /* Light grey-blue for hover */
+    --background-color: #e8f0f2; /* Very light blue-grey background */
+    --text-color: #2c3e50; /* Dark blue text */
+    --card-bg: #ffffff; /* Pure white card background */
+    --heading-color: #1c2833; /* Even darker headings */
+    --input-bg: #fdfdfd; /* Off-white input */
+    --border-color: #d0d7de; /* Slightly darker subtle grey border */
+    --slider-track-bg: #e0e6eb; /* Light grey-blue slider track */
+    --primary-color: #2ecc71; /* Vibrant green */
+    --hover-bg: #e0e6eb; /* Light grey-blue for hover */
 }
 
-[data-theme='light'] { /* Dark Theme */
-    --background-color-dark: #2c3e50; /* Dark blue background */
-    --text-color-dark: #ecf0f1; /* Light grey text */
-    --card-bg-dark: #34495e; /* Slightly lighter dark blue card background */
-    --heading-color-dark: #ecf0f1; /* Light headings */
-    --input-bg-dark: #4a627a; /* Medium dark blue input */
-    --border-color-dark: #5d7f9e; /* More distinct dark blue border */
-    --slider-track-bg-dark: #5d7f9e; /* Dark blue slider track */
-    --primary-color-dark: #9b59b6; /* Vibrant purple */
-    --hover-bg-dark: #4a627a; /* Medium dark blue for hover */
+[data-theme='dark'] { /* Dark Theme */
+    --background-color: #2c3e50; /* Dark blue background */
+    --text-color: #ecf0f1; /* Light grey text */
+    --card-bg: #34495e; /* Slightly lighter dark blue card background */
+    --heading-color: #ecf0f1; /* Light headings */
+    --input-bg: #4a627a; /* Medium dark blue input */
+    --border-color: #5d7f9e; /* More distinct dark blue border */
+    --slider-track-bg: #5d7f9e; /* Dark blue slider track */
+    --primary-color: #9b59b6; /* Vibrant purple */
+    --hover-bg: #4a627a; /* Medium dark blue for hover */
 }
 
 body {
-    background-color: var(--background-color-light);
-    color: var(--text-color-light);
+    background-color: var(--background-color);
+    color: var(--text-color);
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-[data-theme='light'] body {
-    background-color: var(--background-color-dark);
-    color: var(--text-color-dark);
-}
-
 #theme-toggle {
-    background-color: var(--card-bg-light); /* Use card background for toggle */
-    color: var(--text-color-light);
-    border: 1px solid var(--border-color-light);
+    background-color: var(--card-bg); /* Use card background for toggle */
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
     padding: 10px 15px;
     border-radius: 25px;
     cursor: pointer;
@@ -55,17 +50,7 @@ body {
 }
 
 #theme-toggle:hover {
-    background-color: var(--hover-bg-light); /* Use hover background */
-}
-
-[data-theme='light'] #theme-toggle {
-    background-color: var(--card-bg-dark);
-    color: var(--text-color-dark);
-    border-color: var(--border-color-dark);
-}
-
-[data-theme='light'] #theme-toggle:hover {
-    background-color: var(--hover-bg-dark);
+    background-color: var(--hover-bg); /* Use hover background */
 }
 
 #theme-toggle .icon-light,
