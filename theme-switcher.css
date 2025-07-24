@@ -23,6 +23,18 @@
     --hover-bg: #4a627a; /* Medium dark blue for hover */
 }
 
+[data-theme='ultra-dark'] { /* Ultra Dark Theme */
+    --background-color: #000000; /* Pure black background */
+    --text-color: #ecf0f1; /* Light grey text */
+    --card-bg: #1a1a1a; /* Very dark grey card background */
+    --heading-color: #ffffff; /* White headings */
+    --input-bg: #2c2c2c; /* Dark grey input */
+    --border-color: #444444; /* Grey border */
+    --slider-track-bg: #333333; /* Dark grey slider track */
+    --primary-color: #FFA500; /* Vibrant orange */
+    --hover-bg: #333333; /* Dark grey for hover */
+}
+
 body {
     background-color: var(--background-color);
     color: var(--text-color);
@@ -54,8 +66,9 @@ body {
 }
 
 #theme-toggle .icon-light,
-#theme-toggle .icon-dark {
-    display: none; /* Masquer les deux par défaut */
+#theme-toggle .icon-dark,
+#theme-toggle .icon-ultra-dark {
+    display: none; /* Masquer les trois par défaut */
 }
 
 /* En mode sombre (par défaut), afficher l'icône de la lune */
@@ -65,5 +78,10 @@ body {
 
 /* En mode clair, afficher l'icône du soleil */
 #theme-toggle.light-mode .icon-light {
+    display: inline-block;
+}
+
+/* En mode ultra-sombre, afficher l'icône de l'étoile */
+#theme-toggle.ultra-dark-mode .icon-ultra-dark {
     display: inline-block;
 }
