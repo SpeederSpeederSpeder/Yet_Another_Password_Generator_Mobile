@@ -1,6 +1,5 @@
 import { getStrengthDescription } from './utils/password-strength-checker.js';
 import { addPasswordToHistory, loadPasswordHistory, clearPasswordHistory } from './utils/password-history.js';
-import { isPasswordPwned } from './utils/pwned-checker.js';
 
 document.addEventListener('DOMContentLoaded', async () => {
     const passwordInput = document.getElementById('password');
@@ -15,9 +14,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     const includeSymbols = document.getElementById('includeSymbols');
     const strengthText = document.getElementById('strengthText'); // Nouvel élément
     const crackTimeText = document.getElementById('crackTimeText'); // Pour le temps de cassage
-    const pwnedStatus = document.getElementById('pwnedStatus');
-    const pwnedStatusIcon = document.getElementById('pwnedStatusIcon');
-    const pwnedStatusText = document.getElementById('pwnedStatusText');
     const passwordHistoryList = document.getElementById('passwordHistoryList'); // Nouvel élément
     const clearHistoryButton = document.getElementById('clearHistoryButton'); // Nouvel élément
 
@@ -113,21 +109,6 @@ document.addEventListener('DOMContentLoaded', async () => {
             crackTimeText.textContent = translateCrackTime(result.crack_times_display.offline_slow_hashing_1e4_per_second);
         }
 
-        // Vérifier si le mot de passe est compromis
-        pwnedStatus.className = 'pwned-status checking';
-        pwnedStatusIcon.textContent = '⏳';
-        pwnedStatusText.textContent = currentTranslations.pwnedStatusChecking;
-
-        const pwned = await isPasswordPwned(generatedPassword);
-        if (pwned) {
-            pwnedStatus.className = 'pwned-status pwned';
-            pwnedStatusIcon.textContent = '❌';
-            pwnedStatusText.textContent = currentTranslations.pwnedStatusPwned;
-        } else {
-            pwnedStatus.className = 'pwned-status safe';
-            pwnedStatusIcon.textContent = '✅';
-            pwnedStatusText.textContent = currentTranslations.pwnedStatusSafe;
-        }
 
         // Ajouter le mot de passe à l'historique
         addPasswordToHistory(generatedPassword);
@@ -241,18 +222,6 @@ document.addEventListener('DOMContentLoaded', async () => {
                     strengthText.textContent = currentTranslations[getStrengthDescription(strengthScore)];
                     crackTimeText.textContent = translateCrackTime(result.crack_times_display.offline_slow_hashing_1e4_per_second);
                 }
-                // Mettre à jour le statut pwned aussi
-                isPasswordPwned(password).then(pwned => {
-                    if (pwned) {
-                        pwnedStatus.className = 'pwned-status pwned';
-                        pwnedStatusIcon.textContent = '❌';
-                        pwnedStatusText.textContent = currentTranslations.pwnedStatusPwned;
-                    } else {
-                        pwnedStatus.className = 'pwned-status safe';
-                        pwnedStatusIcon.textContent = '✅';
-                        pwnedStatusText.textContent = currentTranslations.pwnedStatusSafe;
-                    }
-                });
             });
             passwordHistoryList.appendChild(listItem);
         });

@@ -290,31 +290,6 @@ h1 {
     color: var(--primary-color);
 }
 
-.pwned-status {
-    text-align: left;
-    padding-left: 5px;
-    margin-top: -15px;
-    margin-bottom: 25px;
-    font-weight: 500;
-    display: flex;
-    align-items: center;
-}
-
-#pwnedStatusIcon {
-    margin-right: 8px;
-}
-
-.pwned-status.safe {
-    color: #28a745;
-}
-
-.pwned-status.pwned {
-    color: #dc3545;
-}
-
-.pwned-status.checking {
-    color: #6c757d;
-}
 
 
 /* Styles pour l'historique des mots de passe */
