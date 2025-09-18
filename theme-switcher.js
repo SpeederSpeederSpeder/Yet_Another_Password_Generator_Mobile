@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+const initializeThemeSwitcher = () => {
     const themeToggleButton = document.createElement('button');
     themeToggleButton.id = 'theme-toggle';
     themeToggleButton.innerHTML = `
@@ -17,34 +17,40 @@ document.addEventListener('DOMContentLoaded', () => {
     const settingsContent = document.querySelector('#settings .settings-content');
     if (settingsContent) {
         settingsContent.appendChild(themeToggleButton);
+    } else {
+        // If the element is not found, try again after a short delay
+        setTimeout(initializeThemeSwitcher, 100);
+        return;
     }
 
-    const currentTheme = localStorage.getItem('theme') || 'light'; // Thème par défaut est clair
+    const currentTheme = localStorage.getItem('theme') || 'light';
     document.documentElement.setAttribute('data-theme', currentTheme);
-    updateToggleButton(currentTheme);
+    updateToggleButton(themeToggleButton, currentTheme);
 
     themeToggleButton.addEventListener('click', () => {
         let theme = document.documentElement.getAttribute('data-theme');
-        if (theme === 'light') { // Si le thème actuel est clair, passer au sombre
+        if (theme === 'light') {
             theme = 'dark';
-        } else if (theme === 'dark') { // Si le thème actuel est sombre, passer à l'ultra-sombre
+        } else if (theme === 'dark') {
             theme = 'ultra-dark';
-        } else { // Sinon, passer au clair
+        } else {
             theme = 'light';
         }
         document.documentElement.setAttribute('data-theme', theme);
         localStorage.setItem('theme', theme);
-        updateToggleButton(theme);
+        updateToggleButton(themeToggleButton, theme);
     });
+};
 
-    function updateToggleButton(theme) {
-        themeToggleButton.classList.remove('light-mode', 'dark-mode', 'ultra-dark-mode');
-        if (theme === 'light') { // Si le thème est clair, ajouter la classe 'light-mode'
-            themeToggleButton.classList.add('light-mode');
-        } else if (theme === 'dark') { // Si le thème est sombre, ajouter la classe 'dark-mode'
-            themeToggleButton.classList.add('dark-mode');
-        } else { // Sinon, ajouter la classe 'ultra-dark-mode'
-            themeToggleButton.classList.add('ultra-dark-mode');
-        }
+const updateToggleButton = (button, theme) => {
+    button.classList.remove('light-mode', 'dark-mode', 'ultra-dark-mode');
+    if (theme === 'light') {
+        button.classList.add('light-mode');
+    } else if (theme === 'dark') {
+        button.classList.add('dark-mode');
+    } else {
+        button.classList.add('ultra-dark-mode');
     }
-});
+};
+
+document.addEventListener('DOMContentLoaded', initializeThemeSwitcher);
