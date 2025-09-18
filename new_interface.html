@@ -10,79 +10,83 @@
 </head>
 <body>
     <div class="container">
-        <div class="controls-top">
-            <div class="settings-container">
-                <button id="settingsButton" class="settings-button">
-                    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0iY3VycmVudENvbG9yIiB3aWR0aD0iMjRweCIgaGVpZ2h0PSIyNHB4Ij48cGF0aCBkPSJNMTkuNDMgMTIuOThjLjA0LS4zMi4wNy0uNjQuMDctLjk4cy0uMDMtLjY2LS4wNy0uOThsMi4xMS0xLjY1Yy4xOS0uMTUuMjQtLjQyLjEyLS42NGwtMi0zLjQ2Yy0uMTItLjIyLS4zOS0uMy0uNjEtLjIybC0yLjQ5IDFjLS41Mi0uNC0xLjA4LS43My0xLjY5LS45OGwtLjM4LTIuNjVBLjQyNC40MjQgMCAwIDAgMTYgMkgtNEMxMy43OCAyIDEzLjU1IDEuMTEgMTMuNDMgMS4zNWwtLjM4IDIuNjVjLS42MS4yNS0xLjE3LjU5LTEuNjkuOThsLTIuNDktMWMtLjIyLS4wOS0uNDktLjAxLS42MS4yMmwtMiAzLjQ2Yy0uMTIuMjItLjA3LjQ5LjEyLjY0bDIuMTEgMS42NWMtLjA0LjMyLS4wNy42NS0uMDcuOThzLjAzLjY2LjA3Ljk4bC0yLjExIDEuNjVjLS4xOS4xNS0uMjQuNDIuMTIuNjRsMiAzLjQ2Yy4xMi4yMi4zOS4zLjYxLjIybDIuNDktMWMuNTIuNCAxLjA4LjczIDEuNjkuOThsLjM4IDIuNjVjLjAyLjI0LjI1LjQyLjQ3LjQyaDRjLjIyIDAgLjQ1LS4xOC40Ny0uNDJsLjM4LTIuNjVjLjYxLS4yNSAxLjE3LS41OSAxLjY5LS45OGwyLjQ5IDFjLjIyLjA5LjQ5LjAxLjYxLS4yMmwyLTMuNDZjLjEyLS4yMi4wNy0uNDktLjEyLS42NGwtMi4xMS0xLjY1eiBNMTIgMTUuNWMtMS45MyAwLTMuNS0xLjU3LTMuNS0zLjVzMS41Ny0zLjUgMy41LTMuNSAzLjUgMS41NyAzLjUgMy41LTEuNTcgMy41LTMuNSAzLjV6Ii8+PC9zdmc+" alt="Settings">
-                </button>
-                <div id="settingsPanel" class="settings-panel">
-                    <div class="language-selector">
-                        <label for="language">Langue:</label>
-                        <select id="language">
-                            <option value="fr">Français</option>
-                            <option value="en">English</option>
-                            <option value="es">Español</option>
-                            <option value="de">Deutsch</option>
-                            <option value="it">Italiano</option>
-                            <option value="pt">Português</option>
-                            <option value="ru">Русский</option>
-                            <option value="ja">日本語</option>
-                            <option value="zh">中文</option>
-                            <option value="ko">한국어</option>
-                            <option value="ar">العربية</option>
-                            <option value="he">עברית</option>
-                            <option value="hi">हिन्दी</option>
-                            <option value="id">Bahasa Indonesia</option>
-                            <option value="ms">Bahasa Melayu</option>
-                            <option value="cs">Čeština</option>
-                            <option value="da">Dansk</option>
-                            <option value="fi">Suomi</option>
-                            <option value="nl">Nederlands</option>
-                            <option value="no">Norsk</option>
-                            <option value="pl">Polski</option>
-                            <option value="ro">Română</option>
-                            <option value="sv">Svenska</option>
-                            <option value="th">ไทย</option>
-                            <option value="tr">Türkçe</option>
-                            <option value="uk">Українська</option>
-                            <option value="vi">Tiếng Việt</option>
-                        </select>
-                    </div>
-                </div>
+        <div class="tabs">
+            <button class="tab-button active" data-tab="generator">Générateur</button>
+            <button class="tab-button" data-tab="settings">Paramètres</button>
+        </div>
+
+        <div id="generator" class="tab-content active">
+            <h1>Générateur de Mot de Passe</h1>
+            <div class="password-display">
+                <input type="text" id="password" readonly>
+                <button id="copyButton">Copier</button>
+            </div>
+            <div id="passwordStrengthDisplay" class="password-strength-display">
+                 Force du mot de passe: <span id="strengthText">N/A</span>
+             </div>
+            <div id="crackTimeDisplay" class="crack-time-display">
+                Temps de cassage estimé: <span id="crackTimeText">N/A</span>
+            </div>
+            <div id="pwnedStatus" class="pwned-status">
+                <span id="pwnedStatusIcon"></span>
+                <span id="pwnedStatusText"></span>
+            </div>
+            <div class="password-length-control">
+                <label for="passwordLength">Longueur du mot de passe:</label>
+                <span id="passwordLengthValue">7</span>
+                <input type="range" id="passwordLength" min="7" max="100" value="7">
+            </div>
+            <div class="character-type-options">
+                <label><input type="checkbox" id="includeUppercase" checked> Majuscules</label>
+                <label><input type="checkbox" id="includeLowercase" checked> Minuscules</label>
+                <label><input type="checkbox" id="includeNumbers" checked> Chiffres</label>
+                <label><input type="checkbox" id="includeSymbols" checked> Symboles</label>
+            </div>
+            <div class="password-history-section">
+                <h2>Historique des mots de passe</h2>
+                <ul id="passwordHistoryList">
+                    <!-- L'historique sera inséré ici par JavaScript -->
+                </ul>
+                <button id="clearHistoryButton">Effacer l'historique</button>
             </div>
         </div>
-        <h1>Générateur de Mot de Passe</h1>
-        <div class="password-display">
-            <input type="text" id="password" readonly>
-            <button id="copyButton">Copier</button>
-        </div>
-        <div id="passwordStrengthDisplay" class="password-strength-display">
-             Force du mot de passe: <span id="strengthText">N/A</span>
-         </div>
-        <div id="crackTimeDisplay" class="crack-time-display">
-            Temps de cassage estimé: <span id="crackTimeText">N/A</span>
-        </div>
-        <div id="pwnedStatus" class="pwned-status">
-            <span id="pwnedStatusIcon"></span>
-            <span id="pwnedStatusText"></span>
-        </div>
-        <div class="password-length-control">
-            <label for="passwordLength">Longueur du mot de passe:</label>
-            <span id="passwordLengthValue">7</span>
-            <input type="range" id="passwordLength" min="7" max="100" value="7">
-        </div>
-        <div class="character-type-options">
-            <label><input type="checkbox" id="includeUppercase" checked> Majuscules</label>
-            <label><input type="checkbox" id="includeLowercase" checked> Minuscules</label>
-            <label><input type="checkbox" id="includeNumbers" checked> Chiffres</label>
-            <label><input type="checkbox" id="includeSymbols" checked> Symboles</label>
-        </div>
-        <div class="password-history-section">
-            <h2>Historique des mots de passe</h2>
-            <ul id="passwordHistoryList">
-                <!-- L'historique sera inséré ici par JavaScript -->
-            </ul>
-            <button id="clearHistoryButton">Effacer l'historique</button>
+
+        <div id="settings" class="tab-content">
+            <h1>Paramètres</h1>
+            <div class="settings-content">
+                <div class="language-selector">
+                    <label for="language">Langue:</label>
+                    <select id="language">
+                        <option value="fr">Français</option>
+                        <option value="en">English</option>
+                        <option value="es">Español</option>
+                        <option value="de">Deutsch</option>
+                        <option value="it">Italiano</option>
+                        <option value="pt">Português</option>
+                        <option value="ru">Русский</option>
+                        <option value="ja">日本語</option>
+                        <option value="zh">中文</option>
+                        <option value="ko">한국어</option>
+                        <option value="ar">العربية</option>
+                        <option value="he">עברית</option>
+                        <option value="hi">हिन्दी</option>
+                        <option value="id">Bahasa Indonesia</option>
+                        <option value="ms">Bahasa Melayu</option>
+                        <option value="cs">Čeština</option>
+                        <option value="da">Dansk</option>
+                        <option value="fi">Suomi</option>
+                        <option value="nl">Nederlands</option>
+                        <option value="no">Norsk</option>
+                        <option value="pl">Polski</option>
+                        <option value="ro">Română</option>
+                        <option value="sv">Svenska</option>
+                        <option value="th">ไทย</option>
+                        <option value="tr">Türkçe</option>
+                        <option value="uk">Українська</option>
+                        <option value="vi">Tiếng Việt</option>
+                    </select>
+                </div>
+            </div>
         </div>
     </div>
     <div id="copyMessage" class="hidden"></div>

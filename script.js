@@ -23,18 +23,18 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     let currentTranslations = {}; // Variable pour stocker les traductions actuelles
 
-    const settingsButton = document.getElementById('settingsButton');
-    const settingsPanel = document.getElementById('settingsPanel');
+    const tabButtons = document.querySelectorAll('.tab-button');
+    const tabContents = document.querySelectorAll('.tab-content');
 
-    settingsButton.addEventListener('click', (event) => {
-        event.stopPropagation();
-        settingsPanel.classList.toggle('show');
-    });
+    tabButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            tabButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
 
-    document.addEventListener('click', (event) => {
-        if (!settingsPanel.contains(event.target) && !settingsButton.contains(event.target)) {
-            settingsPanel.classList.remove('show');
-        }
+            tabContents.forEach(content => content.classList.remove('active'));
+            const tabId = button.dataset.tab;
+            document.getElementById(tabId).classList.add('active');
+        });
     });
 
     // Mettre à jour l'affichage de la longueur du mot de passe
