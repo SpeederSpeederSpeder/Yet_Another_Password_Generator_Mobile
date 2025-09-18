@@ -12,6 +12,7 @@
     <div class="container">
         <div class="tabs">
             <button class="tab-button active" data-tab="generator">Générateur</button>
+            <button class="tab-button" data-tab="history">Historique</button>
             <button class="tab-button" data-tab="settings">Paramètres</button>
         </div>
 
@@ -42,6 +43,9 @@
                 <label><input type="checkbox" id="includeNumbers" checked> Chiffres</label>
                 <label><input type="checkbox" id="includeSymbols" checked> Symboles</label>
             </div>
+        </div>
+
+        <div id="history" class="tab-content">
             <div class="password-history-section">
                 <h2>Historique des mots de passe</h2>
                 <ul id="passwordHistoryList">
