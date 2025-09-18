@@ -4,44 +4,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Générateur de Mot de Passe</title>
-    <link rel="icon" href="data:,">
+    <link rel="icon" href="Krypto.png" type="image/png">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="theme-switcher.css">
 </head>
 <body>
     <div class="container">
         <div class="controls-top">
-            <div class="language-selector">
-                <label for="language">Langue:</label>
-                <select id="language">
-                    <option value="fr">Français</option>
-                    <option value="en">English</option>
-                    <option value="es">Español</option>
-                    <option value="de">Deutsch</option>
-                    <option value="it">Italiano</option>
-                    <option value="pt">Português</option>
-                    <option value="ru">Русский</option>
-                    <option value="ja">日本語</option>
-                    <option value="zh">中文</option>
-                    <option value="ko">한국어</option>
-                    <option value="ar">العربية</option>
-                    <option value="he">עברית</option>
-                    <option value="hi">हिन्दी</option>
-                    <option value="id">Bahasa Indonesia</option>
-                    <option value="ms">Bahasa Melayu</option>
-                    <option value="cs">Čeština</option>
-                    <option value="da">Dansk</option>
-                    <option value="fi">Suomi</option>
-                    <option value="nl">Nederlands</option>
-                    <option value="no">Norsk</option>
-                    <option value="pl">Polski</option>
-                    <option value="ro">Română</option>
-                    <option value="sv">Svenska</option>
-                    <option value="th">ไทย</option>
-                    <option value="tr">Türkçe</option>
-                    <option value="uk">Українська</option>
-                    <option value="vi">Tiếng Việt</option>
-                </select>
+            <div class="settings-container">
+                <button id="settingsButton" class="settings-button">
+                    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0iY3VycmVudENvbG9yIiB3aWR0aD0iMjRweCIgaGVpZ2h0PSIyNHB4Ij48cGF0aCBkPSJNMTkuNDMgMTIuOThjLjA0LS4zMi4wNy0uNjQuMDctLjk4cy0uMDMtLjY2LS4wNy0uOThsMi4xMS0xLjY1Yy4xOS0uMTUuMjQtLjQyLjEyLS42NGwtMi0zLjQ2Yy0uMTItLjIyLS4zOS0uMy0uNjEtLjIybC0yLjQ5IDFjLS41Mi0uNC0xLjA4LS43My0xLjY5LS45OGwtLjM4LTIuNjVBLjQyNC40MjQgMCAwIDAgMTYgMkgtNEMxMy43OCAyIDEzLjU1IDEuMTEgMTMuNDMgMS4zNWwtLjM4IDIuNjVjLS42MS4yNS0xLjE3LjU5LTEuNjkuOThsLTIuNDktMWMtLjIyLS4wOS0uNDktLjAxLS42MS4yMmwtMiAzLjQ2Yy0uMTIuMjItLjA3LjQ5LjEyLjY0bDIuMTEgMS42NWMtLjA0LjMyLS4wNy42NS0uMDcuOThzLjAzLjY2LjA3Ljk4bC0yLjExIDEuNjVjLS4xOS4xNS0uMjQuNDIuMTIuNjRsMiAzLjQ2Yy4xMi4yMi4zOS4zLjYxLjIybDIuNDktMWMuNTIuNCAxLjA4LjczIDEuNjkuOThsLjM4IDIuNjVjLjAyLjI0LjI1LjQyLjQ3LjQyaDRjLjIyIDAgLjQ1LS4xOC40Ny0uNDJsLjM4LTIuNjVjLjYxLS4yNSAxLjE3LS41OSAxLjY5LS45OGwyLjQ5IDFjLjIyLjA5LjQ5LjAxLjYxLS4yMmwyLTMuNDZjLjEyLS4yMi4wNy0uNDktLjEyLS42NGwtMi4xMS0xLjY1eiBNMTIgMTUuNWMtMS45MyAwLTMuNS0xLjU3LTMuNS0zLjVzMS41Ny0zLjUgMy41LTMuNSAzLjUgMS41NyAzLjUgMy41LTEuNTcgMy41LTMuNSAzLjV6Ii8+PC9zdmc+" alt="Settings">
+                </button>
+                <div id="settingsPanel" class="settings-panel">
+                    <div class="language-selector">
+                        <label for="language">Langue:</label>
+                        <select id="language">
+                            <option value="fr">Français</option>
+                            <option value="en">English</option>
+                            <option value="es">Español</option>
+                            <option value="de">Deutsch</option>
+                            <option value="it">Italiano</option>
+                            <option value="pt">Português</option>
+                            <option value="ru">Русский</option>
+                            <option value="ja">日本語</option>
+                            <option value="zh">中文</option>
+                            <option value="ko">한국어</option>
+                            <option value="ar">العربية</option>
+                            <option value="he">עברית</option>
+                            <option value="hi">हिन्दी</option>
+                            <option value="id">Bahasa Indonesia</option>
+                            <option value="ms">Bahasa Melayu</option>
+                            <option value="cs">Čeština</option>
+                            <option value="da">Dansk</option>
+                            <option value="fi">Suomi</option>
+                            <option value="nl">Nederlands</option>
+                            <option value="no">Norsk</option>
+                            <option value="pl">Polski</option>
+                            <option value="ro">Română</option>
+                            <option value="sv">Svenska</option>
+                            <option value="th">ไทย</option>
+                            <option value="tr">Türkçe</option>
+                            <option value="uk">Українська</option>
+                            <option value="vi">Tiếng Việt</option>
+                        </select>
+                    </div>
+                </div>
             </div>
         </div>
         <h1>Générateur de Mot de Passe</h1>

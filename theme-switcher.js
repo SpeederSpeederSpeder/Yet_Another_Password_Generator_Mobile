@@ -14,11 +14,9 @@ document.addEventListener('DOMContentLoaded', () => {
     `;
     themeToggleButton.setAttribute('aria-label', 'Toggle theme');
 
-    const header = document.querySelector('header');
-    if (header) {
-        header.appendChild(themeToggleButton);
-    } else {
-        document.body.prepend(themeToggleButton);
+    const settingsPanel = document.getElementById('settingsPanel');
+    if (settingsPanel) {
+        settingsPanel.appendChild(themeToggleButton);
     }
 
     const currentTheme = localStorage.getItem('theme') || 'light'; // Thème par défaut est clair

@@ -23,6 +23,20 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     let currentTranslations = {}; // Variable pour stocker les traductions actuelles
 
+    const settingsButton = document.getElementById('settingsButton');
+    const settingsPanel = document.getElementById('settingsPanel');
+
+    settingsButton.addEventListener('click', (event) => {
+        event.stopPropagation();
+        settingsPanel.classList.toggle('show');
+    });
+
+    document.addEventListener('click', (event) => {
+        if (!settingsPanel.contains(event.target) && !settingsButton.contains(event.target)) {
+            settingsPanel.classList.remove('show');
+        }
+    });
+
     // Mettre à jour l'affichage de la longueur du mot de passe
     passwordLengthInput.addEventListener('input', () => {
         passwordLengthValueDisplay.textContent = passwordLengthInput.value;
