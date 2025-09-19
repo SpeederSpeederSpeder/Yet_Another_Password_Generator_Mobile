@@ -16,19 +16,36 @@ export function calculatePasswordStrength(password) {
  * @param {number} strengthScore Le score de force du mot de passe.
  * @returns {string} Une description de la force.
  */
-export function getStrengthDescription(zxcvbnScore) {
-    switch (zxcvbnScore) {
-        case 0:
+export function getStrengthDescription(zxcvbnScore, crackTime) {
+    const strength = getStrengthFromCrackTime(crackTime);
+
+    switch (strength) {
+        case "Très faible":
             return "passwordStrengthVeryWeak";
-        case 1:
+        case "Faible":
             return "passwordStrengthWeak";
-        case 2:
+        case "Moyen":
             return "passwordStrengthMedium";
-        case 3:
+        case "Fort":
             return "passwordStrengthStrong";
-        case 4:
+        case "Très Fort":
             return "passwordStrengthVeryStrong";
         default:
             return "passwordStrengthVeryWeak";
     }
+}
+
+function getStrengthFromCrackTime(crackTime) {
+    if (crackTime.includes("instantané")) {
+        return "Très faible";
+    } else if (crackTime.includes("seconde")) {
+        return "Faible";
+    } else if (crackTime.includes("minute") || crackTime.includes("heure")) {
+        return "Moyen";
+    } else if (crackTime.includes("jour") || crackTime.includes("mois")) {
+        return "Fort";
+    } else if (crackTime.includes("an") || crackTime.includes("siècle")) {
+        return "Très Fort";
+    }
+    return "Très faible";
 }

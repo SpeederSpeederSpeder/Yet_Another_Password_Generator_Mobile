@@ -105,8 +105,9 @@ document.addEventListener('DOMContentLoaded', async () => {
         if (typeof zxcvbn !== 'undefined') {
             const result = zxcvbn(generatedPassword);
             const strengthScore = result.score;
-            strengthText.textContent = currentTranslations[getStrengthDescription(strengthScore)];
-            crackTimeText.textContent = translateCrackTime(result.crack_times_display.offline_slow_hashing_1e4_per_second);
+            const crackTime = translateCrackTime(result.crack_times_display.offline_slow_hashing_1e4_per_second);
+            strengthText.textContent = currentTranslations[getStrengthDescription(strengthScore, crackTime)];
+            crackTimeText.textContent = crackTime;
         }
 
 
@@ -158,8 +159,9 @@ document.addEventListener('DOMContentLoaded', async () => {
                 if (typeof zxcvbn !== 'undefined') {
                     const result = zxcvbn(currentPassword);
                     const strengthScore = result.score;
-                    strengthText.textContent = currentTranslations[getStrengthDescription(strengthScore)];
-                    crackTimeText.textContent = translateCrackTime(result.crack_times_display.offline_slow_hashing_1e4_per_second);
+                    const crackTime = translateCrackTime(result.crack_times_display.offline_slow_hashing_1e4_per_second);
+                    strengthText.textContent = currentTranslations[getStrengthDescription(strengthScore, crackTime)];
+                    crackTimeText.textContent = crackTime;
                 }
             } else {
                 // Fallback for when there is no password yet
@@ -176,7 +178,8 @@ document.addEventListener('DOMContentLoaded', async () => {
                 if (typeof zxcvbn !== 'undefined') {
                     const result = zxcvbn(currentPassword);
                     const strengthScore = result.score;
-                    strengthText.textContent = currentTranslations[getStrengthDescription(strengthScore)];
+                    const crackTime = translateCrackTime(result.crack_times_display.offline_slow_hashing_1e4_per_second);
+                    strengthText.textContent = currentTranslations[getStrengthDescription(strengthScore, crackTime)];
                 }
             }
         }
@@ -219,8 +222,9 @@ document.addEventListener('DOMContentLoaded', async () => {
                 if (typeof zxcvbn !== 'undefined') {
                     const result = zxcvbn(password);
                     const strengthScore = result.score;
-                    strengthText.textContent = currentTranslations[getStrengthDescription(strengthScore)];
-                    crackTimeText.textContent = translateCrackTime(result.crack_times_display.offline_slow_hashing_1e4_per_second);
+                    const crackTime = translateCrackTime(result.crack_times_display.offline_slow_hashing_1e4_per_second);
+                    strengthText.textContent = currentTranslations[getStrengthDescription(strengthScore, crackTime)];
+                    crackTimeText.textContent = crackTime;
                 }
             });
             passwordHistoryList.appendChild(listItem);
