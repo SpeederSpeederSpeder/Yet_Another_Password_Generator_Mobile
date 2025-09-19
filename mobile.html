@@ -2,19 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>Générateur de Mot de Passe</title>
     <link rel="icon" href="Krypto.png" type="image/png">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mobile.css">
     <link rel="stylesheet" href="theme-switcher.css">
-    <script>
-        if (window.innerWidth <= 600) {
-            window.location.href = 'mobile.html';
-        }
-    </script>
 </head>
 <body>
     <div class="container">
+        <h1>Générateur de Mot de Passe</h1>
         <div class="tabs">
             <button class="tab-button active" data-tab="generator">Générateur</button>
             <button class="tab-button" data-tab="history">Historique</button>
@@ -22,7 +18,6 @@
         </div>
 
         <div id="generator" class="tab-content active">
-            <h1>Générateur de Mot de Passe</h1>
             <div class="password-display">
                 <input type="text" id="password" readonly>
                 <button id="copyButton">Copier</button>
@@ -57,7 +52,6 @@
         </div>
 
         <div id="settings" class="tab-content">
-            <h1>Paramètres</h1>
             <div class="settings-content">
                 <div class="language-selector">
                     <label for="language">Langue:</label>
@@ -96,7 +90,7 @@
     </div>
     <div id="copyMessage" class="hidden"></div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/zxcvbn/4.4.2/zxcvbn.js"></script>
-    <script type="module" src="script.js"></script>
+    <script type="module" src="mobile.js"></script>
     <script type="module" src="theme-switcher.js"></script>
 </body>
 </html>
