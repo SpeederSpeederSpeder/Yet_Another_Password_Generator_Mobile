@@ -126,6 +126,16 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         if (copyButton) copyButton.textContent = translations.copyButton;
 
+        // Traduire les onglets
+        const generatorTab = document.querySelector('.tab-button[data-tab="generator"]');
+        if (generatorTab) generatorTab.textContent = translations.generatorTab;
+
+        const historyTab = document.querySelector('.tab-button[data-tab="history"]');
+        if (historyTab) historyTab.textContent = translations.historyTab;
+
+        const settingsTab = document.querySelector('.tab-button[data-tab="settings"]');
+        if (settingsTab) settingsTab.textContent = translations.settingsTab;
+
         if (includeUppercase) includeUppercase.nextSibling.textContent = translations.uppercaseLabel;
 
         if (includeLowercase) includeLowercase.nextSibling.textContent = translations.lowercaseLabel;
