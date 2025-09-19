@@ -1,5 +1,8 @@
-export const ms = {
+﻿export const ms = {
     title: "Penjana Kata Laluan",
+    generatorTab: "Penjana",
+    historyTab: "Sejarah",
+    settingsTab: "Tetapan",
     passwordLengthLabel: "Panjang kata laluan:",
     copyButton: "Salin",
     copyAlert: "Kata laluan disalin ke papan klip!",
@@ -35,7 +38,5 @@ export const ms = {
         "century": "abad",
         "centuries": "abad"
     },
-    pwnedStatusChecking: "Memeriksa...",
-    pwnedStatusPwned: "Kata laluan ini telah dibocorkan!",
-    pwnedStatusSafe: "Kata laluan selamat"
 };
+

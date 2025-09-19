@@ -1,5 +1,8 @@
-export const no = {
+﻿export const no = {
     title: "Passordgenerator",
+    generatorTab: "Generator",
+    historyTab: "Historikk",
+    settingsTab: "Innstillinger",
     passwordLengthLabel: "Passordlengde:",
     copyButton: "Kopier",
     copyAlert: "Passord kopiert til utklippstavlen!",
@@ -35,7 +38,5 @@ export const no = {
         "century": "århundre",
         "centuries": "århundrer"
     },
-    pwnedStatusChecking: "Sjekker...",
-    pwnedStatusPwned: "Dette passordet har blitt kompromittert!",
-    pwnedStatusSafe: "Passordet er trygt"
 };
+

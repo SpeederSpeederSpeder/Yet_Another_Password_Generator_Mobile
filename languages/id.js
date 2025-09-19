@@ -1,5 +1,8 @@
-export const id = {
+﻿export const id = {
     title: "Generator Kata Sandi",
+    generatorTab: "Generator",
+    historyTab: "Riwayat",
+    settingsTab: "Pengaturan",
     passwordLengthLabel: "Panjang kata sandi:",
     copyButton: "Salin",
     copyAlert: "Kata sandi disalin ke clipboard!",
@@ -35,7 +38,5 @@ export const id = {
         "century": "abad",
         "centuries": "abad"
     },
-    pwnedStatusChecking: "Memeriksa...",
-    pwnedStatusPwned: "Kata sandi ini telah bocor!",
-    pwnedStatusSafe: "Kata sandi aman"
 };
+

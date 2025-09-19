@@ -1,5 +1,8 @@
-export const pl = {
+﻿export const pl = {
     title: "Generator haseł",
+    generatorTab: "Generator",
+    historyTab: "Historia",
+    settingsTab: "Ustawienia",
     passwordLengthLabel: "Długość hasła:",
     copyButton: "Kopiuj",
     copyAlert: "Hasło skopiowane do schowka!",
@@ -35,7 +38,5 @@ export const pl = {
         "century": "wiek",
         "centuries": "wieki"
     },
-    pwnedStatusChecking: "Sprawdzanie...",
-    pwnedStatusPwned: "To hasło zostało ujawnione!",
-    pwnedStatusSafe: "Hasło jest bezpieczne"
 };
+

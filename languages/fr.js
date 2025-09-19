@@ -38,7 +38,4 @@ export const fr = {
         "century": "siècle",
         "centuries": "siècles"
     },
-    pwnedStatusChecking: "Vérification...",
-    pwnedStatusPwned: "Ce mot de passe a été compromis !",
-    pwnedStatusSafe: "Mot de passe sécurisé"
 };

@@ -1,5 +1,8 @@
-export const es = {
+﻿export const es = {
     title: "Generador de Contraseñas",
+    generatorTab: "Generador",
+    historyTab: "Historial",
+    settingsTab: "Configuración",
     passwordLengthLabel: "Longitud de la contraseña:",
     copyButton: "Copiar",
     copyAlert: "¡Contraseña copiada al portapapeles!",
@@ -35,7 +38,5 @@ export const es = {
         "century": "siglo",
         "centuries": "siglos"
     },
-    pwnedStatusChecking: "Verificando...",
-    pwnedStatusPwned: "¡Esta contraseña ha sido comprometida!",
-    pwnedStatusSafe: "Contraseña segura"
 };
+

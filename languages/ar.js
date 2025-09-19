@@ -1,5 +1,8 @@
-export const ar = {
+﻿export const ar = {
     title: "مولد كلمات المرور",
+    generatorTab: "مولد",
+    historyTab: "السجل",
+    settingsTab: "الإعدادات",
     passwordLengthLabel: "طول كلمة المرور:",
     copyButton: "نسخ",
     copyAlert: "تم نسخ كلمة المرور إلى الحافظة!",
@@ -35,7 +38,5 @@ export const ar = {
         "century": "قرن",
         "centuries": "قرون"
     },
-    pwnedStatusChecking: "جارٍ التحقق...",
-    pwnedStatusPwned: "تم تسريب كلمة المرور هذه!",
-    pwnedStatusSafe: "كلمة المرور آمنة"
 };
+

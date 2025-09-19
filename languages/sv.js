@@ -1,5 +1,8 @@
-export const sv = {
+﻿export const sv = {
     title: "Lösenordsgenerator",
+    generatorTab: "Generator",
+    historyTab: "Historik",
+    settingsTab: "Inställningar",
     passwordLengthLabel: "Lösenordslängd:",
     copyButton: "Kopiera",
     copyAlert: "Lösenord kopierat till urklipp!",
@@ -17,7 +20,23 @@ export const sv = {
     historyTitle: "Lösenordshistorik",
     clearHistoryButton: "Rensa historik",
     noHistory: "Inget lösenord genererat än.",
-    pwnedStatusChecking: "Kontrollerar...",
-    pwnedStatusPwned: "Detta lösenord har blivit komprometterat!",
-    pwnedStatusSafe: "Lösenordet är säkert"
+    crackTimeLabel: "Beräknad tid att knäcka",
+    crackTimeUnits: {
+        "instant": "omedelbart",
+        "second": "sekund",
+        "seconds": "sekunder",
+        "minute": "minut",
+        "minutes": "minuter",
+        "hour": "timme",
+        "hours": "timmar",
+        "day": "dag",
+        "days": "dagar",
+        "month": "månad",
+        "months": "månader",
+        "year": "år",
+        "years": "år",
+        "century": "århundrade",
+        "centuries": "århundraden"
+    },
 };
+

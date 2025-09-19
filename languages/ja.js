@@ -1,5 +1,8 @@
-export const ja = {
+﻿export const ja = {
     title: "パスワードジェネレーター",
+    generatorTab: "ジェネレーター",
+    historyTab: "履歴",
+    settingsTab: "設定",
     passwordLengthLabel: "パスワードの長さ:",
     copyButton: "コピー",
     copyAlert: "パスワードがクリップボードにコピーされました！",
@@ -35,7 +38,5 @@ export const ja = {
         "century": "世紀",
         "centuries": "世紀"
     },
-    pwnedStatusChecking: "確認中...",
-    pwnedStatusPwned: "このパスワードは漏洩しています！",
-    pwnedStatusSafe: "パスワードは安全です"
 };
+

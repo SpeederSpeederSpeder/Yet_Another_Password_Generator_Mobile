@@ -1,5 +1,8 @@
-export const ro = {
+﻿export const ro = {
     title: "Generator de parole",
+    generatorTab: "Generator",
+    historyTab: "Istoric",
+    settingsTab: "Setări",
     passwordLengthLabel: "Lungimea parolei:",
     copyButton: "Copiază",
     copyAlert: "Parola a fost copiată în clipboard!",
@@ -35,7 +38,5 @@ export const ro = {
         "century": "secol",
         "centuries": "secole"
     },
-    pwnedStatusChecking: "Se verifică...",
-    pwnedStatusPwned: "Această parolă a fost compromisă!",
-    pwnedStatusSafe: "Parola este sigură"
 };
+

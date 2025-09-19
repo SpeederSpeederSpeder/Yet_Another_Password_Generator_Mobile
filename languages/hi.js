@@ -1,5 +1,8 @@
-export const hi = {
+﻿export const hi = {
     title: "पासवर्ड जनरेटर",
+    generatorTab: "जनरेटर",
+    historyTab: "इतिहास",
+    settingsTab: "सेटिंग्स",
     passwordLengthLabel: "पासवर्ड की लंबाई:",
     copyButton: "कॉपी करें",
     copyAlert: "पासवर्ड क्लिपबोर्ड पर कॉपी हो गया है!",
@@ -35,7 +38,5 @@ export const hi = {
         "century": "सदी",
         "centuries": "सदियाँ"
     },
-    pwnedStatusChecking: "जांच हो रही है...",
-    pwnedStatusPwned: "यह पासवर्ड लीक हो चुका है!",
-    pwnedStatusSafe: "पासवर्ड सुरक्षित है"
 };
+

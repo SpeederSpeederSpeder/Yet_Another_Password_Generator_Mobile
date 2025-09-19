@@ -1,5 +1,8 @@
-export const uk = {
+﻿export const uk = {
     title: "Генератор Паролів",
+    generatorTab: "Генератор",
+    historyTab: "Історія",
+    settingsTab: "Налаштування",
     passwordLengthLabel: "Довжина пароля:",
     copyButton: "Копіювати",
     copyAlert: "Пароль скопійовано в буфер обміну!",
@@ -35,7 +38,5 @@ export const uk = {
         "century": "століття",
         "centuries": "століття"
     },
-    pwnedStatusChecking: "Перевірка...",
-    pwnedStatusPwned: "Цей пароль був скомпрометований!",
-    pwnedStatusSafe: "Пароль безпечний"
 };
+

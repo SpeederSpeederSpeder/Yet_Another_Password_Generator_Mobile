@@ -1,5 +1,8 @@
-export const he = {
+﻿export const he = {
     title: "מחולל סיסמאות",
+    generatorTab: "מחולל",
+    historyTab: "היסטוריה",
+    settingsTab: "הגדרות",
     passwordLengthLabel: "אורך הסיסמה:",
     copyButton: "העתק",
     copyAlert: "הסיסמה הועתקה ללוח!",
@@ -35,7 +38,5 @@ export const he = {
         "century": "מאה",
         "centuries": "מאות"
     },
-    pwnedStatusChecking: "בודק...",
-    pwnedStatusPwned: "הסיסמה הזו דלפה!",
-    pwnedStatusSafe: "הסיסמה בטוחה"
 };
+

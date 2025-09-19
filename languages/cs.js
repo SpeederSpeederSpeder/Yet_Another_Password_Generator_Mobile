@@ -1,5 +1,8 @@
-export const cs = {
+﻿export const cs = {
     title: "Generátor hesel",
+    generatorTab: "Generátor",
+    historyTab: "Historie",
+    settingsTab: "Nastavení",
     passwordLengthLabel: "Délka hesla:",
     copyButton: "Kopírovat",
     copyAlert: "Heslo zkopírováno do schránky!",
@@ -35,7 +38,5 @@ export const cs = {
         "century": "století",
         "centuries": "století"
     },
-    pwnedStatusChecking: "Kontrola...",
-    pwnedStatusPwned: "Toto heslo bylo kompromitováno!",
-    pwnedStatusSafe: "Heslo je bezpečné"
 };
+

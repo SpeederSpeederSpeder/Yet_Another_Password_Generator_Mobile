@@ -1,5 +1,8 @@
-export const zh = {
+﻿export const zh = {
     title: "密码生成器",
+    generatorTab: "生成器",
+    historyTab: "历史",
+    settingsTab: "设置",
     passwordLengthLabel: "密码长度:",
     copyButton: "复制",
     copyAlert: "密码已复制到剪贴板!",
@@ -35,7 +38,5 @@ export const zh = {
         "century": "世纪",
         "centuries": "世纪"
     },
-    pwnedStatusChecking: "正在检查...",
-    pwnedStatusPwned: "此密码已泄露!",
-    pwnedStatusSafe: "密码安全"
 };
+

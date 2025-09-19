@@ -1,5 +1,8 @@
-export const fi = {
+﻿export const fi = {
     title: "Salasanageneraattori",
+    generatorTab: "Generaattori",
+    historyTab: "Historia",
+    settingsTab: "Asetukset",
     passwordLengthLabel: "Salasanan pituus:",
     copyButton: "Kopioi",
     copyAlert: "Salasana kopioitu leikepöydälle!",
@@ -35,7 +38,5 @@ export const fi = {
         "century": "vuosisata",
         "centuries": "vuosisadat"
     },
-    pwnedStatusChecking: "Tarkistetaan...",
-    pwnedStatusPwned: "Tämä salasana on vaarantunut!",
-    pwnedStatusSafe: "Salasana on turvallinen"
 };
+

@@ -1,5 +1,8 @@
-export const tr = {
+﻿export const tr = {
     title: "Şifre Oluşturucu",
+    generatorTab: "Oluşturucu",
+    historyTab: "Geçmiş",
+    settingsTab: "Ayarlar",
     passwordLengthLabel: "Şifre Uzunluğu:",
     copyButton: "Kopyala",
     copyAlert: "Şifre panoya kopyalandı!",
@@ -35,7 +38,5 @@ export const tr = {
         "century": "yüzyıl",
         "centuries": "yüzyıllar"
     },
-    pwnedStatusChecking: "Kontrol ediliyor...",
-    pwnedStatusPwned: "Bu şifre ele geçirildi!",
-    pwnedStatusSafe: "Şifre güvenli"
 };
+

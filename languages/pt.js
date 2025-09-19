@@ -1,5 +1,8 @@
-export const pt = {
+﻿export const pt = {
     title: "Gerador de Senhas",
+    generatorTab: "Gerador",
+    historyTab: "Histórico",
+    settingsTab: "Configurações",
     passwordLengthLabel: "Comprimento da senha:",
     copyButton: "Copiar",
     copyAlert: "Senha copiada para a área de transferência!",
@@ -35,7 +38,5 @@ export const pt = {
         "century": "século",
         "centuries": "séculos"
     },
-    pwnedStatusChecking: "Verificando...",
-    pwnedStatusPwned: "Esta senha foi comprometida!",
-    pwnedStatusSafe: "Senha segura"
 };
+

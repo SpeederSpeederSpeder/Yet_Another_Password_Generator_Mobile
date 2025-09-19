@@ -1,5 +1,8 @@
-export const de = {
+﻿export const de = {
     title: "Passwort-Generator",
+    generatorTab: "Generator",
+    historyTab: "Verlauf",
+    settingsTab: "Einstellungen",
     passwordLengthLabel: "Passwortlänge:",
     copyButton: "Kopieren",
     copyAlert: "Passwort in die Zwischenablage kopiert!",
@@ -35,7 +38,5 @@ export const de = {
         "century": "Jahrhundert",
         "centuries": "Jahrhunderte"
     },
-    pwnedStatusChecking: "Überprüfung...",
-    pwnedStatusPwned: "Dieses Passwort wurde kompromittiert!",
-    pwnedStatusSafe: "Passwort ist sicher"
 };
+

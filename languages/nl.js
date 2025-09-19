@@ -1,5 +1,8 @@
-export const nl = {
+﻿export const nl = {
     title: "Wachtwoordgenerator",
+    generatorTab: "Generator",
+    historyTab: "Geschiedenis",
+    settingsTab: "Instellingen",
     passwordLengthLabel: "Wachtwoordlengte:",
     copyButton: "Kopiëren",
     copyAlert: "Wachtwoord gekopieerd naar klembord!",
@@ -35,7 +38,5 @@ export const nl = {
         "century": "eeuw",
         "centuries": "eeuwen"
     },
-    pwnedStatusChecking: "Bezig met controleren...",
-    pwnedStatusPwned: "Dit wachtwoord is gecompromitteerd!",
-    pwnedStatusSafe: "Wachtwoord is veilig"
 };
+

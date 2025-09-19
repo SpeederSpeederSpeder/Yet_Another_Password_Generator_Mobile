@@ -1,5 +1,8 @@
-export const th = {
+﻿export const th = {
     title: "เครื่องสร้างรหัสผ่าน",
+    generatorTab: "ตัวสร้าง",
+    historyTab: "ประวัติ",
+    settingsTab: "การตั้งค่า",
     passwordLengthLabel: "ความยาวรหัสผ่าน:",
     copyButton: "คัดลอก",
     copyAlert: "คัดลอกรหัสผ่านไปยังคลิปบอร์ดแล้ว!",
@@ -35,7 +38,5 @@ export const th = {
         "century": "ศตวรรษ",
         "centuries": "ศตวรรษ"
     },
-    pwnedStatusChecking: "กำลังตรวจสอบ...",
-    pwnedStatusPwned: "รหัสผ่านนี้ถูกเปิดเผยแล้ว!",
-    pwnedStatusSafe: "รหัสผ่านปลอดภัย"
 };
+

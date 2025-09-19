@@ -1,5 +1,8 @@
-export const ko = {
+﻿export const ko = {
     title: "비밀번호 생성기",
+    generatorTab: "생성기",
+    historyTab: "기록",
+    settingsTab: "설정",
     passwordLengthLabel: "비밀번호 길이:",
     copyButton: "복사",
     copyAlert: "비밀번호가 클립보드에 복사되었습니다!",
@@ -35,7 +38,5 @@ export const ko = {
         "century": "세기",
         "centuries": "세기"
     },
-    pwnedStatusChecking: "확인 중...",
-    pwnedStatusPwned: "이 비밀번호는 유출되었습니다!",
-    pwnedStatusSafe: "비밀번호는 안전합니다"
 };
+

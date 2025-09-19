@@ -1,5 +1,8 @@
-export const vi = {
+﻿export const vi = {
     title: "Trình tạo mật khẩu",
+    generatorTab: "Trình tạo",
+    historyTab: "Lịch sử",
+    settingsTab: "Cài đặt",
     passwordLengthLabel: "Độ dài mật khẩu:",
     copyButton: "Sao chép",
     copyAlert: "Mật khẩu đã được sao chép vào clipboard!",
@@ -35,7 +38,5 @@ export const vi = {
         "century": "thế kỷ",
         "centuries": "thế kỷ"
     },
-    pwnedStatusChecking: "Đang kiểm tra...",
-    pwnedStatusPwned: "Mật khẩu này đã bị rò rỉ!",
-    pwnedStatusSafe: "Mật khẩu an toàn"
 };
+

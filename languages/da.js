@@ -1,5 +1,8 @@
-export const da = {
+﻿export const da = {
     title: "Adgangskodegenerator",
+    generatorTab: "Generator",
+    historyTab: "Historik",
+    settingsTab: "Indstillinger",
     passwordLengthLabel: "Adgangskodelængde:",
     copyButton: "Kopiér",
     copyAlert: "Adgangskode kopieret til udklipsholderen!",
@@ -35,7 +38,5 @@ export const da = {
         "century": "århundrede",
         "centuries": "århundreder"
     },
-    pwnedStatusChecking: "Tjekker...",
-    pwnedStatusPwned: "Denne adgangskode er blevet kompromitteret!",
-    pwnedStatusSafe: "Adgangskoden er sikker"
 };
+

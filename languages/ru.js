@@ -1,5 +1,8 @@
-export const ru = {
+﻿export const ru = {
     title: "Генератор Паролей",
+    generatorTab: "Генератор",
+    historyTab: "История",
+    settingsTab: "Настройки",
     passwordLengthLabel: "Длина пароля:",
     copyButton: "Копировать",
     copyAlert: "Пароль скопирован в буфер обмена!",
@@ -35,7 +38,5 @@ export const ru = {
         "century": "век",
         "centuries": "века"
     },
-    pwnedStatusChecking: "Проверка...",
-    pwnedStatusPwned: "Этот пароль был скомпрометирован!",
-    pwnedStatusSafe: "Пароль безопасен"
 };
+
