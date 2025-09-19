@@ -1,25 +1,26 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Empêche le défilement global */
+}
+
 body {
     font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; /* Modern font */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
     background-color: var(--background-color);
     color: var(--text-color);
-    margin: 0;
     transition: background-color 0.4s ease, color 0.4s ease; /* Smooth theme transition */
 }
 
 .container {
     background-color: var(--card-bg); /* New variable for card background */
     padding: 15px; /* Further reduced padding */
-    border-radius: 12px; /* More rounded corners */
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2); /* More pronounced, softer shadow */
     text-align: center;
     width: 100%;
-    max-width: 600px; /* Wider container */
-    transition: background-color 0.4s ease, box-shadow 0.4s ease, transform 0.2s ease; /* Added transform for subtle effect */
-    border: 2px solid var(--border-color); /* More prominent border */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
 }
 
 .container:hover {
@@ -365,12 +366,20 @@ h1 {
 
 /* Media Queries pour l'affichage mobile */
 @media (max-width: 600px) {
+    body {
+        min-height: -webkit-fill-available; /* Pour Safari mobile */
+        height: 100vh;
+    }
+
     .container {
-        padding: 20px;
-        max-width: 100%;
+        padding: 15px;
+        width: 100%;
+        height: 100%;
         border-radius: 0;
         box-shadow: none;
         border: none;
+        max-width: 100%;
+        box-sizing: border-box;
     }
 
     h1 {

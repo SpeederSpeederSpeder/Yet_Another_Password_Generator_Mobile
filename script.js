@@ -121,6 +121,15 @@ document.addEventListener('DOMContentLoaded', async () => {
         const h1Element = document.querySelector('h1');
         if (h1Element) h1Element.textContent = translations.title;
 
+        const tabGenerator = document.querySelector('.tab-button[data-tab="generator"]');
+        if (tabGenerator) tabGenerator.textContent = translations.generatorTab;
+
+        const tabHistory = document.querySelector('.tab-button[data-tab="history"]');
+        if (tabHistory) tabHistory.textContent = translations.historyTab;
+
+        const tabSettings = document.querySelector('.tab-button[data-tab="settings"]');
+        if (tabSettings) tabSettings.textContent = translations.settingsTab;
+
         const passwordLengthLabelElement = document.querySelector('label[for="passwordLength"]');
         if (passwordLengthLabelElement) passwordLengthLabelElement.textContent = translations.passwordLengthLabel;
 
