@@ -1,5 +1,8 @@
 export const fr = {
     title: "Générateur de Mot de Passe",
+    generatorTab: "Générateur",
+    historyTab: "Historique",
+    settingsTab: "Paramètres",
     passwordLengthLabel: "Longueur du mot de passe:",
     copyButton: "Copier",
     copyAlert: "Mot de passe copié dans le presse-papiers !",
