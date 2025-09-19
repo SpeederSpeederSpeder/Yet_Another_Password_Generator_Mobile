@@ -38,5 +38,6 @@
         "century": "eeuw",
         "centuries": "eeuwen"
     },
+    languageLabel: "Taal:",
 };
 

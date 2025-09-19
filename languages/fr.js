@@ -38,4 +38,5 @@ export const fr = {
         "century": "siècle",
         "centuries": "siècles"
     },
+    languageLabel: "Langue:",
 };

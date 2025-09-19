@@ -38,5 +38,6 @@
         "century": "secol",
         "centuries": "secole"
     },
+    languageLabel: "Limbă:",
 };
 

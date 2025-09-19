@@ -38,5 +38,6 @@
         "century": "século",
         "centuries": "séculos"
     },
+    languageLabel: "Idioma:",
 };
 

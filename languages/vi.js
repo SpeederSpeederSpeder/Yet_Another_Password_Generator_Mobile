@@ -38,5 +38,6 @@
         "century": "thế kỷ",
         "centuries": "thế kỷ"
     },
+    languageLabel: "Ngôn ngữ:",
 };
 

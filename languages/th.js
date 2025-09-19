@@ -38,5 +38,6 @@
         "century": "ศตวรรษ",
         "centuries": "ศตวรรษ"
     },
+    languageLabel: "ภาษา:",
 };
 

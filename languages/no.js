@@ -38,5 +38,6 @@
         "century": "århundre",
         "centuries": "århundrer"
     },
+    languageLabel: "Språk:",
 };
 

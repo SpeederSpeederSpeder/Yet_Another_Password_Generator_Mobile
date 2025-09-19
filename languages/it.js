@@ -41,5 +41,6 @@
         "century": "secolo",
         "centuries": "secoli"
     },
+    languageLabel: "Lingua:",
 };
 

@@ -38,5 +38,6 @@
         "century": "siglo",
         "centuries": "siglos"
     },
+    languageLabel: "Idioma:",
 };
 

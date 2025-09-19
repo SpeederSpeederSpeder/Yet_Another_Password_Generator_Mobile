@@ -38,5 +38,6 @@
         "century": "abad",
         "centuries": "abad"
     },
+    languageLabel: "Bahasa:",
 };
 

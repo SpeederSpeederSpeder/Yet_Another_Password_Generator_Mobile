@@ -38,5 +38,6 @@
         "century": "wiek",
         "centuries": "wieki"
     },
+    languageLabel: "Język:",
 };
 

@@ -38,5 +38,6 @@
         "century": "століття",
         "centuries": "століття"
     },
+    languageLabel: "Мова:",
 };
 

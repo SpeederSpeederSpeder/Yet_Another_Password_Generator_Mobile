@@ -38,5 +38,6 @@
         "century": "世纪",
         "centuries": "世纪"
     },
+    languageLabel: "语言:",
 };
 

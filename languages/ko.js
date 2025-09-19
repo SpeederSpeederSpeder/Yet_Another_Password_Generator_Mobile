@@ -38,5 +38,6 @@
         "century": "세기",
         "centuries": "세기"
     },
+    languageLabel: "언어:",
 };
 

@@ -38,5 +38,6 @@
         "century": "век",
         "centuries": "века"
     },
+    languageLabel: "Язык:",
 };
 

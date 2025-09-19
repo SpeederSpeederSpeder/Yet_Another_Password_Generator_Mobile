@@ -38,5 +38,6 @@
         "century": "सदी",
         "centuries": "सदियाँ"
     },
+    languageLabel: "भाषा:",
 };
 

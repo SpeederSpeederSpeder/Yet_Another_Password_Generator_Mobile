@@ -155,6 +155,9 @@ document.addEventListener('DOMContentLoaded', async () => {
         if (historyTitle) historyTitle.textContent = translations.historyTitle;
 
         if (clearHistoryButton) clearHistoryButton.textContent = translations.clearHistoryButton;
+
+        const languageLabel = document.querySelector('label[for="language"]');
+        if (languageLabel) languageLabel.textContent = translations.languageLabel;
     };
 
     // Fonction pour charger les traductions

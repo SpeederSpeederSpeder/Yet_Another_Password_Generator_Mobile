@@ -38,5 +38,6 @@
         "century": "מאה",
         "centuries": "מאות"
     },
+    languageLabel: "שפה:",
 };
 

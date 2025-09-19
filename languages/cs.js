@@ -38,5 +38,6 @@
         "century": "století",
         "centuries": "století"
     },
+    languageLabel: "Jazyk:",
 };
 

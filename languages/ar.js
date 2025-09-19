@@ -38,5 +38,6 @@
         "century": "قرن",
         "centuries": "قرون"
     },
+    languageLabel: "لغة:",
 };
 

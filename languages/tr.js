@@ -38,5 +38,6 @@
         "century": "yüzyıl",
         "centuries": "yüzyıllar"
     },
+    languageLabel: "Dil:",
 };
 
