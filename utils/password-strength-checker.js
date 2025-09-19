@@ -38,13 +38,13 @@ export function getStrengthDescription(zxcvbnScore, crackTime) {
 function getStrengthFromCrackTime(crackTime) {
     if (crackTime.includes("instantané")) {
         return "Très faible";
-    } else if (crackTime.includes("seconde")) {
+    } else if (crackTime.includes("seconde") || crackTime.includes("minute")) {
         return "Faible";
-    } else if (crackTime.includes("minute") || crackTime.includes("heure")) {
+    } else if (crackTime.includes("heure") || crackTime.includes("jour")) {
         return "Moyen";
-    } else if (crackTime.includes("jour") || crackTime.includes("mois")) {
+    } else if (crackTime.includes("mois") || crackTime.includes("an")) {
         return "Fort";
-    } else if (crackTime.includes("an") || crackTime.includes("siècle")) {
+    } else if (crackTime.includes("siècle")) {
         return "Très Fort";
     }
     return "Très faible";
