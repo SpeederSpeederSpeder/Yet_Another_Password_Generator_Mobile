@@ -255,25 +255,15 @@ h1 {
     left: 50%;
     transform: translate(-50%, -50%);
     color: white;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: bold;
-    font-family: 'Material Icons';
 }
 
-#includeUppercase:checked::after {
-    content: 'text_fields';
-}
-
-#includeLowercase:checked::after {
-    content: 'text_fields';
-}
-
-#includeNumbers:checked::after {
-    content: 'pin';
-}
-
+#includeUppercase:checked::after,
+#includeLowercase:checked::after,
+#includeNumbers:checked::after,
 #includeSymbols:checked::after {
-    content: 'priority_high';
+    content: '✓';
 }
 
 /* Styles pour l'affichage de la force du mot de passe */
