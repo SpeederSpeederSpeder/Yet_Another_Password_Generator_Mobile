@@ -229,10 +229,6 @@ h1 {
     transition: color 0.3s ease;
 }
 
-.character-type-options label .material-icons {
-    vertical-align: middle;
-    margin-right: 5px;
-}
 
 .character-type-options input[type="checkbox"] {
     -webkit-appearance: none;
@@ -254,14 +250,30 @@ h1 {
 }
 
 .character-type-options input[type="checkbox"]:checked::after {
-    content: '✔';
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: white; /* White checkmark */
-    font-size: 16px; /* Larger checkmark */
+    color: white;
+    font-size: 14px;
     font-weight: bold;
+    font-family: 'Material Icons';
+}
+
+#includeUppercase:checked::after {
+    content: 'text_fields';
+}
+
+#includeLowercase:checked::after {
+    content: 'text_fields';
+}
+
+#includeNumbers:checked::after {
+    content: 'pin';
+}
+
+#includeSymbols:checked::after {
+    content: 'priority_high';
 }
 
 /* Styles pour l'affichage de la force du mot de passe */
