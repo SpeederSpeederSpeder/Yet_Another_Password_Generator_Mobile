@@ -229,6 +229,11 @@ h1 {
     transition: color 0.3s ease;
 }
 
+.character-type-options label .material-icons {
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
 .character-type-options input[type="checkbox"] {
     -webkit-appearance: none;
     appearance: none;

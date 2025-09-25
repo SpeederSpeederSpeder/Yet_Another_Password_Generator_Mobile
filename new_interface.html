@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Générateur de Mot de Passe</title>
     <link rel="icon" href="Krypto.png" type="image/png">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="theme-switcher.css">
     <script>
         if (window.innerWidth <= 600) {
@@ -44,10 +45,10 @@
                 <input type="range" id="passwordLength" min="7" max="100" value="7">
             </div>
             <div class="character-type-options">
-                <label><input type="checkbox" id="includeUppercase" checked> Majuscules</label>
-                <label><input type="checkbox" id="includeLowercase" checked> Minuscules</label>
-                <label><input type="checkbox" id="includeNumbers" checked> Chiffres</label>
-                <label><input type="checkbox" id="includeSymbols" checked> Symboles</label>
+                <label><input type="checkbox" id="includeUppercase" checked> <i class="material-icons">text_fields</i> Majuscules</label>
+                <label><input type="checkbox" id="includeLowercase" checked> <i class="material-icons">text_fields</i> Minuscules</label>
+                <label><input type="checkbox" id="includeNumbers" checked> <i class="material-icons">pin</i> Chiffres</label>
+                <label><input type="checkbox" id="includeSymbols" checked> <i class="material-icons">priority_high</i> Symboles</label>
             </div>
         </div>
 
