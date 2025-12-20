@@ -1,6 +1,6 @@
 export const ar = {
     title: "مولد كلمات المرور",
-    generatorTab: "مولد",
+    generatorTab: "المولد",
     historyTab: "السجل",
     settingsTab: "الإعدادات",
     passwordLengthLabel: "طول كلمة المرور:",
@@ -20,7 +20,7 @@ export const ar = {
     historyTitle: "سجل كلمات المرور",
     clearHistoryButton: "مسح السجل",
     noHistory: "لم يتم إنشاء أي كلمة مرور حتى الآن.",
-    crackTimeLabel: "الوقت المقدر للكسر",
+    crackTimeLabel: "الوقت المقدر للاختراق",
     crackTimeUnits: {
         "instant": "فوري",
         "second": "ثانية",
@@ -38,10 +38,10 @@ export const ar = {
         "century": "قرن",
         "centuries": "قرون"
     },
-    languageLabel: "لغة:",
-    languageDesc: "Choose your preferred language",
-    themeLabel: "Theme",
-    themeDesc: "Change the application appearance",
-    pwnedLabel: "Security",
-    pwnedAlert: "Leaked!",
+    languageLabel: "اللغة:",
+    languageDesc: "اختر لغتك المفضلة",
+    themeLabel: "المظهر",
+    themeDesc: "تغيير مظهر التطبيق",
+    pwnedLabel: "الأمان",
+    pwnedAlert: "مسربة!",
 };

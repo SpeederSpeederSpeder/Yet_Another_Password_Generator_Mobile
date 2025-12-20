@@ -39,9 +39,9 @@ export const he = {
         "centuries": "מאות"
     },
     languageLabel: "שפה:",
-    languageDesc: "Choose your preferred language",
-    themeLabel: "Theme",
-    themeDesc: "Change the application appearance",
-    pwnedLabel: "Security",
-    pwnedAlert: "Leaked!",
+    languageDesc: "בחר את השפה המועדפת עליך",
+    themeLabel: "ערכת נושא",
+    themeDesc: "שנה את מראה האפליקציה",
+    pwnedLabel: "אבטחה",
+    pwnedAlert: "דלפה!",
 };

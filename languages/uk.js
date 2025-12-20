@@ -39,9 +39,9 @@ export const uk = {
         "centuries": "століття"
     },
     languageLabel: "Мова:",
-    languageDesc: "Choose your preferred language",
-    themeLabel: "Theme",
-    themeDesc: "Change the application appearance",
-    pwnedLabel: "Security",
-    pwnedAlert: "Leaked!",
+    languageDesc: "Оберіть мову",
+    themeLabel: "Тема",
+    themeDesc: "Змінити вигляд програми",
+    pwnedLabel: "Безпека",
+    pwnedAlert: "Витік!",
 };

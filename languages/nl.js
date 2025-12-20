@@ -39,9 +39,9 @@ export const nl = {
         "centuries": "eeuwen"
     },
     languageLabel: "Taal:",
-    languageDesc: "Choose your preferred language",
-    themeLabel: "Theme",
-    themeDesc: "Change the application appearance",
-    pwnedLabel: "Security",
-    pwnedAlert: "Leaked!",
+    languageDesc: "Kies uw voorkeurstaal",
+    themeLabel: "Thema",
+    themeDesc: "Wijzig het uiterlijk van de app",
+    pwnedLabel: "Beveiliging",
+    pwnedAlert: "Gelekt!",
 };

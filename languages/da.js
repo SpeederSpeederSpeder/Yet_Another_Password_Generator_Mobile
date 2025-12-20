@@ -39,9 +39,9 @@ export const da = {
         "centuries": "århundreder"
     },
     languageLabel: "Sprog:",
-    languageDesc: "Choose your preferred language",
-    themeLabel: "Theme",
-    themeDesc: "Change the application appearance",
-    pwnedLabel: "Security",
-    pwnedAlert: "Leaked!",
+    languageDesc: "Vælg dit foretrukne sprog",
+    themeLabel: "Tema",
+    themeDesc: "Skift appens udseende",
+    pwnedLabel: "Sikkerhed",
+    pwnedAlert: "Lækket!",
 };

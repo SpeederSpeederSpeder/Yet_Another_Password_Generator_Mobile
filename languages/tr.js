@@ -11,37 +11,37 @@ export const tr = {
     lowercaseLabel: "Küçük Harfler",
     numbersLabel: "Rakamlar",
     symbolsLabel: "Semboller",
-    passwordStrengthLabel: "Şifre Gücü", // Machine translated, please review
-    passwordStrengthVeryWeak: "Çok Zayıf", // Machine translated, please review
-    passwordStrengthWeak: "Zayıf", // Machine translated, please review
-    passwordStrengthMedium: "Orta", // Machine translated, please review
-    passwordStrengthStrong: "Güçlü", // Machine translated, please review
-    passwordStrengthVeryStrong: "Çok Güçlü", // Machine translated, please review
-    historyTitle: "Şifre Geçmişi", // Machine translated, please review
-    clearHistoryButton: "Geçmişi Temizle", // Machine translated, please review
-    noHistory: "Henüz şifre oluşturulmadı.", // Machine translated, please review
+    passwordStrengthLabel: "Şifre Gücü",
+    passwordStrengthVeryWeak: "Çok Zayıf",
+    passwordStrengthWeak: "Zayıf",
+    passwordStrengthMedium: "Orta",
+    passwordStrengthStrong: "Güçlü",
+    passwordStrengthVeryStrong: "Çok Güçlü",
+    historyTitle: "Şifre Geçmişi",
+    clearHistoryButton: "Geçmişi Temizle",
+    noHistory: "Henüz şifre oluşturulmadı.",
     crackTimeLabel: "Tahmini kırılma süresi",
     crackTimeUnits: {
         "instant": "anında",
         "second": "saniye",
-        "seconds": "saniyeler",
+        "seconds": "saniye",
         "minute": "dakika",
-        "minutes": "dakikalar",
+        "minutes": "dakika",
         "hour": "saat",
-        "hours": "saatler",
+        "hours": "saat",
         "day": "gün",
-        "days": "günler",
+        "days": "gün",
         "month": "ay",
-        "months": "aylar",
+        "months": "ay",
         "year": "yıl",
-        "years": "yıllar",
+        "years": "yıl",
         "century": "yüzyıl",
-        "centuries": "yüzyıllar"
+        "centuries": "yüzyıl"
     },
     languageLabel: "Dil:",
-    languageDesc: "Choose your preferred language",
-    themeLabel: "Theme",
-    themeDesc: "Change the application appearance",
-    pwnedLabel: "Security",
-    pwnedAlert: "Leaked!",
+    languageDesc: "Tercih ettiğiniz dili seçin",
+    themeLabel: "Tema",
+    themeDesc: "Uygulama görünümünü değiştir",
+    pwnedLabel: "Güvenlik",
+    pwnedAlert: "Sızdırıldı!",
 };

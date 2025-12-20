@@ -39,9 +39,9 @@ export const ja = {
         "centuries": "世紀"
     },
     languageLabel: "言語:",
-    languageDesc: "Choose your preferred language",
-    themeLabel: "Theme",
-    themeDesc: "Change the application appearance",
-    pwnedLabel: "Security",
-    pwnedAlert: "Leaked!",
+    languageDesc: "希望の言語を選択してください",
+    themeLabel: "テーマ",
+    themeDesc: "アプリの外観を変更する",
+    pwnedLabel: "セキュリティ",
+    pwnedAlert: "漏洩済み!",
 };

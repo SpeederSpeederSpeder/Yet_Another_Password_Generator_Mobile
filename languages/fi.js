@@ -39,9 +39,9 @@ export const fi = {
         "centuries": "vuosisadat"
     },
     languageLabel: "Kieli:",
-    languageDesc: "Choose your preferred language",
-    themeLabel: "Theme",
-    themeDesc: "Change the application appearance",
-    pwnedLabel: "Security",
-    pwnedAlert: "Leaked!",
+    languageDesc: "Valitse haluamasi kieli",
+    themeLabel: "Teema",
+    themeDesc: "Muuta sovelluksen ulkoasua",
+    pwnedLabel: "Turvallisuus",
+    pwnedAlert: "Vuotanut!",
 };

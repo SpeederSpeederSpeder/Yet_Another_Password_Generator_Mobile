@@ -39,9 +39,9 @@ export const th = {
         "centuries": "ศตวรรษ"
     },
     languageLabel: "ภาษา:",
-    languageDesc: "Choose your preferred language",
-    themeLabel: "Theme",
-    themeDesc: "Change the application appearance",
-    pwnedLabel: "Security",
-    pwnedAlert: "Leaked!",
+    languageDesc: "เลือกภาษาที่คุณต้องการ",
+    themeLabel: "ธีม",
+    themeDesc: "เปลี่ยนรูปลักษณ์ของแอป",
+    pwnedLabel: "ความปลอดภัย",
+    pwnedAlert: "รั่วไหล!",
 };

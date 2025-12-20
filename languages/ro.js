@@ -39,9 +39,9 @@ export const ro = {
         "centuries": "secole"
     },
     languageLabel: "Limbă:",
-    languageDesc: "Choose your preferred language",
-    themeLabel: "Theme",
-    themeDesc: "Change the application appearance",
-    pwnedLabel: "Security",
-    pwnedAlert: "Leaked!",
+    languageDesc: "Alegeți limba preferată",
+    themeLabel: "Temă",
+    themeDesc: "Schimbați aspectul aplicației",
+    pwnedLabel: "Securitate",
+    pwnedAlert: "Expusă!",
 };

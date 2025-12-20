@@ -19,7 +19,7 @@ export const sv = {
     passwordStrengthVeryStrong: "Mycket starkt",
     historyTitle: "Lösenordshistorik",
     clearHistoryButton: "Rensa historik",
-    noHistory: "Inget lösenord genererat än.",
+    noHistory: "Inget lösenord har genererats ännu.",
     crackTimeLabel: "Beräknad tid att knäcka",
     crackTimeUnits: {
         "instant": "omedelbart",
@@ -39,9 +39,9 @@ export const sv = {
         "centuries": "århundraden"
     },
     languageLabel: "Språk:",
-    languageDesc: "Choose your preferred language",
-    themeLabel: "Theme",
-    themeDesc: "Change the application appearance",
-    pwnedLabel: "Security",
-    pwnedAlert: "Leaked!",
+    languageDesc: "Välj ditt föredragna språk",
+    themeLabel: "Tema",
+    themeDesc: "Ändra appens utseende",
+    pwnedLabel: "Säkerhet",
+    pwnedAlert: "Läckt!",
 };

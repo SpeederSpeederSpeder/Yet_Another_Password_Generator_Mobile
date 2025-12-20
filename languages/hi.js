@@ -11,22 +11,22 @@ export const hi = {
     lowercaseLabel: "छोटे अक्षर",
     numbersLabel: "संख्याएँ",
     symbolsLabel: "प्रतीक",
-    passwordStrengthLabel: "पासवर्ड की मजबूती", // Machine translated, please review
-    passwordStrengthVeryWeak: "बहुत कमजोर", // Machine translated, please review
-    passwordStrengthWeak: "कमजोर", // Machine translated, please review
-    passwordStrengthMedium: "मध्यम", // Machine translated, please review
-    passwordStrengthStrong: "मजबूत", // Machine translated, please review
-    passwordStrengthVeryStrong: "बहुत मजबूत", // Machine translated, please review
-    historyTitle: "पासवर्ड इतिहास", // Machine translated, please review
-    clearHistoryButton: "इतिहास साफ करें", // Machine translated, please review
+    passwordStrengthLabel: "पासवर्ड की मजबूती",
+    passwordStrengthVeryWeak: "बहुत कमजोर",
+    passwordStrengthWeak: "कमजोर",
+    passwordStrengthMedium: "मध्यम",
+    passwordStrengthStrong: "मजबूत",
+    passwordStrengthVeryStrong: "बहुत मजबूत",
+    historyTitle: "पासवर्ड इतिहास",
+    clearHistoryButton: "इतिहास साफ करें",
     noHistory: "अभी तक कोई पासवर्ड जनरेट नहीं हुआ है।",
     crackTimeLabel: "अनुमानित क्रैक समय",
     crackTimeUnits: {
         "instant": "तुरंत",
         "second": "सेकंड",
-        "seconds": "सेकंड्स",
+        "seconds": "सेकंड",
         "minute": "मिनट",
-        "minutes": "मिनट्स",
+        "minutes": "मिनट",
         "hour": "घंटा",
         "hours": "घंटे",
         "day": "दिन",
@@ -39,9 +39,9 @@ export const hi = {
         "centuries": "सदियाँ"
     },
     languageLabel: "भाषा:",
-    languageDesc: "Choose your preferred language",
-    themeLabel: "Theme",
-    themeDesc: "Change the application appearance",
-    pwnedLabel: "Security",
-    pwnedAlert: "Leaked!",
+    languageDesc: "अपनी पसंद की भाषा चुनें",
+    themeLabel: "थीम",
+    themeDesc: "ऐप का स्वरूप बदलें",
+    pwnedLabel: "सुरक्षा",
+    pwnedAlert: "लीक हुआ!",
 };

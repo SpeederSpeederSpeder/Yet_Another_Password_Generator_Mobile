@@ -39,9 +39,9 @@ export const zh = {
         "centuries": "世纪"
     },
     languageLabel: "语言:",
-    languageDesc: "Choose your preferred language",
-    themeLabel: "Theme",
-    themeDesc: "Change the application appearance",
-    pwnedLabel: "Security",
-    pwnedAlert: "Leaked!",
+    languageDesc: "选择您的首选语言",
+    themeLabel: "主题",
+    themeDesc: "更改应用程序外观",
+    pwnedLabel: "安全",
+    pwnedAlert: "已泄露!",
 };

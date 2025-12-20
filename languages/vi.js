@@ -39,9 +39,9 @@ export const vi = {
         "centuries": "thế kỷ"
     },
     languageLabel: "Ngôn ngữ:",
-    languageDesc: "Choose your preferred language",
-    themeLabel: "Theme",
-    themeDesc: "Change the application appearance",
-    pwnedLabel: "Security",
-    pwnedAlert: "Leaked!",
+    languageDesc: "Chọn ngôn ngữ của bạn",
+    themeLabel: "Giao diện",
+    themeDesc: "Thay đổi giao diện ứng dụng",
+    pwnedLabel: "Bảo mật",
+    pwnedAlert: "Bị rò rỉ!",
 };

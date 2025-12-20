@@ -39,9 +39,9 @@ export const id = {
         "centuries": "abad"
     },
     languageLabel: "Bahasa:",
-    languageDesc: "Choose your preferred language",
-    themeLabel: "Theme",
-    themeDesc: "Change the application appearance",
-    pwnedLabel: "Security",
-    pwnedAlert: "Leaked!",
+    languageDesc: "Pilih bahasa pilihan Anda",
+    themeLabel: "Tema",
+    themeDesc: "Ubah tampilan aplikasi",
+    pwnedLabel: "Keamanan",
+    pwnedAlert: "Bocor!",
 };

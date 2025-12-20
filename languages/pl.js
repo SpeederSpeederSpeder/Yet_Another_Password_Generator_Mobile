@@ -39,9 +39,9 @@ export const pl = {
         "centuries": "wieki"
     },
     languageLabel: "Język:",
-    languageDesc: "Choose your preferred language",
-    themeLabel: "Theme",
-    themeDesc: "Change the application appearance",
-    pwnedLabel: "Security",
-    pwnedAlert: "Leaked!",
+    languageDesc: "Wybierz preferowany język",
+    themeLabel: "Motyw",
+    themeDesc: "Zmień wygląd aplikacji",
+    pwnedLabel: "Bezpieczeństwo",
+    pwnedAlert: "Wyciekło!",
 };

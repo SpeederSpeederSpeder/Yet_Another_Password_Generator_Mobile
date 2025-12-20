@@ -11,15 +11,15 @@ export const ru = {
     lowercaseLabel: "Строчные буквы",
     numbersLabel: "Цифры",
     symbolsLabel: "Символы",
-    passwordStrengthLabel: "Надежность пароля", // Machine translated, please review
-    passwordStrengthVeryWeak: "Очень слабый", // Machine translated, please review
-    passwordStrengthWeak: "Слабый", // Machine translated, please review
-    passwordStrengthMedium: "Средний", // Machine translated, please review
-    passwordStrengthStrong: "Сильный", // Machine translated, please review
-    passwordStrengthVeryStrong: "Очень сильный", // Machine translated, please review
-    historyTitle: "История паролей", // Machine translated, please review
-    clearHistoryButton: "Очистить историю", // Machine translated, please review
-    noHistory: "Пароль еще не был сгенерирован.",
+    passwordStrengthLabel: "Надежность пароля",
+    passwordStrengthVeryWeak: "Очень слабый",
+    passwordStrengthWeak: "Слабый",
+    passwordStrengthMedium: "Средний",
+    passwordStrengthStrong: "Сильный",
+    passwordStrengthVeryStrong: "Очень сильный",
+    historyTitle: "История паролей",
+    clearHistoryButton: "Очистить историю",
+    noHistory: "Пароли еще не создавались.",
     crackTimeLabel: "Оценочное время взлома",
     crackTimeUnits: {
         "instant": "мгновенно",
@@ -39,9 +39,9 @@ export const ru = {
         "centuries": "века"
     },
     languageLabel: "Язык:",
-    languageDesc: "Choose your preferred language",
-    themeLabel: "Theme",
-    themeDesc: "Change the application appearance",
-    pwnedLabel: "Security",
-    pwnedAlert: "Leaked!",
+    languageDesc: "Выберите предпочитаемый язык",
+    themeLabel: "Тема",
+    themeDesc: "Изменить внешний вид приложения",
+    pwnedLabel: "Безопасность",
+    pwnedAlert: "Утечка!",
 };

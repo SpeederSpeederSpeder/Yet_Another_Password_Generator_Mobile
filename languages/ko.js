@@ -39,9 +39,9 @@ export const ko = {
         "centuries": "세기"
     },
     languageLabel: "언어:",
-    languageDesc: "Choose your preferred language",
-    themeLabel: "Theme",
-    themeDesc: "Change the application appearance",
-    pwnedLabel: "Security",
-    pwnedAlert: "Leaked!",
+    languageDesc: "선호하는 언어를 선택하세요",
+    themeLabel: "테마",
+    themeDesc: "앱 모양 변경",
+    pwnedLabel: "보안",
+    pwnedAlert: "유출됨!",
 };

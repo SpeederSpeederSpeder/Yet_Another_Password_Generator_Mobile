@@ -39,9 +39,9 @@ export const cs = {
         "centuries": "století"
     },
     languageLabel: "Jazyk:",
-    languageDesc: "Choose your preferred language",
-    themeLabel: "Theme",
-    themeDesc: "Change the application appearance",
-    pwnedLabel: "Security",
-    pwnedAlert: "Leaked!",
+    languageDesc: "Vyberte preferovaný jazyk",
+    themeLabel: "Motiv",
+    themeDesc: "Změnit vzhled aplikace",
+    pwnedLabel: "Zabezpečení",
+    pwnedAlert: "Uniklo!",
 };

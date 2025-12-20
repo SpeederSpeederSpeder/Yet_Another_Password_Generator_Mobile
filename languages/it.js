@@ -1,4 +1,4 @@
-﻿export const it = {
+export const it = {
     title: "Generatore di Password",
     generatorTab: "Generatore",
     historyTab: "Cronologia",
@@ -43,6 +43,5 @@
     themeLabel: "Tema",
     themeDesc: "Cambia l'aspetto dell'applicazione",
     pwnedLabel: "Sicurezza",
-    pwnedAlert: "Esposto!",
+    pwnedAlert: "Esposta!",
 };
-
