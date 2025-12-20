@@ -39,4 +39,9 @@ export const fr = {
         "centuries": "siècles"
     },
     languageLabel: "Langue:",
+    languageDesc: "Choisissez votre langue préférée",
+    themeLabel: "Thème",
+    themeDesc: "Changer l'apparence de l'application",
+    pwnedLabel: "Sécurité",
+    pwnedAlert: "Exposé !",
 };

@@ -1,83 +1,68 @@
 :root {
     /* Light Theme (Default) */
-    --background-color: #e8f0f2; /* Very light blue-grey background */
-    --text-color: #2c3e50; /* Dark blue text */
-    --card-bg: #ffffff; /* Pure white card background */
-    --heading-color: #1c2833; /* Even darker headings */
-    --input-bg: #fdfdfd; /* Off-white input */
-    --border-color: #d0d7de; /* Slightly darker subtle grey border */
-    --slider-track-bg: #e0e6eb; /* Light grey-blue slider track */
-    --primary-color: #2ecc71; /* Vibrant green */
-    --hover-bg: #e0e6eb; /* Light grey-blue for hover */
+    --background-color: #f0f4f8;
+    --text-color: #1a202c;
+    --card-bg: #ffffff;
+    --heading-color: #2d3748;
+    --input-bg: #f7fafc;
+    --border-color: #e2e8f0;
+    --slider-track-bg: #edf2f7;
+    --primary-color: #38a169;
+    --hover-bg: #f1f5f9;
 }
 
-[data-theme='dark'] { /* Dark Theme */
-    --background-color: #2c3e50; /* Dark blue background */
-    --text-color: #ecf0f1; /* Light grey text */
-    --card-bg: #34495e; /* Slightly lighter dark blue card background */
-    --heading-color: #ecf0f1; /* Light headings */
-    --input-bg: #4a627a; /* Medium dark blue input */
-    --border-color: #5d7f9e; /* More distinct dark blue border */
-    --slider-track-bg: #5d7f9e; /* Dark blue slider track */
-    --primary-color: #9b59b6; /* Vibrant purple */
-    --hover-bg: #4a627a; /* Medium dark blue for hover */
+[data-theme='dark'] {
+    --background-color: #1a202c;
+    --text-color: #f7fafc;
+    --card-bg: #2d3748;
+    --heading-color: #ffffff;
+    --input-bg: #1a202c;
+    --border-color: #4a5568;
+    --slider-track-bg: #4a5568;
+    --primary-color: #9f7aea;
+    --hover-bg: #4a5568;
 }
 
-[data-theme='ultra-dark'] { /* Ultra Dark Theme */
-    --background-color: #000000; /* Pure black background */
-    --text-color: #ecf0f1; /* Light grey text */
-    --card-bg: #1a1a1a; /* Very dark grey card background */
-    --heading-color: #ffffff; /* White headings */
-    --input-bg: #2c2c2c; /* Dark grey input */
-    --border-color: #444444; /* Grey border */
-    --slider-track-bg: #333333; /* Dark grey slider track */
-    --primary-color: #FFA500; /* Vibrant orange */
-    --hover-bg: #333333; /* Dark grey for hover */
-}
-
-body {
-    background-color: var(--background-color);
-    color: var(--text-color);
-    transition: background-color 0.3s ease, color 0.3s ease;
+[data-theme='ultra-dark'] {
+    --background-color: #000000;
+    --text-color: #ffffff;
+    --card-bg: #111111;
+    --heading-color: #ffffff;
+    --input-bg: #000000;
+    --border-color: #333333;
+    --slider-track-bg: #333333;
+    --primary-color: #ed8936;
+    --hover-bg: #222222;
 }
 
 #theme-toggle {
-    background-color: var(--card-bg); /* Use card background for toggle */
+    background-color: var(--background-color);
     color: var(--text-color);
     border: 1px solid var(--border-color);
-    padding: 10px 15px;
-    border-radius: 25px;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
     cursor: pointer;
-    font-size: 1.2em;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 8px;
-    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* More prominent shadow */
+    transition: all 0.2s ease;
 }
 
 #theme-toggle:hover {
-    background-color: var(--hover-bg); /* Use hover background */
+    background-color: var(--hover-bg);
+    transform: translateY(-1px);
 }
 
 #theme-toggle .icon-light,
 #theme-toggle .icon-dark,
 #theme-toggle .icon-ultra-dark {
-    display: none; /* Masquer les trois par défaut */
+    display: none;
+    line-height: 0;
 }
 
-/* En mode sombre (par défaut), afficher l'icône de la lune */
-#theme-toggle.dark-mode .icon-dark {
-    display: inline-block;
-}
-
-/* En mode clair, afficher l'icône du soleil */
-#theme-toggle.light-mode .icon-light {
-    display: inline-block;
-}
-
-/* En mode ultra-sombre, afficher l'icône de l'étoile */
+#theme-toggle.light-mode .icon-light,
+#theme-toggle.dark-mode .icon-dark,
 #theme-toggle.ultra-dark-mode .icon-ultra-dark {
-    display: inline-block;
+    display: flex;
 }

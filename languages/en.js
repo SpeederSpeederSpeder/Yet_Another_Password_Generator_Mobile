@@ -39,5 +39,10 @@
         "centuries": "centuries"
     },
     languageLabel: "Language:",
+    languageDesc: "Choose your preferred language",
+    themeLabel: "Theme",
+    themeDesc: "Change the application appearance",
+    pwnedLabel: "Security",
+    pwnedAlert: "Leaked!",
 };
 

@@ -1,7 +1,7 @@
 // utils/password-history.js
 
 const HISTORY_KEY = 'passwordHistory';
-const MAX_HISTORY_SIZE = 10; // Limite l'historique aux 10 derniers mots de passe
+const MAX_HISTORY_SIZE = 20; // Limite l'historique aux 20 derniers mots de passe
 
 /**
  * Charge l'historique des mots de passe depuis le stockage local.

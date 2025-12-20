@@ -1,9 +1,11 @@
 import { getStrengthDescription } from './utils/password-strength-checker.js';
 import { addPasswordToHistory, loadPasswordHistory, clearPasswordHistory } from './utils/password-history.js';
+import { isPasswordPwned } from './utils/pwned-checker.js';
 
 document.addEventListener('DOMContentLoaded', async () => {
     const passwordInput = document.getElementById('password');
     const copyButton = document.getElementById('copyButton');
+    const refreshButton = document.getElementById('refreshButton');
     const passwordLengthInput = document.getElementById('passwordLength');
     const passwordLengthValueDisplay = document.getElementById('passwordLengthValue');
     const languageSelect = document.getElementById('language');
@@ -12,12 +14,16 @@ document.addEventListener('DOMContentLoaded', async () => {
     const includeLowercase = document.getElementById('includeLowercase');
     const includeNumbers = document.getElementById('includeNumbers');
     const includeSymbols = document.getElementById('includeSymbols');
-    const strengthText = document.getElementById('strengthText'); // Nouvel élément
-    const crackTimeText = document.getElementById('crackTimeText'); // Pour le temps de cassage
-    const passwordHistoryList = document.getElementById('passwordHistoryList'); // Nouvel élément
-    const clearHistoryButton = document.getElementById('clearHistoryButton'); // Nouvel élément
+    const strengthText = document.getElementById('strengthText');
+    const strengthBar = document.getElementById('strengthBar');
+    const crackTimeText = document.getElementById('crackTimeText');
+    const pwnedStatus = document.getElementById('pwnedStatus');
+    const pwnedText = document.getElementById('pwnedText');
+    const passwordHistoryList = document.getElementById('passwordHistoryList');
+    const clearHistoryButton = document.getElementById('clearHistoryButton');
 
-    let currentTranslations = {}; // Variable pour stocker les traductions actuelles
+    let currentTranslations = {};
+    let pwnedCheckTimeout;
 
     const tabButtons = document.querySelectorAll('.tab-button');
     const tabContents = document.querySelectorAll('.tab-content');
@@ -33,13 +39,11 @@ document.addEventListener('DOMContentLoaded', async () => {
         });
     });
 
-    // Mettre à jour l'affichage de la longueur du mot de passe
-    passwordLengthInput.addEventListener('input', () => {
-        passwordLengthValueDisplay.textContent = passwordLengthInput.value;
-        generatePassword(); // Générer un nouveau mot de passe lorsque la longueur change
-    });
+    const getStrengthColor = (score) => {
+        const colors = ['#e74c3c', '#e67e22', '#f1c40f', '#2ecc71', '#27ae60'];
+        return colors[score] || colors[0];
+    };
 
-    // Fonction pour traduire le temps de cassage
     const translateCrackTime = (crackTime) => {
         if (!crackTime || !currentTranslations.crackTimeUnits) {
             return crackTime;
@@ -47,7 +51,6 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         const parts = crackTime.split(' ');
         if (parts.length < 2) {
-            // Gère les cas comme "instant"
             const unit = parts[0].toLowerCase();
             return currentTranslations.crackTimeUnits[unit] || crackTime;
         }
@@ -59,15 +62,27 @@ document.addEventListener('DOMContentLoaded', async () => {
         return translatedUnit ? `${value} ${translatedUnit}` : crackTime;
     };
 
+    const checkPwned = async (password) => {
+        clearTimeout(pwnedCheckTimeout);
+        pwnedStatus.classList.add('hidden');
+        
+        pwnedCheckTimeout = setTimeout(async () => {
+            const isPwned = await isPasswordPwned(password);
+            if (isPwned) {
+                pwnedText.textContent = currentTranslations.pwnedAlert || "Exposé !";
+                pwnedStatus.classList.remove('hidden');
+            }
+        }, 500);
+    };
+
     const generatePassword = async () => {
-        const length = passwordLengthInput.value;
+        const length = parseInt(passwordLengthInput.value);
         const includeUpper = includeUppercase.checked;
         const includeLower = includeLowercase.checked;
         const includeNum = includeNumbers.checked;
         const includeSym = includeSymbols.checked;
 
         let password = "";
-
         const uppercaseChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         const lowercaseChars = "abcdefghijklmnopqrstuvwxyz";
         const numberChars = "0123456789";
@@ -79,133 +94,128 @@ document.addEventListener('DOMContentLoaded', async () => {
         if (includeNum) availableChars += numberChars;
         if (includeSym) availableChars += symbolChars;
 
-        // Si aucun type n'est sélectionné, inclure tous les types par défaut
         if (availableChars.length === 0) {
-            availableChars = uppercaseChars + lowercaseChars + numberChars + symbolChars;
+            availableChars = lowercaseChars;
+            includeLowercase.checked = true;
         }
 
-        // Valider la longueur du mot de passe
-        const minLength = 7;
-        const maxLength = 100;
-        let passwordLength = parseInt(length, 10); // Use 'length' from input
-
-        if (isNaN(passwordLength) || passwordLength < minLength || passwordLength > maxLength) {
-            passwordLength = minLength; // Utiliser la longueur par défaut si invalide
-        }
-
-        for (let i = 0; i < passwordLength; i++) {
+        for (let i = 0; i < length; i++) {
             const randomIndex = Math.floor(Math.random() * availableChars.length);
             password += availableChars[randomIndex];
         }
 
-        const generatedPassword = password;
-        passwordInput.value = generatedPassword;
+        passwordInput.value = password;
 
-        // Calculer la force et le temps de cassage avec zxcvbn
         if (typeof zxcvbn !== 'undefined') {
-            const result = zxcvbn(generatedPassword);
-            const strengthScore = result.score;
+            const result = zxcvbn(password);
+            const score = result.score;
             const crackTime = translateCrackTime(result.crack_times_display.offline_slow_hashing_1e4_per_second);
-            strengthText.textContent = currentTranslations[getStrengthDescription(strengthScore, crackTime)];
+            
+            strengthText.textContent = currentTranslations[getStrengthDescription(score, crackTime)] || "N/A";
             crackTimeText.textContent = crackTime;
+            
+            strengthBar.style.width = `${(score + 1) * 20}%`;
+            strengthBar.style.backgroundColor = getStrengthColor(score);
         }
 
-
-        // Ajouter le mot de passe à l'historique
-        addPasswordToHistory(generatedPassword);
-        displayPasswordHistory(); // Mettre à jour l'affichage de l'historique
+        checkPwned(password);
+        addPasswordToHistory(password);
+        displayPasswordHistory();
     };
 
-    // Fonction pour mettre à jour le texte de l'interface
+    passwordLengthInput.addEventListener('input', () => {
+        passwordLengthValueDisplay.textContent = passwordLengthInput.value;
+        generatePassword();
+    });
+
+    refreshButton.addEventListener('click', generatePassword);
+
     const updateContent = (translations) => {
-        const h1Element = document.querySelector('h1');
-        if (h1Element) h1Element.textContent = translations.title;
+        const h1Element = document.querySelector('.logo h1');
+        if (h1Element) h1Element.textContent = "Krypto"; // App name stays same or can be translations.title
 
         const passwordLengthLabelElement = document.querySelector('label[for="passwordLength"]');
         if (passwordLengthLabelElement) passwordLengthLabelElement.textContent = translations.passwordLengthLabel;
 
-        if (copyButton) copyButton.textContent = translations.copyButton;
-
-        // Traduire les onglets
-        const generatorTab = document.querySelector('.tab-button[data-tab="generator"]');
+        const generatorTab = document.querySelector('.tab-button[data-tab="generator"] .tab-text');
         if (generatorTab) generatorTab.textContent = translations.generatorTab;
 
-        const historyTab = document.querySelector('.tab-button[data-tab="history"]');
+        const historyTab = document.querySelector('.tab-button[data-tab="history"] .tab-text');
         if (historyTab) historyTab.textContent = translations.historyTab;
 
-        const settingsTab = document.querySelector('.tab-button[data-tab="settings"]');
+        const settingsTab = document.querySelector('.tab-button[data-tab="settings"] .tab-text');
         if (settingsTab) settingsTab.textContent = translations.settingsTab;
 
-        if (includeUppercase) includeUppercase.nextSibling.textContent = translations.uppercaseLabel;
+        const labels = {
+            'includeUppercase': 'uppercaseLabel',
+            'includeLowercase': 'lowercaseLabel',
+            'includeNumbers': 'numbersLabel',
+            'includeSymbols': 'symbolsLabel'
+        };
 
-        if (includeLowercase) includeLowercase.nextSibling.textContent = translations.lowercaseLabel;
+        for (const [id, key] of Object.entries(labels)) {
+            const el = document.getElementById(id);
+            if (el) {
+                const labelText = el.closest('.checkbox-container').querySelector('.label-text');
+                if (labelText) labelText.textContent = translations[key];
+            }
+        }
 
-        if (includeNumbers) includeNumbers.nextSibling.textContent = translations.numbersLabel;
+        const strengthLabel = document.querySelector('.stat-item:nth-child(1) .stat-label');
+        if (strengthLabel) strengthLabel.textContent = translations.passwordStrengthLabel;
 
-        if (includeSymbols) includeSymbols.nextSibling.textContent = translations.symbolsLabel;
+        const crackTimeLabel = document.querySelector('.stat-item:nth-child(2) .stat-label');
+        if (crackTimeLabel) crackTimeLabel.textContent = translations.crackTimeLabel;
 
-        // Mettre à jour le texte pour la force du mot de passe et l'historique
-        const strengthLabel = document.querySelector('.password-strength-display');
-        if (strengthLabel) strengthLabel.firstChild.textContent = translations.passwordStrengthLabel + ": ";
-
-        const crackTimeLabel = document.querySelector('.crack-time-display');
-        if (crackTimeLabel) crackTimeLabel.firstChild.textContent = translations.crackTimeLabel + ": ";
-
-        const historyTitle = document.querySelector('.password-history-section h2');
+        const historyTitle = document.querySelector('.history-card h2');
         if (historyTitle) historyTitle.textContent = translations.historyTitle;
+
+        const pwnedLabel = document.querySelector('#pwnedStatus .stat-label');
+        if (pwnedLabel) pwnedLabel.textContent = translations.pwnedLabel || "Sécurité";
 
         if (clearHistoryButton) clearHistoryButton.textContent = translations.clearHistoryButton;
 
-        const languageLabel = document.querySelector('label[for="language"]');
+        const languageLabel = document.querySelector('.setting-info label[for="language"]');
         if (languageLabel) languageLabel.textContent = translations.languageLabel;
+        
+        const languageDesc = document.querySelector('.setting-item:nth-child(1) .setting-desc');
+        if (languageDesc) languageDesc.textContent = translations.languageDesc || "Choose your preferred language";
+
+        const themeLabel = document.querySelector('#theme-setting-item label');
+        if (themeLabel) themeLabel.textContent = translations.themeLabel || "Theme";
+
+        const themeDesc = document.querySelector('#theme-setting-item .setting-desc');
+        if (themeDesc) themeDesc.textContent = translations.themeDesc || "Change application appearance";
     };
 
-    // Fonction pour charger les traductions
     const loadTranslations = async (lang) => {
         try {
             const module = await import(`./languages/${lang}.js`);
             currentTranslations = module[lang];
             updateContent(currentTranslations);
-            // Mettre à jour la force du mot de passe affichée avec la nouvelle langue
+            
             const currentPassword = passwordInput.value;
-            if (currentPassword) {
-                if (typeof zxcvbn !== 'undefined') {
-                    const result = zxcvbn(currentPassword);
-                    const strengthScore = result.score;
-                    const crackTime = translateCrackTime(result.crack_times_display.offline_slow_hashing_1e4_per_second);
-                    strengthText.textContent = currentTranslations[getStrengthDescription(strengthScore, crackTime)];
-                    crackTimeText.textContent = crackTime;
-                }
-            } else {
-                // Fallback for when there is no password yet
-                crackTimeText.textContent = "N/A";
+            if (currentPassword && typeof zxcvbn !== 'undefined') {
+                const result = zxcvbn(currentPassword);
+                const score = result.score;
+                const crackTime = translateCrackTime(result.crack_times_display.offline_slow_hashing_1e4_per_second);
+                strengthText.textContent = currentTranslations[getStrengthDescription(score, crackTime)];
+                crackTimeText.textContent = crackTime;
             }
         } catch (error) {
-            console.error(`Traductions non disponibles pour la langue: ${lang}`, error);
-            // Fallback to default language if not found
+            console.error(`Translations not available for: ${lang}`, error);
             const module = await import('./languages/fr.js');
             currentTranslations = module.fr;
             updateContent(currentTranslations);
-            const currentPassword = passwordInput.value;
-            if (currentPassword) {
-                if (typeof zxcvbn !== 'undefined') {
-                    const result = zxcvbn(currentPassword);
-                    const strengthScore = result.score;
-                    const crackTime = translateCrackTime(result.crack_times_display.offline_slow_hashing_1e4_per_second);
-                    strengthText.textContent = currentTranslations[getStrengthDescription(strengthScore, crackTime)];
-                }
-            }
         }
     };
 
-    // Gérer le changement de langue
     languageSelect.addEventListener('change', async (event) => {
         const selectedLang = event.target.value;
         localStorage.setItem('language', selectedLang);
         await loadTranslations(selectedLang);
     });
 
-    // Fonction pour afficher un message temporaire
     const showMessage = (message, duration = 2000) => {
         copyMessage.textContent = message;
         copyMessage.classList.add('show');
@@ -214,75 +224,80 @@ document.addEventListener('DOMContentLoaded', async () => {
         }, duration);
     };
 
-    // Fonction pour afficher l'historique des mots de passe
     const displayPasswordHistory = () => {
         const history = loadPasswordHistory();
-        passwordHistoryList.innerHTML = ''; // Effacer l'historique actuel
+        passwordHistoryList.innerHTML = '';
 
         if (history.length === 0) {
             const noHistoryItem = document.createElement('li');
-            noHistoryItem.textContent = currentTranslations.noHistory;
+            noHistoryItem.textContent = currentTranslations.noHistory || "No history yet";
+            noHistoryItem.classList.add('history-item');
+            noHistoryItem.style.justifyContent = 'center';
+            noHistoryItem.style.opacity = '0.5';
             passwordHistoryList.appendChild(noHistoryItem);
             return;
         }
 
         history.forEach(password => {
             const listItem = document.createElement('li');
-            listItem.textContent = password;
             listItem.classList.add('history-item');
+            
+            const passText = document.createElement('span');
+            passText.textContent = password;
+            listItem.appendChild(passText);
+
+            const copyIcon = document.createElement('div');
+            copyIcon.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg>';
+            copyIcon.style.opacity = '0.5';
+            listItem.appendChild(copyIcon);
+
             listItem.addEventListener('click', () => {
-                passwordInput.value = password; // Remplir le champ de mot de passe avec l'historique
+                passwordInput.value = password;
                 if (typeof zxcvbn !== 'undefined') {
                     const result = zxcvbn(password);
-                    const strengthScore = result.score;
+                    const score = result.score;
                     const crackTime = translateCrackTime(result.crack_times_display.offline_slow_hashing_1e4_per_second);
-                    strengthText.textContent = currentTranslations[getStrengthDescription(strengthScore, crackTime)];
+                    strengthText.textContent = currentTranslations[getStrengthDescription(score, crackTime)];
                     crackTimeText.textContent = crackTime;
+                    strengthBar.style.width = `${(score + 1) * 20}%`;
+                    strengthBar.style.backgroundColor = getStrengthColor(score);
                 }
+                
+                checkPwned(password);
+                
+                // Also copy to clipboard when clicking history item
+                navigator.clipboard.writeText(password);
+                showMessage(currentTranslations.copyAlert);
             });
             passwordHistoryList.appendChild(listItem);
         });
     };
 
     copyButton.addEventListener('click', () => {
-        passwordInput.select();
-        passwordInput.setSelectionRange(0, 99999); // Pour les appareils mobiles
-        document.execCommand('copy');
+        navigator.clipboard.writeText(passwordInput.value);
         showMessage(currentTranslations.copyAlert);
     });
 
-    // Gérer l'effacement de l'historique
     clearHistoryButton.addEventListener('click', () => {
         clearPasswordHistory();
-        displayPasswordHistory(); // Mettre à jour l'affichage après effacement
+        displayPasswordHistory();
     });
 
-    // Appliquer la langue sauvegardée ou détecter la langue du navigateur au chargement
-    let initialLang = 'fr'; // Langue par défaut
-
-    const browserLanguage = navigator.language.split('-')[0]; // Ex: "fr-FR" -> "fr"
-    // Vérifier si la langue du navigateur est supportée
-    // Pour l'instant, nous ne pouvons pas vérifier dynamiquement si le fichier existe avant l'importation.
-    // Nous allons donc nous fier à la liste des langues dans index.html pour déterminer si une langue est "supportée".
     const supportedLanguages = Array.from(languageSelect.options).map(option => option.value);
-    if (supportedLanguages.includes(browserLanguage)) {
-        initialLang = browserLanguage; // Utiliser la langue du navigateur si supportée
-    }
-
+    let initialLang = 'fr';
+    const browserLanguage = navigator.language.split('-')[0];
+    if (supportedLanguages.includes(browserLanguage)) initialLang = browserLanguage;
     const savedLanguage = localStorage.getItem('language');
-    if (savedLanguage && supportedLanguages.includes(savedLanguage)) { // Vérifier si la langue sauvegardée est valide
-        initialLang = savedLanguage; // La langue sauvegardée a priorité
-    }
+    if (savedLanguage && supportedLanguages.includes(savedLanguage)) initialLang = savedLanguage;
+    
     languageSelect.value = initialLang;
-    await loadTranslations(initialLang); // Charger les traductions initiales
+    await loadTranslations(initialLang);
 
-    // Ajouter des écouteurs d'événements pour les cases à cocher
     includeUppercase.addEventListener('change', generatePassword);
     includeLowercase.addEventListener('change', generatePassword);
     includeNumbers.addEventListener('change', generatePassword);
     includeSymbols.addEventListener('change', generatePassword);
 
-    // Générer un mot de passe au chargement de la page avec la longueur par défaut
     generatePassword();
-    displayPasswordHistory(); // Afficher l'historique au chargement de la page
+    displayPasswordHistory();
 });
