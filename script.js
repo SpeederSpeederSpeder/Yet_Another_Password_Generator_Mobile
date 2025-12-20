@@ -132,7 +132,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     const updateContent = (translations) => {
         const h1Element = document.querySelector('.logo h1');
-        if (h1Element) h1Element.textContent = "Krypto"; // App name stays same or can be translations.title
+        if (h1Element) h1Element.textContent = "Kryptopass"; // App name stays same or can be translations.title
 
         const passwordLengthLabelElement = document.querySelector('label[for="passwordLength"]');
         if (passwordLengthLabelElement) passwordLengthLabelElement.textContent = translations.passwordLengthLabel;
