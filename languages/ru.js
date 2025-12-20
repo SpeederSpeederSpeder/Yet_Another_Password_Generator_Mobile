@@ -1,4 +1,4 @@
-﻿export const ru = {
+export const ru = {
     title: "Генератор Паролей",
     generatorTab: "Генератор",
     historyTab: "История",
@@ -39,5 +39,9 @@
         "centuries": "века"
     },
     languageLabel: "Язык:",
+    languageDesc: "Choose your preferred language",
+    themeLabel: "Theme",
+    themeDesc: "Change the application appearance",
+    pwnedLabel: "Security",
+    pwnedAlert: "Leaked!",
 };
-

@@ -1,4 +1,4 @@
-﻿export const id = {
+export const id = {
     title: "Generator Kata Sandi",
     generatorTab: "Generator",
     historyTab: "Riwayat",
@@ -39,5 +39,9 @@
         "centuries": "abad"
     },
     languageLabel: "Bahasa:",
+    languageDesc: "Choose your preferred language",
+    themeLabel: "Theme",
+    themeDesc: "Change the application appearance",
+    pwnedLabel: "Security",
+    pwnedAlert: "Leaked!",
 };
-

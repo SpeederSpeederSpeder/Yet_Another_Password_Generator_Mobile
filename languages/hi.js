@@ -1,4 +1,4 @@
-﻿export const hi = {
+export const hi = {
     title: "पासवर्ड जनरेटर",
     generatorTab: "जनरेटर",
     historyTab: "इतिहास",
@@ -39,5 +39,9 @@
         "centuries": "सदियाँ"
     },
     languageLabel: "भाषा:",
+    languageDesc: "Choose your preferred language",
+    themeLabel: "Theme",
+    themeDesc: "Change the application appearance",
+    pwnedLabel: "Security",
+    pwnedAlert: "Leaked!",
 };
-

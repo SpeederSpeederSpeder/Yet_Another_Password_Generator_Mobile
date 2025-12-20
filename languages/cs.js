@@ -1,4 +1,4 @@
-﻿export const cs = {
+export const cs = {
     title: "Generátor hesel",
     generatorTab: "Generátor",
     historyTab: "Historie",
@@ -39,5 +39,9 @@
         "centuries": "století"
     },
     languageLabel: "Jazyk:",
+    languageDesc: "Choose your preferred language",
+    themeLabel: "Theme",
+    themeDesc: "Change the application appearance",
+    pwnedLabel: "Security",
+    pwnedAlert: "Leaked!",
 };
-

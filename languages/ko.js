@@ -1,4 +1,4 @@
-﻿export const ko = {
+export const ko = {
     title: "비밀번호 생성기",
     generatorTab: "생성기",
     historyTab: "기록",
@@ -39,5 +39,9 @@
         "centuries": "세기"
     },
     languageLabel: "언어:",
+    languageDesc: "Choose your preferred language",
+    themeLabel: "Theme",
+    themeDesc: "Change the application appearance",
+    pwnedLabel: "Security",
+    pwnedAlert: "Leaked!",
 };
-

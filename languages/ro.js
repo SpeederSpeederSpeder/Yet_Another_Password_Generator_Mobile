@@ -1,4 +1,4 @@
-﻿export const ro = {
+export const ro = {
     title: "Generator de parole",
     generatorTab: "Generator",
     historyTab: "Istoric",
@@ -39,5 +39,9 @@
         "centuries": "secole"
     },
     languageLabel: "Limbă:",
+    languageDesc: "Choose your preferred language",
+    themeLabel: "Theme",
+    themeDesc: "Change the application appearance",
+    pwnedLabel: "Security",
+    pwnedAlert: "Leaked!",
 };
-

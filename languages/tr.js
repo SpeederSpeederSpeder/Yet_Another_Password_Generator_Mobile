@@ -1,4 +1,4 @@
-﻿export const tr = {
+export const tr = {
     title: "Şifre Oluşturucu",
     generatorTab: "Oluşturucu",
     historyTab: "Geçmiş",
@@ -39,5 +39,9 @@
         "centuries": "yüzyıllar"
     },
     languageLabel: "Dil:",
+    languageDesc: "Choose your preferred language",
+    themeLabel: "Theme",
+    themeDesc: "Change the application appearance",
+    pwnedLabel: "Security",
+    pwnedAlert: "Leaked!",
 };
-

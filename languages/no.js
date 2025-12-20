@@ -1,4 +1,4 @@
-﻿export const no = {
+export const no = {
     title: "Passordgenerator",
     generatorTab: "Generator",
     historyTab: "Historikk",
@@ -39,5 +39,9 @@
         "centuries": "århundrer"
     },
     languageLabel: "Språk:",
+    languageDesc: "Choose your preferred language",
+    themeLabel: "Theme",
+    themeDesc: "Change the application appearance",
+    pwnedLabel: "Security",
+    pwnedAlert: "Leaked!",
 };
-

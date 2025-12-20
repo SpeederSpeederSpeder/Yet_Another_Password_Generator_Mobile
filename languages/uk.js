@@ -1,4 +1,4 @@
-﻿export const uk = {
+export const uk = {
     title: "Генератор Паролів",
     generatorTab: "Генератор",
     historyTab: "Історія",
@@ -39,5 +39,9 @@
         "centuries": "століття"
     },
     languageLabel: "Мова:",
+    languageDesc: "Choose your preferred language",
+    themeLabel: "Theme",
+    themeDesc: "Change the application appearance",
+    pwnedLabel: "Security",
+    pwnedAlert: "Leaked!",
 };
-

@@ -1,4 +1,4 @@
-﻿export const pl = {
+export const pl = {
     title: "Generator haseł",
     generatorTab: "Generator",
     historyTab: "Historia",
@@ -39,5 +39,9 @@
         "centuries": "wieki"
     },
     languageLabel: "Język:",
+    languageDesc: "Choose your preferred language",
+    themeLabel: "Theme",
+    themeDesc: "Change the application appearance",
+    pwnedLabel: "Security",
+    pwnedAlert: "Leaked!",
 };
-

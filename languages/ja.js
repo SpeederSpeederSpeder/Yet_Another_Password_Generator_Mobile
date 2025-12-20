@@ -1,4 +1,4 @@
-﻿export const ja = {
+export const ja = {
     title: "パスワードジェネレーター",
     generatorTab: "ジェネレーター",
     historyTab: "履歴",
@@ -39,5 +39,9 @@
         "centuries": "世紀"
     },
     languageLabel: "言語:",
+    languageDesc: "Choose your preferred language",
+    themeLabel: "Theme",
+    themeDesc: "Change the application appearance",
+    pwnedLabel: "Security",
+    pwnedAlert: "Leaked!",
 };
-

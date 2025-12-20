@@ -1,4 +1,4 @@
-﻿export const zh = {
+export const zh = {
     title: "密码生成器",
     generatorTab: "生成器",
     historyTab: "历史",
@@ -39,5 +39,9 @@
         "centuries": "世纪"
     },
     languageLabel: "语言:",
+    languageDesc: "Choose your preferred language",
+    themeLabel: "Theme",
+    themeDesc: "Change the application appearance",
+    pwnedLabel: "Security",
+    pwnedAlert: "Leaked!",
 };
-

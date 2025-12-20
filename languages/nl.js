@@ -1,4 +1,4 @@
-﻿export const nl = {
+export const nl = {
     title: "Wachtwoordgenerator",
     generatorTab: "Generator",
     historyTab: "Geschiedenis",
@@ -39,5 +39,9 @@
         "centuries": "eeuwen"
     },
     languageLabel: "Taal:",
+    languageDesc: "Choose your preferred language",
+    themeLabel: "Theme",
+    themeDesc: "Change the application appearance",
+    pwnedLabel: "Security",
+    pwnedAlert: "Leaked!",
 };
-

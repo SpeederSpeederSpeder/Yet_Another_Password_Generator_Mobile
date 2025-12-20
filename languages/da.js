@@ -1,4 +1,4 @@
-﻿export const da = {
+export const da = {
     title: "Adgangskodegenerator",
     generatorTab: "Generator",
     historyTab: "Historik",
@@ -39,5 +39,9 @@
         "centuries": "århundreder"
     },
     languageLabel: "Sprog:",
+    languageDesc: "Choose your preferred language",
+    themeLabel: "Theme",
+    themeDesc: "Change the application appearance",
+    pwnedLabel: "Security",
+    pwnedAlert: "Leaked!",
 };
-

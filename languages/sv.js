@@ -1,4 +1,4 @@
-﻿export const sv = {
+export const sv = {
     title: "Lösenordsgenerator",
     generatorTab: "Generator",
     historyTab: "Historik",
@@ -39,5 +39,9 @@
         "centuries": "århundraden"
     },
     languageLabel: "Språk:",
+    languageDesc: "Choose your preferred language",
+    themeLabel: "Theme",
+    themeDesc: "Change the application appearance",
+    pwnedLabel: "Security",
+    pwnedAlert: "Leaked!",
 };
-

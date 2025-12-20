@@ -1,4 +1,4 @@
-﻿export const ms = {
+export const ms = {
     title: "Penjana Kata Laluan",
     generatorTab: "Penjana",
     historyTab: "Sejarah",
@@ -39,5 +39,9 @@
         "centuries": "abad"
     },
     languageLabel: "Bahasa:",
+    languageDesc: "Choose your preferred language",
+    themeLabel: "Theme",
+    themeDesc: "Change the application appearance",
+    pwnedLabel: "Security",
+    pwnedAlert: "Leaked!",
 };
-

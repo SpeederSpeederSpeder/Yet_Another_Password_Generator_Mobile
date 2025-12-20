@@ -1,4 +1,4 @@
-﻿export const fi = {
+export const fi = {
     title: "Salasanageneraattori",
     generatorTab: "Generaattori",
     historyTab: "Historia",
@@ -39,5 +39,9 @@
         "centuries": "vuosisadat"
     },
     languageLabel: "Kieli:",
+    languageDesc: "Choose your preferred language",
+    themeLabel: "Theme",
+    themeDesc: "Change the application appearance",
+    pwnedLabel: "Security",
+    pwnedAlert: "Leaked!",
 };
-

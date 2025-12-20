@@ -39,5 +39,10 @@
         "centuries": "siglos"
     },
     languageLabel: "Idioma:",
+    languageDesc: "Elige tu idioma preferido",
+    themeLabel: "Tema",
+    themeDesc: "Cambiar la apariencia de la aplicación",
+    pwnedLabel: "Seguridad",
+    pwnedAlert: "¡Expuesto!",
 };
 

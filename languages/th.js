@@ -1,4 +1,4 @@
-﻿export const th = {
+export const th = {
     title: "เครื่องสร้างรหัสผ่าน",
     generatorTab: "ตัวสร้าง",
     historyTab: "ประวัติ",
@@ -39,5 +39,9 @@
         "centuries": "ศตวรรษ"
     },
     languageLabel: "ภาษา:",
+    languageDesc: "Choose your preferred language",
+    themeLabel: "Theme",
+    themeDesc: "Change the application appearance",
+    pwnedLabel: "Security",
+    pwnedAlert: "Leaked!",
 };
-

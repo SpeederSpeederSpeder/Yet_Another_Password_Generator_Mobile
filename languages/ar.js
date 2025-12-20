@@ -1,4 +1,4 @@
-﻿export const ar = {
+export const ar = {
     title: "مولد كلمات المرور",
     generatorTab: "مولد",
     historyTab: "السجل",
@@ -39,5 +39,9 @@
         "centuries": "قرون"
     },
     languageLabel: "لغة:",
+    languageDesc: "Choose your preferred language",
+    themeLabel: "Theme",
+    themeDesc: "Change the application appearance",
+    pwnedLabel: "Security",
+    pwnedAlert: "Leaked!",
 };
-

@@ -1,4 +1,4 @@
-﻿export const he = {
+export const he = {
     title: "מחולל סיסמאות",
     generatorTab: "מחולל",
     historyTab: "היסטוריה",
@@ -39,5 +39,9 @@
         "centuries": "מאות"
     },
     languageLabel: "שפה:",
+    languageDesc: "Choose your preferred language",
+    themeLabel: "Theme",
+    themeDesc: "Change the application appearance",
+    pwnedLabel: "Security",
+    pwnedAlert: "Leaked!",
 };
-

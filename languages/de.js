@@ -39,5 +39,10 @@
         "centuries": "Jahrhunderte"
     },
     languageLabel: "Sprache:",
+    languageDesc: "Wählen Sie Ihre bevorzugte Sprache",
+    themeLabel: "Design",
+    themeDesc: "Das Erscheinungsbild der Anwendung ändern",
+    pwnedLabel: "Sicherheit",
+    pwnedAlert: "Geleakt!",
 };
 

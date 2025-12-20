@@ -1,4 +1,4 @@
-﻿export const vi = {
+export const vi = {
     title: "Trình tạo mật khẩu",
     generatorTab: "Trình tạo",
     historyTab: "Lịch sử",
@@ -39,5 +39,9 @@
         "centuries": "thế kỷ"
     },
     languageLabel: "Ngôn ngữ:",
+    languageDesc: "Choose your preferred language",
+    themeLabel: "Theme",
+    themeDesc: "Change the application appearance",
+    pwnedLabel: "Security",
+    pwnedAlert: "Leaked!",
 };
-
