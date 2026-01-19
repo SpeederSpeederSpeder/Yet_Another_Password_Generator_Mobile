@@ -26,19 +26,22 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
 
+      - name: Configure Bubblewrap
+        run: |
+          mkdir -p ~/.bubblewrap
+          echo "{\"jdkPath\":\"${JAVA_HOME}\",\"androidSdkPath\":\"${ANDROID_HOME}\"}" > ~/.bubblewrap/config.json
+
       - name: Build APK
         run: |
           # Generate a temporary keystore if one doesn't exist (for demo purposes)
           # In a real app, you should use GitHub Secrets to store your keystore
           keytool -genkey -v -keystore android.keystore -alias android -keyalg RSA -keysize 2048 -validity 10000 -storepass password -keypass password -dname "CN=Kryptopass, OU=Mobile, O=Kryptopass, L=Paris, S=France, C=FR"
           
-          # We need to update the twa-manifest.json with the correct URL if possible
-          # For now, we assume the user might have updated it or we use a placeholder
-          # bubblewrap build --signingKeyPath android.keystore --signingKeyAlias android --signingKeyPassword password --signingStorePassword password
+          # Initialize the Bubblewrap project from the manifest
+          # We use yes to accept all default values if any prompts appear
+          yes | bubblewrap init --manifest twa-manifest.json
           
-          # Mocking the interaction for bubblewrap build
-          # Bubblewrap usually needs a pre-existing project or 'init'
-          # Since we provided twa-manifest.json, we try 'build'
+          # Build the APK
           bubblewrap build --skipCheck --signingKeyPath android.keystore --signingKeyAlias android --signingKeyPassword password --signingStorePassword password
 
       - name: Upload APK
