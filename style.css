@@ -16,9 +16,9 @@ body {
     min-height: 100vh;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease;
-    padding: 20px;
+    padding: 10vh 20px 40px;
 }
 
 .app-container {
