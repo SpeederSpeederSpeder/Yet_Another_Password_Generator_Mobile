@@ -1,0 +1,26 @@
+{
+  "packageId": "com.kryptopass.twa",
+  "host": "SpeederSpeederSpeder.github.io",
+  "name": "Kryptopass",
+  "launcherName": "Kryptopass",
+  "display": "standalone",
+  "themeColor": "#6366F1",
+  "navigationColor": "#FFFFFF",
+  "backgroundColor": "#FFFFFF",
+  "enableNotifications": false,
+  "startUrl": "/Yet_Another_Password_Generator_Mobile/",
+  "iconUrl": "https://SpeederSpeederSpeder.github.io/Yet_Another_Password_Generator_Mobile/Krypto.png",
+  "splashScreenFadeOutDuration": 300,
+  "signingKey": {
+    "path": "./android.keystore",
+    "alias": "android"
+  },
+  "appVersionName": "1.0.0",
+  "appVersionCode": 1,
+  "shortcuts": [],
+  "generatorApp": "bubblewrap-cli",
+  "webManifestUrl": "https://SpeederSpeederSpeder.github.io/Yet_Another_Password_Generator_Mobile/manifest.json",
+  "fallbackType": "customtabs",
+  "enableSiteSettingsShortcut": true,
+  "isPreAppBundle": false
+}
