@@ -124,8 +124,8 @@
                             <label for="language">Langue</label>
                             <p class="setting-desc">Choisissez votre langue préférée</p>
                         </div>
-                        <div class="select-wrapper">
-                            <select id="language">
+                        <div class="select-wrapper custom-select-wrapper">
+                            <select id="language" style="display: none;">
                                 <option value="fr">Français</option>
                                 <option value="en">English</option>
                                 <option value="es">Español</option>
@@ -154,6 +154,22 @@
                                 <option value="uk">Українська</option>
                                 <option value="vi">Tiếng Việt</option>
                             </select>
+                            
+                            <div class="custom-select" id="customLanguageSelect">
+                                <button class="custom-select__trigger" type="button">
+                                    <span class="current-language">Français</span>
+                                    <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                                </button>
+                                <div class="custom-options">
+                                    <div class="option-search">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                                        <input type="text" id="languageSearch" placeholder="Search...">
+                                    </div>
+                                    <div class="options-list" id="languageOptionsList">
+                                        <!-- Options will be populated by JS -->
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="setting-item" id="theme-setting-item">

@@ -298,6 +298,78 @@ document.addEventListener('DOMContentLoaded', async () => {
     includeNumbers.addEventListener('change', generatePassword);
     includeSymbols.addEventListener('change', generatePassword);
 
+    // Custom Select Logic
+    const customSelectWrapper = document.querySelector('.custom-select');
+    const customSelectTrigger = customSelectWrapper.querySelector('.custom-select__trigger');
+    const customOptionsList = document.getElementById('languageOptionsList');
+    const languageSearch = document.getElementById('languageSearch');
+    const currentLanguageSpan = customSelectTrigger.querySelector('.current-language');
+
+    const populateCustomOptions = () => {
+        customOptionsList.innerHTML = '';
+        Array.from(languageSelect.options).forEach(option => {
+            const customOption = document.createElement('div');
+            customOption.className = 'custom-option';
+            customOption.dataset.value = option.value;
+            customOption.textContent = option.text;
+            
+            if (option.value === languageSelect.value) {
+                customOption.classList.add('selected');
+                currentLanguageSpan.textContent = option.text;
+            }
+
+            customOption.addEventListener('click', () => {
+                languageSelect.value = customOption.dataset.value;
+                languageSelect.dispatchEvent(new Event('change'));
+                
+                currentLanguageSpan.textContent = customOption.textContent;
+                
+                customOptionsList.querySelectorAll('.custom-option').forEach(opt => opt.classList.remove('selected'));
+                customOption.classList.add('selected');
+
+                customSelectWrapper.classList.remove('open');
+            });
+
+            customOptionsList.appendChild(customOption);
+        });
+    };
+
+    if (customSelectTrigger) {
+        customSelectTrigger.addEventListener('click', () => {
+            customSelectWrapper.classList.toggle('open');
+            if (customSelectWrapper.classList.contains('open')) {
+                languageSearch.value = '';
+                filterOptions('');
+                languageSearch.focus();
+            }
+        });
+
+        document.addEventListener('click', (e) => {
+            if (customSelectWrapper && !customSelectWrapper.contains(e.target)) {
+                customSelectWrapper.classList.remove('open');
+            }
+        });
+
+        languageSearch.addEventListener('input', (e) => {
+            filterOptions(e.target.value);
+        });
+
+        // Initial population
+        populateCustomOptions();
+    }
+
+    const filterOptions = (searchTerm) => {
+        const term = searchTerm.toLowerCase();
+        const options = customOptionsList.querySelectorAll('.custom-option');
+        options.forEach(option => {
+            if (option.textContent.toLowerCase().includes(term)) {
+                option.style.display = 'block';
+            } else {
+                option.style.display = 'none';
+            }
+        });
+    };
+
     generatePassword();
     displayPasswordHistory();
 });
