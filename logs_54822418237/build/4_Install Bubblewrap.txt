@@ -1,0 +1,13 @@
+﻿2026-01-20T01:41:57.1195494Z ##[group]Run npm install -g @bubblewrap/cli
+2026-01-20T01:41:57.1196450Z [36;1mnpm install -g @bubblewrap/cli[0m
+2026-01-20T01:41:57.1234310Z shell: /usr/bin/bash -e {0}
+2026-01-20T01:41:57.1234628Z ##[endgroup]
+2026-01-20T01:42:06.6898819Z npm warn deprecated phin@3.7.1: Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.
+2026-01-20T01:42:07.2412801Z npm warn deprecated google-p12-pem@3.1.4: Package is no longer maintained
+2026-01-20T01:42:07.5440327Z npm warn deprecated @types/gapi.client.androidpublisher@3.0.2: use @types/gapi.client.androidpublisher-v3 instead; see https://github.com/Maxim-Mazurok/google-api-typings-generator/issues/652 for details
+2026-01-20T01:42:07.6414670Z npm warn deprecated tar@6.2.1: Old versions of tar are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exhorbitant rates) by contacting i@izs.me
+2026-01-20T01:42:09.2224791Z 
+2026-01-20T01:42:09.2226434Z added 288 packages in 12s
+2026-01-20T01:42:09.2242546Z 
+2026-01-20T01:42:09.2243003Z 40 packages are looking for funding
+2026-01-20T01:42:09.2243539Z   run `npm fund` for details
