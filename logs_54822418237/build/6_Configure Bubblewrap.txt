@@ -1,8 +1,0 @@
-﻿2026-01-20T01:42:09.5196136Z ##[group]Run mkdir -p ~/.bubblewrap
-2026-01-20T01:42:09.5196690Z [36;1mmkdir -p ~/.bubblewrap[0m
-2026-01-20T01:42:09.5197152Z [36;1mecho "{\"jdkPath\":\"${JAVA_HOME}\",\"androidSdkPath\":\"${ANDROID_HOME}\"}" > ~/.bubblewrap/config.json[0m
-2026-01-20T01:42:09.5230656Z shell: /usr/bin/bash -e {0}
-2026-01-20T01:42:09.5230883Z env:
-2026-01-20T01:42:09.5231169Z   JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.17-10/x64
-2026-01-20T01:42:09.5231650Z   JAVA_HOME_17_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.17-10/x64
-2026-01-20T01:42:09.5232014Z ##[endgroup]

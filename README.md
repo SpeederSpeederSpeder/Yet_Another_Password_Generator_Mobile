@@ -1,3 +1,4 @@
+
 # Kryptopass - Advanced Password Generator
 
 A robust, modern, and customizable password generator designed for enhanced security and a premium user experience.

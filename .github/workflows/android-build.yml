@@ -43,32 +43,31 @@ jobs:
           # 1. Backup twa-manifest.json
           cp twa-manifest.json twa-manifest.json.bak
 
-          # 2. Point webManifestUrl to local file
-          sed -i 's|https://SpeederSpeederSpeder.github.io/Yet_Another_Password_Generator_Mobile/manifest.json|./manifest.json|g' twa-manifest.json
-
-          # 3. Inject iconUrl and absolute start_url into manifest.json
+          # 2. Inject iconUrl and absolute start_url into manifest.json
           # iconUrl is required by bubblewrap when using local manifest
           # start_url must be absolute for bubblewrap to derive the 'host'
           cp manifest.json manifest.json.bak
           jq '. + {"iconUrl": "https://SpeederSpeederSpeder.github.io/Yet_Another_Password_Generator_Mobile/Krypto.png", "start_url": "https://SpeederSpeederSpeder.github.io/Yet_Another_Password_Generator_Mobile/"}' manifest.json.bak > manifest.json
 
-          # 4. Run bubblewrap update (generates project using local manifest)
+          # 3. Run bubblewrap update (generates project using local manifest)
+          # We keep the real webManifestUrl in twa-manifest.json so bubblewrap can derive the host,
+          # but we pass the local manifest via the --manifest flag.
           VERSION_NAME=$(jq -r .appVersionName twa-manifest.json)
           VERSION_CODE=$(jq -r .appVersionCode twa-manifest.json)
           
           bubblewrap update --appVersionName "$VERSION_NAME" --appVersionCode "$VERSION_CODE" --manifest ./manifest.json
           
-          # 5. Restore original files
+          # 4. Restore original files
           mv twa-manifest.json.bak twa-manifest.json
           mv manifest.json.bak manifest.json
 
-          # 6. Patch generated files to use real domain instead of local path
+          # 5. Patch generated files to use real domain instead of local path
           # Find the absolute path to manifest.json that bubblewrap might have resolved
           PWD=$(pwd)
           
           # Replace local path with production URL in all files
-          grep -rl "./manifest.json" . | xargs sed -i 's|\./manifest\.json|https://SpeederSpeederSpeder.github.io/Yet_Another_Password_Generator_Mobile/manifest.json|g'
-          grep -rl "$PWD/manifest.json" . | xargs sed -i "s|$PWD/manifest.json|https://SpeederSpeederSpeder.github.io/Yet_Another_Password_Generator_Mobile/manifest.json|g"
+          grep -rl "./manifest.json" . | xargs -r sed -i 's|\./manifest\.json|https://SpeederSpeederSpeder.github.io/Yet_Another_Password_Generator_Mobile/manifest.json|g'
+          grep -rl "$PWD/manifest.json" . | xargs -r sed -i "s|$PWD/manifest.json|https://SpeederSpeederSpeder.github.io/Yet_Another_Password_Generator_Mobile/manifest.json|g"
           
           # Build the APK
           bubblewrap build --skipCheck --signingKeyPath android.keystore --signingKeyAlias android --signingKeyPassword password --signingStorePassword password
