@@ -38,7 +38,9 @@ jobs:
           keytool -genkey -v -keystore android.keystore -alias android -keyalg RSA -keysize 2048 -validity 10000 -storepass password -keypass password -dname "CN=Kryptopass, OU=Mobile, O=Kryptopass, L=Paris, S=France, C=FR"
           
           # Regenerate the Bubblewrap project from the existing twa-manifest.json
-          yes "" | bubblewrap update
+          VERSION_NAME=$(jq -r .appVersionName twa-manifest.json)
+          VERSION_CODE=$(jq -r .appVersionCode twa-manifest.json)
+          bubblewrap update --appVersionName "$VERSION_NAME" --appVersionCode "$VERSION_CODE"
           
           # Build the APK
           bubblewrap build --skipCheck --signingKeyPath android.keystore --signingKeyAlias android --signingKeyPassword password --signingStorePassword password
