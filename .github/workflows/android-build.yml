@@ -38,35 +38,30 @@ jobs:
           keytool -genkey -v -keystore android.keystore -alias android -keyalg RSA -keysize 2048 -validity 10000 -storepass password -keypass password -dname "CN=Kryptopass, OU=Mobile, O=Kryptopass, L=Paris, S=France, C=FR"
           
           # Workaround for 404 on Web Manifest (Site not deployed yet)
-          # 1. Start local server
-          python3 -m http.server 8080 &
-          SERVER_PID=$!
-          sleep 5 # Wait for server to start
-
-          # 2. Backup twa-manifest.json
+          # Use local manifest file instead of fetching from URL
+          
+          # 1. Backup twa-manifest.json
           cp twa-manifest.json twa-manifest.json.bak
 
-          # 3. Point webManifestUrl to local server
-          sed -i 's|https://SpeederSpeederSpeder.github.io/Yet_Another_Password_Generator_Mobile/manifest.json|http://localhost:8080/manifest.json|g' twa-manifest.json
+          # 2. Point webManifestUrl to local file
+          sed -i 's|https://SpeederSpeederSpeder.github.io/Yet_Another_Password_Generator_Mobile/manifest.json|./manifest.json|g' twa-manifest.json
 
-          # 4. Run bubblewrap update (generates project using local manifest)
+          # 3. Run bubblewrap update (generates project using local manifest)
           VERSION_NAME=$(jq -r .appVersionName twa-manifest.json)
           VERSION_CODE=$(jq -r .appVersionCode twa-manifest.json)
           
-          # Note: bubblewrap update might fail if it can't reach the manifest, but we provided a local one.
-          bubblewrap update --appVersionName "$VERSION_NAME" --appVersionCode "$VERSION_CODE" --manifest http://localhost:8080/manifest.json
+          bubblewrap update --appVersionName "$VERSION_NAME" --appVersionCode "$VERSION_CODE" --manifest ./manifest.json
           
-          # 5. Stop local server
-          kill $SERVER_PID
-
-          # 6. Restore original twa-manifest.json
+          # 4. Restore original twa-manifest.json
           mv twa-manifest.json.bak twa-manifest.json
 
-          # 7. Patch generated files to use real domain instead of localhost
-          # Replace launch URL
-          grep -rl "http://localhost:8080/" . | xargs sed -i 's|http://localhost:8080/|https://SpeederSpeederSpeder.github.io/Yet_Another_Password_Generator_Mobile/|g'
-          # Replace Host
-          grep -rl "localhost:8080" . | xargs sed -i 's|localhost:8080|SpeederSpeederSpeder.github.io|g'
+          # 5. Patch generated files to use real domain instead of local path
+          # Find the absolute path to manifest.json that bubblewrap might have resolved
+          PWD=$(pwd)
+          
+          # Replace local path with production URL in all files
+          grep -rl "./manifest.json" . | xargs sed -i 's|\./manifest\.json|https://SpeederSpeederSpeder.github.io/Yet_Another_Password_Generator_Mobile/manifest.json|g'
+          grep -rl "$PWD/manifest.json" . | xargs sed -i "s|$PWD/manifest.json|https://SpeederSpeederSpeder.github.io/Yet_Another_Password_Generator_Mobile/manifest.json|g"
           
           # Build the APK
           bubblewrap build --skipCheck --signingKeyPath android.keystore --signingKeyAlias android --signingKeyPassword password --signingStorePassword password
