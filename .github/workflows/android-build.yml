@@ -44,17 +44,17 @@ jobs:
           mkdir -p Yet_Another_Password_Generator_Mobile
           cp manifest.json Krypto.png Yet_Another_Password_Generator_Mobile/
           
-          # 3. Start a local server
-          python3 -m http.server 8080 &
+          # 3. Start a local server (bound explicitly to 127.0.0.1)
+          python3 -m http.server 8080 --bind 127.0.0.1 &
           SERVER_PID=$!
-          sleep 2 # Give the server a moment to start
+          sleep 5 # Give the server more time to start
           
           # 4. Prepare local manifest for generation
-          # We set start_url to include the local server address and path
-          jq '. + {"start_url": "http://localhost:8080/Yet_Another_Password_Generator_Mobile/", "iconUrl": "http://localhost:8080/Yet_Another_Password_Generator_Mobile/Krypto.png"}' manifest.json.bak > Yet_Another_Password_Generator_Mobile/manifest.json
+          # Use 127.0.0.1 instead of localhost to avoid IPv6 resolution issues
+          jq '. + {"start_url": "http://127.0.0.1:8080/Yet_Another_Password_Generator_Mobile/", "iconUrl": "http://127.0.0.1:8080/Yet_Another_Password_Generator_Mobile/Krypto.png"}' manifest.json.bak > Yet_Another_Password_Generator_Mobile/manifest.json
           
           # 5. Temporarily point twa-manifest.json to local server
-          sed -i 's|https://SpeederSpeederSpeder.github.io/Yet_Another_Password_Generator_Mobile/manifest.json|http://localhost:8080/Yet_Another_Password_Generator_Mobile/manifest.json|g' twa-manifest.json
+          sed -i 's|https://SpeederSpeederSpeder.github.io/Yet_Another_Password_Generator_Mobile/manifest.json|http://127.0.0.1:8080/Yet_Another_Password_Generator_Mobile/manifest.json|g' twa-manifest.json
 
           # 6. Run bubblewrap update
           # This generates the Android project files
@@ -70,11 +70,11 @@ jobs:
           mv manifest.json.bak manifest.json
           rm -rf Yet_Another_Password_Generator_Mobile
 
-          # 9. Patch generated files to use real domain instead of localhost
-          # We replace the localhost address with the production one in all generated files
-          grep -rl "localhost:8080" . | xargs -r sed -i 's|http://localhost:8080|https://SpeederSpeederSpeder.github.io|g'
-          # Also replace any remaining 'localhost' with the real host
-          grep -rl "localhost" . | xargs -r sed -i 's|localhost|SpeederSpeederSpeder.github.io|g'
+          # 9. Patch generated files to use real domain instead of 127.0.0.1
+          # We replace the local IP address with the production one in all generated files
+          grep -rl "127.0.0.1:8080" . | xargs -r sed -i 's|http://127.0.0.1:8080|https://SpeederSpeederSpeder.github.io|g'
+          # Also replace any remaining '127.0.0.1' with the real host
+          grep -rl "127.0.0.1" . | xargs -r sed -i 's|127.0.0.1|SpeederSpeederSpeder.github.io|g'
           
           # Build the APK
           bubblewrap build --skipCheck --signingKeyPath android.keystore --signingKeyAlias android --signingKeyPassword password --signingStorePassword password
