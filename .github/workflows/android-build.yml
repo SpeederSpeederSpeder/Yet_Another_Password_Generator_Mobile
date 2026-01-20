@@ -46,16 +46,21 @@ jobs:
           # 2. Point webManifestUrl to local file
           sed -i 's|https://SpeederSpeederSpeder.github.io/Yet_Another_Password_Generator_Mobile/manifest.json|./manifest.json|g' twa-manifest.json
 
-          # 3. Run bubblewrap update (generates project using local manifest)
+          # 3. Inject iconUrl into manifest.json (required by bubblewrap when using local manifest)
+          cp manifest.json manifest.json.bak
+          jq '. + {"iconUrl": "https://SpeederSpeederSpeder.github.io/Yet_Another_Password_Generator_Mobile/Krypto.png"}' manifest.json.bak > manifest.json
+
+          # 4. Run bubblewrap update (generates project using local manifest)
           VERSION_NAME=$(jq -r .appVersionName twa-manifest.json)
           VERSION_CODE=$(jq -r .appVersionCode twa-manifest.json)
           
           bubblewrap update --appVersionName "$VERSION_NAME" --appVersionCode "$VERSION_CODE" --manifest ./manifest.json
           
-          # 4. Restore original twa-manifest.json
+          # 5. Restore original files
           mv twa-manifest.json.bak twa-manifest.json
+          mv manifest.json.bak manifest.json
 
-          # 5. Patch generated files to use real domain instead of local path
+          # 6. Patch generated files to use real domain instead of local path
           # Find the absolute path to manifest.json that bubblewrap might have resolved
           PWD=$(pwd)
           
