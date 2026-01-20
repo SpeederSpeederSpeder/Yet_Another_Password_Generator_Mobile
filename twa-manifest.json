@@ -9,7 +9,7 @@
   "backgroundColor": "#FFFFFF",
   "enableNotifications": false,
   "startUrl": "/Yet_Another_Password_Generator_Mobile/",
-  "iconUrl": "https://SpeederSpeederSpeder.github.io/Yet_Another_Password_Generator_Mobile/Krypto.png",
+  "iconUrl": "https://raw.githubusercontent.com/SpeederSpeederSpeder/Yet_Another_Password_Generator_Mobile/main/Krypto.png",
   "splashScreenFadeOutDuration": 300,
   "signingKey": {
     "path": "./android.keystore",
