@@ -29,7 +29,13 @@ jobs:
       - name: Configure Bubblewrap
         run: |
           mkdir -p ~/.bubblewrap
-          echo "{\"jdkPath\":\"${JAVA_HOME}\",\"androidSdkPath\":\"${ANDROID_HOME}\"}" > ~/.bubblewrap/config.json
+          # On ubuntu-latest, ANDROID_HOME is usually /usr/local/lib/android/sdk
+          # We explicitly set it to ensure Bubblewrap finds it
+          SDK_PATH=${ANDROID_HOME:-/usr/local/lib/android/sdk}
+          echo "{\"jdkPath\":\"$JAVA_HOME\",\"androidSdkPath\":\"$SDK_PATH\"}" > ~/.bubblewrap/config.json
+          
+          # Accept Android licenses
+          yes | $SDK_PATH/cmdline-tools/latest/bin/sdkmanager --licenses || true
 
       - name: Build APK
         run: |
@@ -47,7 +53,7 @@ jobs:
           # 3. Start a local server (bound explicitly to 127.0.0.1)
           python3 -m http.server 8080 --bind 127.0.0.1 &
           SERVER_PID=$!
-          sleep 5 # Give the server more time to start
+          sleep 5 # Give the server time to start
           
           # 4. Prepare local manifest for generation
           # Use 127.0.0.1 instead of localhost to avoid IPv6 resolution issues
@@ -57,7 +63,7 @@ jobs:
           sed -i 's|https://SpeederSpeederSpeder.github.io/Yet_Another_Password_Generator_Mobile/manifest.json|http://127.0.0.1:8080/Yet_Another_Password_Generator_Mobile/manifest.json|g' twa-manifest.json
 
           # 6. Run bubblewrap update
-          # This generates the Android project files
+          # This generates/updates the Android project files
           VERSION_NAME=$(jq -r .appVersionName twa-manifest.json.bak)
           VERSION_CODE=$(jq -r .appVersionCode twa-manifest.json.bak)
           yes | bubblewrap update --appVersionName "$VERSION_NAME" --appVersionCode "$VERSION_CODE"
@@ -71,13 +77,18 @@ jobs:
           rm -rf Yet_Another_Password_Generator_Mobile
 
           # 9. Patch generated files to use real domain instead of 127.0.0.1
-          # We replace the local IP address with the production one in all generated files
-          grep -rl "127.0.0.1:8080" . | xargs -r sed -i 's|http://127.0.0.1:8080|https://SpeederSpeederSpeder.github.io|g'
-          # Also replace any remaining '127.0.0.1' with the real host
-          grep -rl "127.0.0.1" . | xargs -r sed -i 's|127.0.0.1|SpeederSpeederSpeder.github.io|g'
+          # Target only the app directory and build files to avoid messing with config.json
+          grep -rl "127.0.0.1:8080" ./app ./*.gradle | xargs -r sed -i 's|http://127.0.0.1:8080|https://SpeederSpeederSpeder.github.io|g'
+          grep -rl "127.0.0.1" ./app ./*.gradle | xargs -r sed -i 's|127.0.0.1|SpeederSpeederSpeder.github.io|g'
           
           # Build the APK
           bubblewrap build --skipCheck --signingKeyPath android.keystore --signingKeyAlias android --signingKeyPassword password --signingStorePassword password
+
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: app-release-apk
+          path: ./*.apk
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
