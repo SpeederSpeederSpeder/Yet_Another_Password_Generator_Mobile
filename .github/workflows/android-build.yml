@@ -37,9 +37,8 @@ jobs:
           # In a real app, you should use GitHub Secrets to store your keystore
           keytool -genkey -v -keystore android.keystore -alias android -keyalg RSA -keysize 2048 -validity 10000 -storepass password -keypass password -dname "CN=Kryptopass, OU=Mobile, O=Kryptopass, L=Paris, S=France, C=FR"
           
-          # Initialize the Bubblewrap project from the manifest
-          # We use yes to accept all default values if any prompts appear
-          yes | bubblewrap init --manifest twa-manifest.json
+          # Regenerate the Bubblewrap project from the existing twa-manifest.json
+          yes | bubblewrap update
           
           # Build the APK
           bubblewrap build --skipCheck --signingKeyPath android.keystore --signingKeyAlias android --signingKeyPassword password --signingStorePassword password
